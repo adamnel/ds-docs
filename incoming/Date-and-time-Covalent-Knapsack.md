@@ -1,0 +1,543 @@
+# Covalent / Date and time
+
+Follow these guidelines for clarity, consistency, and accurate translation.
+
+# 
+
+User preferences
+
+Depending on user account settings for dates and times, the formats users see on a UI might vary from UI content you create. When designing for a UI, consider user date and time options and available space.
+
+# 
+
+Date
+
+## 
+
+The basics
+
+Use day-month-year order.
+
+##### Do
+
+17 October 2024 
+
+17 October
+
+##### Don't
+
+October 17, 2024
+
+October 17
+
+Don’t write dates with numerals only.
+
+##### Do
+
+17 October 2024
+
+17 October
+
+October 2024
+
+##### Don't
+
+17/10/24
+
+10/17
+
+10/2024
+
+When possible, use the day's or month's full name. 
+
+If space is limited, use these 3-letter abbreviations. If you include the month and the day, and need to abbreviate, abbreviate both.
+
+**Days**
+
+Mon
+
+  
+
+Tue
+
+  
+
+Wed
+
+  
+
+Thu
+
+  
+
+Fri
+
+  
+
+Sat
+
+  
+
+Sun
+
+**Months**
+
+Jan
+
+  
+
+Feb
+
+  
+
+Mar
+
+  
+
+Apr
+
+  
+
+May
+
+  
+
+Jun
+
+  
+
+Jul
+
+  
+
+Aug
+
+  
+
+Sep
+
+  
+
+Oct
+
+  
+
+Nov
+
+  
+
+Dec
+
+##### Do
+
+Thu, 17 Oct 2024
+
+##### Don't
+
+Thursday, 17 Oct 2024 
+
+Use a comma to separate a day and date.
+
+##### Do
+
+Thursday, 17 October 2024
+
+Thu, 17 Oct 2024
+
+##### Don't
+
+Thursday 17 October 2024
+
+Thu 17 Oct
+
+In prose, for days under 10, do not include a leading 0. 
+
+##### Do
+
+Thursday, 5 October 2024
+
+##### Don't
+
+ Thursday, 05 October 2024
+
+Tables have [their own standards](#tables) for leading zeros.
+
+Use 4 digits for the year.
+
+##### Do
+
+17 October 2024
+
+Oct 2024
+
+##### Don't
+
+17 October ’24 
+
+Oct '24
+
+## 
+
+Date range
+
+To indicate a date range, use an [en dash](https://www.w3schools.com/charsets/ref_utf_punctuation.asp) (not a hyphen) with no spaces around it.
+
+##### Do
+
+23 January–1 April
+
+##### Don't
+
+23 January-1 April
+
+23 January – 1 April
+
+## 
+
+Ordinals
+
+Don’t use ordinals. They indicate position or rank in a sequential order (1st, 2nd, 3rd, and so on). 
+
+##### Do
+
+23 January – 1 April
+
+##### Don't
+
+23rd January – 1st April
+
+# 
+
+Time
+
+## 
+
+System default
+
+Teradata product implementations default to GMT (Greenwich Mean Time).
+
+## 
+
+12-hour format
+
+Use numerals and AM or PM (uppercase), with a space in between. 
+
+For hours under 10, do not include a leading 0.
+
+*   7:00 AM
+    
+*   10:30 PM 
+    
+
+Tables have [their own standards](#tables) for leading zeros.
+
+## 
+
+24-hour format
+
+Use numerals without AM or PM. 
+
+For hours under 10, include the leading 0.
+
+*   07:00
+    
+*   13:45
+    
+
+Tables have [their own standards](#tables) for leading zeros.
+
+## 
+
+Seconds
+
+Include seconds only if they are relevant and provide value to the user.
+
+*   7:40:12 AM
+    
+*   07:40:12 
+    
+
+## 
+
+Date and time separation
+
+In prose, use _at_.
+
+*   Thursday, 17 October 2024 at 2:00 PM
+    
+
+  
+
+On a list page or log, use a comma.
+
+*   17 Oct 2024, 2:00 PM
+    
+
+## 
+
+Time period
+
+To indicate a time period, use an [en dash](https://www.w3schools.com/charsets/ref_utf_punctuation.asp) (not a hyphen) with no spaces around it.
+
+For a 12-hour clock, include the AM or PM after both times.
+
+*   7:00 AM–10:30 AM 
+    
+*   8:00 AM–5:00 PM
+    
+*   16:30–18:30
+    
+
+## 
+
+Time zone
+
+To include the time zone, use its abbreviation. For a 12-hour format, put the abbreviation after the AM or PM.
+
+*   16:14 IST
+    
+*   4:00 PM CET
+    
+
+In a time range, include the time zone once at the end.
+
+*   8:00 AM–5:00 PM ET
+    
+
+If a time zone has a standard time and a daylight time, do not use abbreviations that distinguish between them. Some time zones, that do not have a daylight time, have Standard (S) in the name of their year-round time. An example is Japan Standard Time (JST).
+
+##### Do
+
+7:30 PM PT
+
+18:14 JST
+
+##### Don't
+
+7:30 PM PST
+
+7:30 PM PDT
+
+## 
+
+Units of time
+
+Spell out units of time if space is available. Otherwise use these abbreviations, using the longer ones if you can.
+
+  
+
+Abbreviation
+
+Shorter abbreviation
+
+year, years
+
+  
+
+month, months
+
+  
+
+day, days
+
+  
+
+hour, hours
+
+  
+
+minute, minutes
+
+  
+
+second, seconds
+
+  
+
+millisecond, milliseconds
+
+yr
+
+  
+
+mo
+
+  
+
+_Don't use_
+
+  
+
+hr
+
+  
+
+min
+
+  
+
+s
+
+  
+
+ms
+
+y
+
+  
+
+m
+
+  
+
+_Don't use_
+
+  
+
+h
+
+  
+
+m
+
+  
+
+_Don't use_
+
+  
+
+_Don't use_
+
+# 
+
+Relative dates and times
+
+Relative dates and times can provide a more intuitive understanding of the timing of events than absolute dates and times.
+
+Use them for events such as log entries or scheduled jobs that are recent, near, or updated frequently. This helps users more easily see new or impending events.
+
+Use the words _yesterday_, _today_, and _tomorrow_.
+
+Use numerals with units of time:
+
+*   3 days ago
+    
+*   4 hours 29 minutes ago
+    
+*   7 minutes from now
+    
+
+Last update (PT)
+
+2 minutes ago
+
+Friday, 26 January, 07:00 AM  
+Friday, 26 January, 05:45 AM
+
+Next run (PT)
+
+Today, 11:00 PM
+
+Saturday, 20 January, 11:00 PM  
+Saturday, 13 January, 11:00 PM
+
+# 
+
+Specific contexts
+
+## 
+
+Tables
+
+If all the times in a column are in the same time zone, add the time zone to the column header. Then the time zone doesn’t have to be in each row.
+
+Right-align date, time, or date-time content in a column.
+
+Default to descending order with the most recent date or time at the top. 
+
+If anything is to the left of the leftmost number in a date or time, include any leading 0s in that number. Otherwise, do not.
+
+*   Friday, 01 Nov 2024
+    
+*   1 Nov 2024
+    
+*   1 Nov 2024, 07:03:16
+    
+*   7:03:16
+    
+*   3:16
+    
+
+Use our [code type scale](/site/covalent/latest/pages/typography-3shrxwkyk) to make sure content aligns well for easy comparison.
+
+### 
+
+Standard column header labels
+
+Some examples:
+
+*   Date
+    
+*   Time (ET) 
+    
+*   Date and time (ET)
+    
+*   Timestamp (ET)
+    
+*   Start (ET) 
+    
+*   End (ET) 
+    
+*   Duration
+    
+*   Last run (ET)
+    
+
+### 
+
+Single date-time column
+
+![single-datetime-column.png](https://knapsack.imgix.net/site/covalent/single-datetime-column-t9uxqvjrwupng)
+
+### 
+
+Multiple related date-time columns
+
+In logs, result sets, and similar tables, use the 24-hour time format.
+
+![multiple-related-datetime-columns.png](https://knapsack.imgix.net/site/covalent/multiple-related-datetime-columns-izn5qk3ogpng)
+
+## 
+
+Charts or graphs
+
+Simplify data by adding the time zone to the legend, so it doesn’t repeat on each item. 
+
+![charting--timezone.png](https://knapsack.imgix.net/site/covalent/charting-timezone-ebvlzdpt9dpng)
+
+To pick up a draggable item, press the space bar. While dragging, use the arrow keys to move the item. Press space again to drop the item in its new position, or press escape to cancel.
+
+Contents
+
+*   [User preferences](#user-preferences)
+*   [Date](#date)
+    *   [The basics](#the-basics)
+    *   [Date range](#date-range)
+    *   [Ordinals](#ordinals)
+*   [Time](#time)
+    *   [System default](#system-default)
+    *   [12-hour format](#heading-12-hour-format)
+    *   [24-hour format](#heading-24-hour-format)
+    *   [Seconds](#seconds)
+    *   [Date and time separation](#date-and-time-separation)
+    *   [Time period](#time-period)
+    *   [Time zone](#time-zone)
+    *   [Units of time](#units-of-time)
+*   [Relative dates and times](#relative-dates-and-times)
+*   [Specific contexts](#specific-contexts)
+    *   [Tables](#tables)
+    *   [Charts or graphs](#charts-or-graphs)
+
+*   [Workspace Repo](https://github.com/Teradata/covalent)
+
+[Powered by Knapsack](https://knapsack.cloud)Sign In

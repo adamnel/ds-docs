@@ -1,10 +1,12 @@
 ---
 title: Button
-last_edited: '2026-04-02T12:00:00.000Z'
+last_edited: '2026-04-03T19:41:43.700Z'
 auto_generated: false
 ---
 
 The Button component triggers actions: submit a form, open a dialog, or run a command. Covalent ships **primary**, **secondary**, **tertiary**, and **destructive** variants, plus **ghost** and **link** styles for low-emphasis actions. Sizes follow the **sm**, **md**, and **lg** scale so dense admin UIs and marketing surfaces can share the same primitive.
+
+<storybookEmbed storyId="components-button--raised" height={300} />
 
 ## Variants
 
@@ -12,17 +14,17 @@ Use **primary** for the single most important action on a surface (often one per
 
 ## Usage guidelines
 
-- Prefer a **verb** for the label: “Save draft”, “Invite user”, not “OK” or “Submit” unless the context is obvious.
-- Do not nest interactive elements inside a button; use a single clear target.
-- When an action is **in progress**, show a loading state and disable duplicate clicks rather than leaving the user guessing.
+* Prefer a **verb** for the label: “Save draft”, “Invite user”, not “OK” or “Submit” unless the context is obvious.
+* Do not nest interactive elements inside a button; use a single clear target.
+* When an action is **in progress**, show a loading state and disable duplicate clicks rather than leaving the user guessing.
 
 ## Do and don't
 
-| Do | Don't |
-| --- | --- |
-| Use one primary button per logical section | Stack multiple primary buttons side by side |
-| Pair destructive actions with confirmation dialogs | Use destructive styling for benign actions |
-| Keep labels short and readable at a glance | Rely on icons alone without accessible names |
+| Do                                                 | Don't                                        |
+| -------------------------------------------------- | -------------------------------------------- |
+| Use one primary button per logical section         | Stack multiple primary buttons side by side  |
+| Pair destructive actions with confirmation dialogs | Use destructive styling for benign actions   |
+| Keep labels short and readable at a glance         | Rely on icons alone without accessible names |
 
 ## Code examples
 
@@ -30,12 +32,14 @@ Use **primary** for the single most important action on a surface (often one per
   tabs={[
     {
       name: "React",
-      content: "import { Button } from '@covalent/react';\n\nexport function Example() {\n  return (\n    <Button variant=\"primary\" size=\"md\">\n      Save changes\n    </Button>\n  );\n}",
+      content:
+        'import { Button } from \'@covalent/react\';\n\nexport function Example() {\n  return (\n    <Button variant="primary" size="md">\n      Save changes\n    </Button>\n  );\n}',
       language: "tsx"
     },
     {
       name: "Anatomy",
-      content: "Button\n├── Root (button | a)\n├── Optional leading icon\n├── Label text\n└── Optional trailing icon / loading spinner",
+      content:
+        "Button\n├── Root (button | a)\n├── Optional leading icon\n├── Label text\n└── Optional trailing icon / loading spinner",
       language: "text"
     }
   ]}
@@ -44,9 +48,9 @@ Use **primary** for the single most important action on a surface (often one per
 
 ## Accessibility
 
-- Native `<button>` is used unless the control navigates, in which case render as a link styled as a button.
-- **Focus** is visible in all themes; do not remove outlines without an equivalent focus ring.
-- **Disabled** buttons are not focusable in strict mode; if you must explain why an action is unavailable, use helper text or a tooltip on a wrapper, not a disabled control alone.
+* Native `<button>` is used unless the control navigates, in which case render as a link styled as a button.
+* **Focus** is visible in all themes; do not remove outlines without an equivalent focus ring.
+* **Disabled** buttons are not focusable in strict mode; if you must explain why an action is unavailable, use helper text or a tooltip on a wrapper, not a disabled control alone.
 
 <Callout
   body={<>
