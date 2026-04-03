@@ -1,12 +1,16 @@
+import type { ReactNode } from "react";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import Accordion, { AccordionBlock } from "./embedded-elements/accordion";
 import { ApiReference } from "./embedded-elements/api-reference";
 import Callout from "./embedded-elements/callout";
 import { CardGrid } from "./embedded-elements/card-grid";
 import { CodeTabs } from "./embedded-elements/code-tabs";
+import { DoDont } from "./embedded-elements/do-dont";
 import { FileStructure } from "./embedded-elements/file-structure";
+import { ImagePlaceholder } from "./embedded-elements/image-placeholder";
 import RecipeBlock from "./embedded-elements/recipe";
 import { ScrollBasedShowcase } from "./embedded-elements/scroll-showcase";
+import StorybookEmbed from "./embedded-elements/storybook-embed";
 import TypeDefinition from "./embedded-elements/type-definition";
 import Youtube from "./embedded-elements/youtube";
 import Blockquote from "./standard-elements/blockquote";
@@ -25,6 +29,13 @@ type ComponentMapping = {
       id?: string;
     }[];
     initialSelectedIndex?: number;
+  };
+  imagePlaceholder: {
+    imageId: string;
+  };
+  doDont: {
+    doBody: TinaMarkdownContent | ReactNode;
+    dontBody: TinaMarkdownContent | ReactNode;
   };
   typeDefinition: {
     property: {
@@ -109,6 +120,11 @@ type ComponentMapping = {
       parentId: string | null;
     }[];
   };
+  storybookEmbed: {
+    storyId: string;
+    height?: number;
+    embedMode?: string;
+  };
 };
 
 type CalloutVariant =
@@ -129,9 +145,12 @@ export const MarkdownComponentMapping: Components<ComponentMapping> = {
   apiReference: (props) => <ApiReference {...props} />,
   youtube: (props) => <Youtube {...props} />,
   codeTabs: (props) => <CodeTabs {...props} />,
+  imagePlaceholder: (props) => <ImagePlaceholder {...props} />,
+  doDont: (props) => <DoDont {...props} />,
   Callout: (props: { body: TinaMarkdownContent; variant: string }) => (
     <Callout {...props} variant={props.variant as CalloutVariant} />
   ),
+  storybookEmbed: (props) => <StorybookEmbed {...props} />,
   // Our default markdown components
   h1: (props) => <HeaderFormat level={1} {...props} />,
   h2: (props) => <HeaderFormat level={2} {...props} />,

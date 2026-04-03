@@ -48,10 +48,6 @@
               "_template": "item"
             },
             {
-              "slug": "content/docs/components/button-accessibility.mdx",
-              "_template": "item"
-            },
-            {
               "slug": "content/docs/components/action-ribbon.mdx",
               "_template": "item"
             },
