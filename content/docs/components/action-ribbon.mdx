@@ -1,0 +1,82 @@
+---
+title: Action ribbon
+last_edited: '2026-04-03T20:18:16.000Z'
+auto_generated: false
+---
+
+Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.
+
+[Default / inactive](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=xrVH4M3t6W)
+
+[Active](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=SBpuLooid9)
+
+[Caution](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=3ueuxC011k)
+
+[Negative](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=04wy8HmIJl)
+
+[Positive](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=78JmyZgiv8)
+
+[Loading](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=PX4CXlob7k)
+
+[Pending](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=I15dIgeIM4)
+
+[Bulk selection default / inactive](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=sNiAamckj3)
+
+[Bulk selection active](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=aQE9OP2U6t)
+
+LightShare
+
+## Default / inactive
+
+No changes
+
+labelText
+
+stateactivenegativepositivecaution
+
+icon
+
+iconAriaLabel
+
+centered
+
+action-items
+
+Main
+
+Main
+
+
+icon
+
+```
+<cv-action-ribbon labelText="No changes" iconAriaLabel="info">  <div slot="action-items">    <cv-button label="Cancel" outlined color="secondary"> </cv-button>    <cv-button label="Save" raised disabled> </cv-button>  </div></cv-action-ribbon>
+```
+
+### How to Import
+
+`   import '@covalent/components/action-ribbon';   `
+
+### Methods
+
+Method signature
+
+Description
+
+`show() => void`
+
+Opens the action ribbon.
+
+`close(reason: CloseReason) => void`
+
+Closes the action ribbon, with the specified action indicating why it was closed.
+
+* * *
+
+#### 
+
+References
+
+[MDC banner](https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme)
+
+[Covalent design system - Action ribbon](https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview)

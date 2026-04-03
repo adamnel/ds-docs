@@ -15,18 +15,10 @@
           ]
         },
         {
-          "title": "Components",
+          "title": "Getting Started",
           "items": [
             {
-              "slug": "content/docs/components/button.mdx",
-              "_template": "item"
-            },
-            {
-              "slug": "content/docs/components/dialog.mdx",
-              "_template": "item"
-            },
-            {
-              "slug": "content/docs/components/data-table.mdx",
+              "slug": "content/docs/getting-started/index.mdx",
               "_template": "item"
             }
           ]
@@ -45,8 +37,53 @@
           ]
         },
         {
+          "title": "Components",
+          "items": [
+            {
+              "slug": "content/docs/components/index.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/button.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/button-accessibility.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/action-ribbon.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/checkbox.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/chip-set.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/code-snippet.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/dialog.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/data-table.mdx",
+              "_template": "item"
+            }
+          ]
+        },
+        {
           "title": "Patterns",
           "items": [
+            {
+              "slug": "content/docs/patterns/index.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/patterns/form-validation.mdx",
               "_template": "item"
@@ -58,14 +95,40 @@
           ]
         },
         {
-          "title": "Guidelines",
+          "title": "Tokens",
           "items": [
+            {
+              "slug": "content/docs/tokens/index.mdx",
+              "_template": "item"
+            }
+          ]
+        },
+        {
+          "title": "Content",
+          "items": [
+            {
+              "slug": "content/docs/content/index.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/adapting-tone-by-situation.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/guidelines/accessibility.mdx",
               "_template": "item"
             },
             {
               "slug": "content/docs/guidelines/writing-component-docs.mdx",
+              "_template": "item"
+            }
+          ]
+        },
+        {
+          "title": "Feedback",
+          "items": [
+            {
+              "slug": "content/docs/feedback/index.mdx",
               "_template": "item"
             }
           ]
@@ -76,8 +139,8 @@
   ],
   "ctaButtons": {
     "button1": {
-      "label": "Foundations",
-      "link": "/docs/foundations/color",
+      "label": "Getting started",
+      "link": "/docs/getting-started",
       "variant": "primary-outline"
     },
     "button2": {
