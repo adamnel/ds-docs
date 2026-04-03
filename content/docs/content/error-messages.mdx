@@ -1,0 +1,285 @@
+---
+title: Error messages
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+An error occurs when Teradata users expect one thing to happen but something else (or nothing) happens. These moments are frustrating. They make it harder to get things done yet present an opportunity for us to build trust.
+
+
+Principles for writing error messages
+
+Thoughtful error handling enhances the usefulness of Teradata products and plays a crucial role in building trust with the users. It can also reduce support resources.
+
+These principles are meant to help you design useful messages that embody the Teradata voice as a trustworthy, knowledgeable, and proactive guide in the products.  
+
+  
+
+* * *
+
+
+Avoid showing a message
+
+The best error message is no error happening at all. The message and the error itself are disruptive to a user’s experience. They stand in the way between the user and their job to be done. Make sure the system can address errors on the back end to avoid showing an error message.
+
+  
+
+* * *
+
+
+Consider the message before the design components
+
+Most existing Teradata error messages don’t have the right content. If we have to display an error message, first write out what the content needs to say and think through how you’re going to say it and in which order you’ll place the words.
+
+<imagePlaceholder imageId="cv-error-messages_components" />
+
+  
+
+### 
+
+Anatomy of an error message
+
+Not every error message you design will look like this, but many will. Regardless of the cause or type of the error, the most useful error message includes 3 distinct parts in this order:
+
+*   What happened
+    
+*   The underlying cause (show only if helpful to the user)
+    
+*   How to fix it
+    
+<imagePlaceholder imageId="cv-error-messages_anatomy-detail" />
+
+### 
+
+What happened
+
+This should be the first part of the message. It’s the header if the message appears in a dialog. It’s the first sentence if the message is on the page level.
+
+Write it from the perspective of the user, not the system. In other words, talk about the user impact, not something about the system. For example, focus on what the user intended to do but couldn’t do because of the error. Be as specific about the problem as possible.
+
+##### Do
+
+*   Your role doesn’t have access to this 
+    
+*   Couldn’t validate the 47 datasets
+    
+
+##### Don't
+
+*   There’s a problem.
+    
+*   We’re experiencing an issue in the system.
+    
+
+### 
+
+The underlying cause
+
+Explaining the underlying cause is optional depending on the context. It’s helpful to have an explanation of why something happened if the additional layer of transparency helps increase a user’s understanding of the system. For example, instead of just saying “The system timed out,” it’s more helpful to include an explanation like this, “The system took too long validating your shared data.”
+
+Here’s when including the cause _isn’t_ helpful:
+
+*   When excessive information gives a feeling of chaos or uncertainty, it gets in the way of useful, usable information. For example, “We couldn’t connect to the server due to too much traffic, a configuration error, or a bad request.”
+    
+*   When, due to limited space, the “what happened” and “how to fix it” information get compromised to include the underlying cause of the error
+    
+
+  
+
+### 
+
+How to fix it
+
+This part tells the user what they can do about the error. If there’s nothing for them to do, then explain what the product is doing. Often a path forward that’s simple and actionable is helpful. If the actions will require the user to take more effort, as shown in the message anatomy, explain clearly while keeping the content concise.
+
+Linking to a help article can be useful, but only if that article is specific and descriptive to the error’s use case.
+
+Avoid generic, catch-all resolutions like “Contact your IT administrator for details.”
+
+  
+
+* * *
+
+
+Be supportive and transparent
+
+Voice and tone are strategic tools we use to help users accomplish goals and more easily relate to the Teradata system at hand. Teradata has a unique voice that manifests confidence and compassion. From marketing to product to support, we speak in the same consistent voice.
+
+When you write error messages, you continue to speak in that confident and compassionate voice but flex your voice to be supportive and transparent. We own up to our mistakes. This means we refer to Teradata as “we” and to the user as “you” to clearly communicate what went wrong, who’s taking what action to help, and who needs to take action in the error message. Using “we” also helps show the humanness behind the software.
+
+**Tone**
+
+**What this means**
+
+Supportive
+
+Whether it’s a system or user error, we support the user. It’s an attitude we have. It’s in our mindset.
+
+Transparent
+
+Error messages often don’t provide enough right details to help the user get unstuck.
+
+We aim to be honest and easy to understand. This means we sweat the details to get the most helpful information and communicate it clearly and simply.
+
+### 
+
+Stay neutral
+
+Be supportive and transparent, but stay neutral. Keep a neutral tone to avoid escalating an already-tense situation. This means to focus on communicating helpful information and avoid making them feel something by keeping our emotion in check.
+
+### 
+
+Words to avoid
+
+#### 
+
+sorry 
+
+Avoid saying "sorry." Saying it implies an emotion the user may not be feeling. How we feel is irrelevant in error situations. The most important thing is to communicate what happened and how to fix it.
+
+Exception: Save “sorry” for grave errors, for example, when there’s data loss.
+
+##### Do
+
+*   The system timed out. Please try again.
+    
+*   We’re experiencing an issue in the system.
+    
+
+##### Don't
+
+*   We’re sorry, but the system timed out. Please try again.
+    
+*   We’re sorry, but we’re experiencing an issue in the system.
+    
+
+#### 
+
+please 
+
+Use “please” sparingly.  
+
+Exception: Consider saying “please” only if the absence of it makes the message sound demanding or a little too terse to be human. Read your draft out loud to see if you do need the word.    
+
+##### Do
+
+*   The path name is too long. Shorten the name to less than 1024 bytes and resubmit the job.
+    
+*   It’s taking longer than we expect to load your data. It could take a few more minutes. Please check back later.
+    
+
+##### Don't
+
+*   The path name is too long. Please shorten the name to less than 1024 bytes and resubmit the job.
+    
+*   It’s taking longer than we expect to load your data. It could take a few more minutes. Check back later.
+    
+
+#### 
+
+fail, failure 
+
+Do not use. Errors present a stressful situation to the user. Be supportive by speaking to them in a positive way.     
+
+##### Do
+
+*   Couldn’t create an environment
+    
+*   Couldn’t set up space in the region
+    
+
+##### Don't
+
+*   Failed to create an environment
+    
+*   Reservation failed
+    
+
+#### 
+
+oops 
+
+"Oops" can sound irreverent. Avoid using words like this to downplay an error or sound friendly.        
+
+##### Do
+
+The system timed out. Please try again.
+
+##### Don't
+
+Oops! The system timed out. Try again.
+
+#### 
+
+Are you sure? 
+
+Do not use. Saying “Are you sure?” implies you’re questioning the user. Instead of asking questions, confirm the user-intended action and communicate what they need to know.         
+
+##### Do
+
+**(user action)** Share 47 datasets 
+
+**(what they need to know)** Sharing a large number of datasets will take a long time and may result in a system timeout.
+
+**(clear actions)** Don’t share | Share
+
+##### Don't
+
+Are you sure you want to share 47 datasets? 
+
+Sharing a large number of datasets will take a long time and may result in a system timeout.
+
+Yes | No
+
+
+Match design components to the chosen message
+
+Choose your design component based on the error message—not the other way around. 
+
+Essentially, user impact determines the message and how it should be displayed on the UI. Significant user impact means the user needs to spend a considerable amount of time or effort to resolve the issue. This diagram illustrates the 3 severity levels based on user impact. Throughout the scale, we speak in a consistent tone but may be elaborate, brief, or somewhere in between depending on the situation.
+
+<imagePlaceholder imageId="cv-error-messages_tone-scale" />
+
+
+Modal dialog
+
+*   User impact: High
+    
+*   Severity: High
+    
+*   Style: Elaborate
+    
+
+The user needs to spend a considerable amount of time or effort to resolve the error, such as looking for a fix in the knowledge base or contacting Support. In high-severity situations, we find it necessary to catch the user’s attention in communicating the enough right details, hence the need to be elaborate and display the message in a modal dialog.
+
+<imagePlaceholder imageId="cv-error-messages_severe-alert-1" />
+<imagePlaceholder imageId="cv-error-messages_severe-alert-2" />
+
+
+Page-level banner
+
+*   User impact: Moderate
+    
+*   Severity: Moderate
+    
+*   Style: Brief
+    
+
+The user may need to spend some amount of time or effort to fix the error. Sometimes, we're not sure if the primary action will work. In moderate-severity situations, we can be less elaborate and less “in-your-face” by using a page-level banner.
+
+<imagePlaceholder imageId="cv-error-messages_page-banner-moderate" />
+
+*   User impact: Low
+    
+*   Severity: Low
+    
+*   Style: Brief
+    
+
+The error results in a relatively small inconvenience for the user. In minor-severity situations, we can be brief and less “in-your-face” by using a page-level banner.
+
+<imagePlaceholder imageId="cv-error-messages_page-banner-low-1" />
+
+<imagePlaceholder imageId="cv-error-messages_page-banner-low-2" />
+
+<imagePlaceholder imageId="cv-error-messages_page-banner-low-3" />

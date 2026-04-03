@@ -1,40 +1,53 @@
 ---
 title: Chip set
-last_edited: '2026-04-03T20:18:16.000Z'
+last_edited: '2026-04-03T12:00:00.000Z'
 auto_generated: false
 ---
 
-Compact visual element representing an attribute, action, or choice.
+Compact visual element representing an attribute, action, or choice. A **chip set** groups multiple [Chip](https://teradata.github.io/covalent/docs/components/?path=/docs/components-chips--overview) controls for selection, filtering, or actions.
 
-LightShare
+## Usage
 
-## Main
+Design documentation for chip set continues to align with **Material chips** patterns. Review the current Figma documentation and Storybook examples before shipping new layouts.
 
-selectable\*
+- [Figma — Chip set](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7914-54907)
+- [Related: Chip (single)](https://teradata.github.io/covalent/docs/components/?path=/docs/components-chips--overview)
 
-multi
+<imagePlaceholder imageId="cv-chip-set_hero" />
 
-label
+### When to use
 
-activeIndex
+Use chip sets when users pick **one or many** options from a compact list—filters, facets, or removable tokens. Prefer **radio** or **select** when the list is long or requires heavy scanning.
 
-default
+## Web components
 
-Main
-
-Main
-
-Main
-
+### Example
 
 ```
-<cv-chip-set selectable activeIndex="0" label="chip-set">  <cv-chip label="Chip" filter state="secondary"> </cv-chip>  <cv-chip label="Chip" filter state="secondary"> </cv-chip>  <cv-chip label="Chip" filter state="secondary"> </cv-chip></cv-chip-set>
+<cv-chip-set selectable activeIndex="0" label="chip-set">
+  <cv-chip label="Chip" filter state="secondary"></cv-chip>
+  <cv-chip label="Chip" filter state="secondary"></cv-chip>
+  <cv-chip label="Chip" filter state="secondary"></cv-chip>
+</cv-chip-set>
 ```
 
-#### 
+### Import
 
-References
+```
+import "@covalent/components/chip";
+import "@covalent/components/chip-set";
+```
 
-[MDC chips](https://www.npmjs.com/package/@material/chips)
+### Common props
 
-[Covalent design system - Chips](https://teradata.github.io/covalent/docs/components/?path=/docs/components-chips--overview)
+| Name | Role |
+| --- | --- |
+| `selectable` | Enables selection behavior |
+| `multi` | Allows multiple selection where supported |
+| `label` | Accessible label for the set |
+| `activeIndex` | Controlled active chip index |
+
+### References
+
+- [MDC Chips](https://www.npmjs.com/package/@material/chips)
+- [Covalent — Chips](https://teradata.github.io/covalent/docs/components/?path=/docs/components-chips--overview)

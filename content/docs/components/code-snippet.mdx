@@ -1,29 +1,45 @@
 ---
 title: Code snippet
-last_edited: '2026-04-03T20:18:16.000Z'
+last_edited: '2026-04-03T12:00:00.000Z'
 auto_generated: false
 ---
 
-Portion of code displayed within an interface, often for demonstration or explanation.
+Portion of code displayed within an interface, often for demonstration, configuration, or explanation.
 
-Design documentation coming soon. In the mean time, review the resources below.
+## Usage
 
-[
+Use code snippets when users must **copy**, **inspect**, or **compare** short pieces of code or structured text. Keep snippets **scoped** (only what the task needs), **readable** (line length and wrapping), and **accessible** (syntax highlighting does not replace structure—expose plain text for assistive tech).
 
-Current design
+### Design resources
 
-Code samples
+- [Figma — Code samples (current)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7910-39132)
+- [Figma — Code samples (legacy reference)](https://www.figma.com/design/4qn8W9GCuhyNxEMBhMeahz/Code-samples?node-id=0-1)
 
+<imagePlaceholder imageId="cv-code-snippet_hero" />
 
+### Recommendations
 
-](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7910-39132)
+<doDont
+  doBody={<>
+    Limit height with **scroll** instead of shrinking type; preserve **monospace** and **line numbers** when they help orientation; offer a **copy** action when copying is a primary task.
+  </>}
+  dontBody={<>
+    Embed **secrets** or **tokens** in screenshots only; paste live credentials into snippets; or use snippets for **long** documents—link out instead.
+  </>}
+/>
 
-[
+## Web components
 
-Legacy document
+See Storybook for the **`cv-code-snippet`** API, theming, and copy behavior.
 
-Code samples
+- [Covalent — Code snippet](https://teradata.github.io/covalent/docs/components/?path=/docs/components-code-snippet--overview)
 
+```
+import "@covalent/components/code-snippet";
+```
 
+## Accessibility
 
-](https://www.figma.com/design/4qn8W9GCuhyNxEMBhMeahz/Code-samples?node-id=0-1)
+- Ensure code is available as **text**, not only as an image.
+- If you provide **copy**, expose **name** and **state** (e.g., “Copied”) to screen readers.
+- Avoid relying on **color** alone for syntax—structure and copy affordances still matter for low-vision users.

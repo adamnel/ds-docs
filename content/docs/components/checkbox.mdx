@@ -1,61 +1,146 @@
 ---
 title: Checkbox
-last_edited: '2026-04-03T20:18:16.000Z'
+last_edited: '2026-04-03T12:00:00.000Z'
 auto_generated: false
 ---
 
 A checkbox allows the user to select one or more options from a set of choices. Unlike radio buttons, checkboxes allow for multiple selections, meaning the user can choose more than one option at a time.
 
-[Unchecked](/site/covalent/latest/pattern/checkbox?templateId=web-components-29FbeDQWhM&demoId=ee2EneFvzS)
+## Usage
 
-[Checked](/site/covalent/latest/pattern/checkbox?templateId=web-components-29FbeDQWhM&demoId=WqDTVze47k)
+<imagePlaceholder imageId="cv-checkbox_hero" />
 
-LightShare
+### When to use
 
-## Unchecked
+Checkboxes should be used when multiple selections are allowed from a set of options. If the user can only choose one option from a list, use **radio buttons** instead.
 
-Checkboxes allow the user to select one or more items from a set. Checkboxes can be used to turn an option on or off.
+**Variants**
 
-checked
+| Variant | Purpose |
+| --- | --- |
+| **Default** | Allow users to select multiple options independently. |
 
-indeterminate
+**Related:** [Form field](https://teradata.github.io/covalent/docs/components/?path=/docs/components-form-field--overview) wraps a checkbox with its label.
 
-disabled
+### Recommendations
 
-reducedTouchTarget
+<imagePlaceholder imageId="cv-checkbox_do_labels" />
 
-value
+<doDont
+  doBody={<>
+    Make sure each checkbox has a **clear and concise label**. Provide clear labels and group checkboxes logically. Use checkboxes for agreeing to terms, selecting multiple items, or confirming options. Ensure targets are large enough on all screen sizes. When helpful, include a **select all** control.
+  </>}
+  dontBody={<>
+    Use checkboxes for **mutually exclusive** choices—use **radio buttons** instead. Overuse checkboxes for secondary options, leave state ambiguous, or rely on the control alone without labels and context.
+  </>}
+/>
+
+### Additional resources
+
+- [Angular Material — Checkbox](https://material.angular.io/components/checkbox/overview)
+- [Figma — Toggles](https://www.figma.com/design/UTdDovL41gL90NQF7C7s59/Toggles?node-id=0-1)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-checkbox_anatomy" />
+
+1. Contains the check icon.
+2. Present when the checkbox is selected or indeterminate.
+3. Communicates interaction state (hover, focus, pressed). See **Foundations → Color** for state layers.
+
+### Content guidelines
+
+The checkbox helps users make binary choices. Use a direct, supportive voice; keep labels to **3–5 words** where possible; helper text up to ~50 characters.
+
+<doDont
+  doBody={<>
+    **Example:** “Please enter a valid email address.”
+  </>}
+  dontBody={<>
+    **Example:** “Error 400: Invalid field.”
+  </>}
+/>
+
+### States
+
+Use the following as reference for selected, indeterminate, unselected, error combinations, and interaction rings.
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_selected_simple" />
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_indeterminate_simple" />
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_unselected_simple" />
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_selected_error_simple" />
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_indeterminate_error_simple" />
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_unselected_error_simple" />
+
+<imagePlaceholder imageId="cv-checkbox_anatomy_interaction_states" />
+
+Interaction states follow the same state-layer system as other controls; see [Color](/docs/foundations/color).
+
+## Web components
+
+Demos and live props: [Covalent Storybook — Checkbox](https://teradata.github.io/covalent/docs/components/?path=/docs/components-checkbox--overview).
+
+### Default markup
 
 ```
-<cv-checkbox value=""> </cv-checkbox>
+<cv-checkbox value=""></cv-checkbox>
 ```
 
-### How to Import
+### Import
 
-`   import "@covalent/components/checkbox";   `
+```
+import "@covalent/components/checkbox";
+```
+
+### Properties (common)
+
+| Name | Notes |
+| --- | --- |
+| `checked` | Selected state |
+| `indeterminate` | Indeterminate state |
+| `disabled` | Disables interaction |
+| `reducedTouchTarget` | Smaller touch target when needed |
+| `value` | Associated value |
 
 ### Events
 
-Event Name
+| Event | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `change` | `cv-checkbox` | `{}` | Fired when the user changes `checked` or `indeterminate` from input. Not fired when properties are set from script (same as native `change`). |
 
-Target
+### References
 
-Detail
+- [MWC Checkbox](https://www.npmjs.com/package/@material/mwc-checkbox)
+- [Covalent — Checkbox](https://teradata.github.io/covalent/docs/components/?path=/docs/components-checkbox--overview)
 
-Description
+## Accessibility
 
-change
+### Overview
 
-cv-checkbox
+Checkboxes support multiple selections and require clear labeling, visible focus, and error handling that does not rely on color alone.
 
-{}
+### Keyboard
 
-Fired when the user modifies the checkbox `checked` or `indeterminate` states from an input device interaction. Note that, like [native](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) `<input>`, the `change` event is _not_ fired when the `checked` or `indeterminate` properties are set from JavaScript.
+- **Tab** moves focus to the checkbox.
+- **Space** toggles the checkbox.
 
-#### 
+<imagePlaceholder imageId="cv-checkbox_accessibility1" />
 
-References
+### Focus order
 
-[MWC Checkbox](https://www.npmjs.com/package/@material/mwc-checkbox)
+- Use **`tabindex="0"`** on active checkboxes; exclude disabled controls from the tab order.
+- Pair focus rings with selection state so sighted users can follow focus.
 
-[Covalent Design System - Checkbox](https://teradata.github.io/covalent/docs/components/?path=/docs/components-checkbox--overview)
+<imagePlaceholder imageId="cv-checkbox_accessibility2" />
+
+### Additional resources
+
+- [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
+- [Material — Checkbox (web) accessibility](https://m2.material.io/components/checkboxes/web#using-checkboxes)

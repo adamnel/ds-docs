@@ -1,0 +1,527 @@
+---
+title: Menu
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+## Usage
+
+Provide extended features or hide some items for usability.
+
+<imagePlaceholder imageId="cv-menu_hero" />
+
+
+When to use
+
+Menus are used to provide extended features or hide some items for usability. They appear as a result of user action on a button, dropdown select, or other UI item. They are elevated above all other items.
+
+Variant
+
+Purpose
+
+Default
+
+Provide extended features or hide some items for usability.
+
+Scrollable
+
+If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.
+
+
+Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+
+Use icons and dividers
+
+Use descriptive icons that provide quickly recognizable cues about each menu item's purpose. Use only filled icons on menu items.
+
+Create visual distinction between selection categories using dividers. Destructive actions should be separated from other options with a divider.
+
+<imagePlaceholder imageId="cv-menu_item_dividers" />
+
+
+Leave disabled items visible
+
+When certain actions are disabled, do not hide them. Instead, make them visible as disabled.
+
+<imagePlaceholder imageId="cv-menu_rec_disabled_item" />
+
+
+Multi-select
+
+A menu may sometimes allow for multiple selections, like when presenting filter choices. When multiple selections can be made, indicate the selected items using checkmarks.
+
+<imagePlaceholder imageId="cv-menu_rec_multi_select" />
+
+
+Customization
+
+Menus can be further customized to suit specific use cases. 
+
+<imagePlaceholder imageId="cv-menu_rec_avatar" />
+
+
+Additional resources
+
+[
+
+Menu
+
+Figma component
+
+
+
+](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36810)
+
+[
+
+Menu
+
+Legacy document
+
+
+
+](https://www.figma.com/design/n808q0jZjqoPvyzXacqn9N/Menus?node-id=35-236)
+
+[
+
+Menu
+
+Material design
+
+
+
+](https://m2.material.io/components/menus)
+
+[
+
+Menu
+
+Angular material
+
+
+
+](https://material.angular.io/components/menu/overview)
+## Style
+
+Provide extended features or hide some items for usability.
+
+
+Anatomy
+
+<imagePlaceholder imageId="cv-menu_anatomy" />
+
+1.  Contains the menu contents.
+    
+2.  Clickable menu item. See [List item](https://design.teradata.comhttps://teradata.github.io/covalent/docs/components/?path=/docs/list-item?subPageId=overview) for detailed interactions.
+    
+3.  (Optional) Divider used to separate destructive actions or otherwise categorize the items.
+    
+
+
+Padding
+
+There should always be 8px at the top and bottom of a menu.
+
+<imagePlaceholder imageId="cv-menu_top_bottom_padding" />
+
+
+Positioning
+
+When a button opens a menu, the menu should be positioned relative to the button's placement on the screen. For example, if there is not enough room above the button, the menu should appear below the button. All possible positioning is shown below.
+
+Default positioning is at the bottom right. Positioning should be done responsively according to the button's location on the screen.
+
+<imagePlaceholder imageId="cv-menu_positioning1" />
+
+<imagePlaceholder imageId="cv-menu_positioning2" />
+
+<imagePlaceholder imageId="cv-menu_positioning3" />
+
+<imagePlaceholder imageId="cv-menu_positioning4" />
+
+
+Typography
+
+Use these text styles for menu:
+
+1.  body-1
+    
+
+<imagePlaceholder imageId="cv-menu_typography" />
+
+
+Content guidelines
+
+Items in a menu should be labelled as concisely as possible for quick comprehension. Items should be labelled with a single word if possible.
+
+
+Opening a menu
+
+A menu can be opened in the following ways.
+
+
+Using a button
+
+A regular button that opens a menu should always have a dropdown arrow icon. An icon button that opens a menu should use a "more vertical / 3-dot menu" icon.
+
+<imagePlaceholder imageId="cv-menu_variant_opened_by_button" />
+
+When a button or icon button is used to open a menu, the button should return to its enabled state after opening the menu.
+
+<imagePlaceholder imageId="cv-menu_opening_element" />
+
+
+Using a select dropdown
+
+The [cv-select](https://teradata.github.io/covalent/docs/components/?path=/docs/select) component uses a menu to display selectable options.
+
+<imagePlaceholder imageId="cv-menu_variant_opened_by_select" />
+
+
+Using another UI item
+
+Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.
+
+<imagePlaceholder imageId="cv-menu_variant_opened_by_UI_item" />
+
+
+States
+
+Menus items use the [list item](https://teradata.github.io/covalent/docs/components/?path=/docs/list-item) component. Interaction states for menu items match the interaction states for cv-list-item.
+
+
+Selected
+
+Use a check icon to indicate which items are selected when multiple selections can be made. Otherwise, just use a color fill on the selected item.
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface-variant
+
+2
+
+on-surface-variant
+
+3
+
+primary-8
+
+4
+
+surface-container
+
+<imagePlaceholder imageId="cv-menu_item_selection_single_item_color" />
+
+
+Enabled
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface-variant
+
+2
+
+on-surface-variant
+
+3
+
+surface-container
+
+<imagePlaceholder imageId="cv-menu_state_enabled" />
+
+
+Hovered
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface-variant
+
+2
+
+on-surface-variant
+
+3
+
+on-surface-variant-8
+
+4
+
+surface-container
+
+<imagePlaceholder imageId="cv-menu_state_hovered" />
+
+
+Focused
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface-variant
+
+2
+
+on-surface-variant
+
+3
+
+on-surface-variant-12
+
+4
+
+surface-container
+
+<imagePlaceholder imageId="cv-menu_state_focused" />
+
+
+Pressed
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface-variant
+
+2
+
+on-surface-variant
+
+3
+
+on-surface-variant-12
+
+4
+
+surface-container
+
+<imagePlaceholder imageId="cv-menu_state_pressed" />
+
+
+Disabled
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface-variant-38
+
+2
+
+on-surface-variant-38
+
+3
+
+surface-container
+
+<imagePlaceholder imageId="cv-menu_state_disabled" />
+
+
+Variants
+
+
+Scrollbar
+
+If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.
+
+<imagePlaceholder imageId="cv-menu_variant_scrollbar" />
+## Web components
+
+### Menu
+
+Provide extended features or hide some items for usability.
+
+[Main](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=boILoye9Gi)
+
+[Use icons](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=gRDfiA2cmG)
+
+[Disabled items](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=AynqJBvDNe)
+
+[Multi-select](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=tJNSB-88zA)
+
+[Customization](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=c58o7pD09p)
+
+LightShare
+
+## Main
+
+open
+
+anchor
+
+cornerTOP\_LEFTTOP\_RIGHTBOTTOM\_LEFTBOTTOM\_RIGHTTOP\_STARTTOP\_ENDBOTTOM\_STARTBOTTOM\_END
+
+menuCornerSTARTEND
+
+x
+
+y
+
+defaultFocusNONELIST\_ROOTFIRST\_ITEMLAST\_ITEM
+
+innerAriaLabel
+
+innerRolemenulistbox
+
+quick
+
+absolute
+
+fixed
+
+forceGroupSelection
+
+fullwidth
+
+stayOpenOnBodyClick
+
+wrapFocus
+
+multi
+
+activatable
+
+default
+
+Main
+
+Main
+
+Main
+
+Main
+
+Main
+
+### Menu
+
+Provide extended features or hide some items for usability.
+
+[Main](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=boILoye9Gi)
+
+[Use icons](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=gRDfiA2cmG)
+
+[Disabled items](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=AynqJBvDNe)
+
+[Multi-select](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=tJNSB-88zA)
+
+[Customization](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy?templateId=web-components-hY3y1MyhrP&demoId=c58o7pD09p)
+
+LightShare
+
+## Main
+
+open
+
+anchor
+
+cornerTOP\_LEFTTOP\_RIGHTBOTTOM\_LEFTBOTTOM\_RIGHTTOP\_STARTTOP\_ENDBOTTOM\_STARTBOTTOM\_END
+
+menuCornerSTARTEND
+
+x
+
+y
+
+defaultFocusNONELIST\_ROOTFIRST\_ITEMLAST\_ITEM
+
+innerAriaLabel
+
+innerRolemenulistbox
+
+quick
+
+absolute
+
+fixed
+
+forceGroupSelection
+
+fullwidth
+
+stayOpenOnBodyClick
+
+wrapFocus
+
+multi
+
+activatable
+
+default
+
+Main
+
+Main
+
+Main
+
+Main
+
+Main
+## Accessibility
+
+Provide extended features or hide some items for usability.
+
+
+Overview
+
+Menus enable users to select items from a list. They require clear labeling, keyboard operability, and assistive technology compatibility to guide decision-making effectively.
+
+
+Keyboard interactions
+
+*   **Up and Down Arrow keys**: Navigate between options while skipping disabled options.
+    
+*   **Enter key/Spacebar**: Selects an option.
+    
+*   **Escape key**: Closes the menu.
+    
+
+  
+
+After clicking the UI element to open the menu, the tab index focus should move to the menu. 
+
+<imagePlaceholder imageId="cv-menu_accessibility" />
+
+
+Additional resources
+
+Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences
+
+[
+
+See also
+
+Web Content Accessibility Guidelines (WCAG) component standards
+
+
+
+](https://www.w3.org/TR/WCAG21/)
+
+[
+
+See also
+
+
+
+](https://m2.material.io/components/menus/web#style-customization)

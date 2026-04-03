@@ -1,0 +1,179 @@
+---
+title: Tree List
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+## Usage
+
+Hierarchical list structure displaying data in a tree-like format.
+
+<imagePlaceholder imageId="cv-tree-list_hero" />
+
+
+When to use
+
+Tree lists provide a hierarchical drill-down of deep nested structures.
+
+Variants
+
+Purpose
+
+[Default](https://design.teradata.com/site/covalent/3MEWkdMLax/pattern/tree-list?templateId=web-components-Ue0Hy3Asb&demoId=RjMe6Q4mA)
+
+Provide access to hierarchical structures, such as databases or file structures, in an intuitive way.
+
+
+Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+##### Do
+
+*   **Do** use relevant icons as visual cues to help distinguish items in large lists.
+    
+*   **Do** keep labels as concise as possible when label content us not user generated, . 
+    
+
+##### Don't
+
+*   **Don't** use tree lists to represent flat structures. Only use for hierarchical structures.
+    
+
+
+Additional resources
+
+[
+
+Current design
+
+Tree list
+
+
+
+](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8983-5003)
+
+[
+
+Angular Material
+
+Tree
+
+
+
+](https://material.angular.io/components/tree/overview)
+## Style
+
+Hierarchical list structure displaying data in a tree-like format.
+
+
+Anatomy
+
+<imagePlaceholder imageId="cv-tree-list_anatomy" />
+
+1.  [Tree list item](https://teradata.github.io/covalent/docs/components/?path=/docs/tree-list-item)
+    
+
+
+Indent levels
+
+Use indents to communicate hierarchy between tree list items. Add 16px of left padding for each level of hierarchy.
+
+<imagePlaceholder imageId="cv-tree-list_anatomy_indent_levels" />
+
+
+Two line items
+
+Allow the item height to expand by the height of the extra text. First line of text and icons should remain top-aligned, with second line “hanging” below.
+
+<imagePlaceholder imageId="cv-tree-list_anatomy_two_line_items" />
+
+
+Empty state
+
+Use a simple “No results” text in a space the same size as any other menu item. Do not use an icon.
+
+<imagePlaceholder imageId="cv-tree-list_anatomy_empty_state" />
+## Web components
+
+### Tree list
+
+Hierarchical list structure displaying data in a tree-like format.
+
+LightShare
+
+## Default
+
+default
+
+Main
+
+Main
+
+Main
+
+### Tree list
+
+Hierarchical list structure displaying data in a tree-like format.
+
+LightShare
+
+## Default
+
+default
+
+Main
+
+Main
+
+Main
+## Accessibility
+
+Hierarchical list structure displaying data in a tree-like format.
+
+
+Overview
+
+Tree lists require clear labeling, keyboard operability, and assistive technology compatibility to allow for accessible navigation through the hierarchy that is represented.
+
+
+Keyboard interactions
+
+To support accessibility through keyboard navigation, tree lists include the following interactions:
+
+*   **Tab:** Focus tree list items.
+    
+*   **Space or Enter:** Select the currently focused tree list item. Opens a currently closed item. Closes a currently opened item.
+    
+*   **Up/down arrow keys:** Move between tree list items.
+    
+
+
+Tab index focus
+
+Ensures that items in a tree list are included in the sequential keyboard navigation, allowing users to reach and interact with them using the Tab key.
+
+  
+
+### 
+
+Hit area state
+
+A visible focus indicator highlights items in the tree list when it gains keyboard focus, ensuring that users can easily identify which element is active.
+
+<imagePlaceholder imageId="cv-tree-list_acessibility" />
+
+
+Additional resources
+
+Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.
+
+[
+
+See also
+
+Web Content Accessibility Guidelines (WCAG) component standards
+
+
+
+](https://www.w3.org/TR/WCAG21/)

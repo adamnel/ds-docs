@@ -3,17 +3,19 @@
   "darkModeLogo": "/svg/tina-icon-orange.svg",
   "tabs": [
     {
-      "title": "Docs",
-      "supermenuGroup": [
+      "title": "Home",
+      "sidebarTopLinks": [
         {
-          "title": "Introduction",
-          "items": [
-            {
-              "slug": "content/docs/index.mdx",
-              "_template": "item"
-            }
-          ]
-        },
+          "label": "Home",
+          "slug": "content/docs/index.mdx"
+        }
+      ],
+      "supermenuGroup": [],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Getting Started",
+      "supermenuGroup": [
         {
           "title": "Getting Started",
           "items": [
@@ -22,7 +24,13 @@
               "_template": "item"
             }
           ]
-        },
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Foundations",
+      "supermenuGroup": [
         {
           "title": "Foundations",
           "items": [
@@ -33,9 +41,19 @@
             {
               "slug": "content/docs/foundations/typography.mdx",
               "_template": "item"
+            },
+            {
+              "slug": "content/docs/foundations/icons.mdx",
+              "_template": "item"
             }
           ]
-        },
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Components",
+      "supermenuGroup": [
         {
           "title": "Components",
           "items": [
@@ -44,11 +62,15 @@
               "_template": "item"
             },
             {
-              "slug": "content/docs/components/button.mdx",
+              "slug": "content/docs/components/action-ribbon.mdx",
               "_template": "item"
             },
             {
-              "slug": "content/docs/components/action-ribbon.mdx",
+              "slug": "content/docs/components/alert.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/button.mdx",
               "_template": "item"
             },
             {
@@ -56,11 +78,7 @@
               "_template": "item"
             },
             {
-              "slug": "content/docs/components/chip-set.mdx",
-              "_template": "item"
-            },
-            {
-              "slug": "content/docs/components/code-snippet.mdx",
+              "slug": "content/docs/components/checkbox-icon.mdx",
               "_template": "item"
             },
             {
@@ -68,11 +86,191 @@
               "_template": "item"
             },
             {
-              "slug": "content/docs/components/data-table.mdx",
+              "slug": "content/docs/components/empty-state.mdx",
               "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/list.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/tree-list-item.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/menu.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/radio.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/radio-icon.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/select.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/snackbar.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/text-area.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/text-field.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/toolbar.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/tree-list.mdx",
+              "_template": "item"
+            },
+            {
+              "_template": "items",
+              "title": "Upcoming components",
+              "items": [
+                {
+                  "slug": "content/docs/components/app-shell.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/badge.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/breadcrumbs.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/card.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/chip.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/chip-set.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/circular-progress.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/code-snippet.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/data-table.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/expansion-panel.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/expansion-panel-item.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/focused-page.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/form-field.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/full-screen-dialog.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/icon.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/icon-button.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/icon-button-toggle.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/icon-lockup.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/linear-progress.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/notebook-cell.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/side-sheet.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/slider.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/status-dialog.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/status-header.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/switch.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/tab.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/tab-bar.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/text-lockup.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/tooltip.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/top-app-bar.mdx",
+                  "_template": "item"
+                },
+                {
+                  "slug": "content/docs/components/typography.mdx",
+                  "_template": "item"
+                }
+              ]
             }
           ]
-        },
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Patterns",
+      "supermenuGroup": [
         {
           "title": "Patterns",
           "items": [
@@ -89,7 +287,13 @@
               "_template": "item"
             }
           ]
-        },
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Tokens",
+      "supermenuGroup": [
         {
           "title": "Tokens",
           "items": [
@@ -98,12 +302,58 @@
               "_template": "item"
             }
           ]
-        },
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Content",
+      "supermenuGroup": [
         {
           "title": "Content",
           "items": [
             {
               "slug": "content/docs/content/index.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/voice-and-tone.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/error-messages.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/date-and-time.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/actionable-language.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/writing-mechanics.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/inclusive-language.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/word-list.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/video.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/info-and-help.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content/notebook-content-guidelines.mdx",
               "_template": "item"
             },
             {
@@ -119,30 +369,9 @@
               "_template": "item"
             }
           ]
-        },
-        {
-          "title": "Feedback",
-          "items": [
-            {
-              "slug": "content/docs/feedback/index.mdx",
-              "_template": "item"
-            }
-          ]
         }
       ],
       "_template": "docsTab"
     }
-  ],
-  "ctaButtons": {
-    "button1": {
-      "label": "Getting started",
-      "link": "/docs/getting-started",
-      "variant": "primary-outline"
-    },
-    "button2": {
-      "label": "Components",
-      "link": "/docs/components/button",
-      "variant": "primary-background"
-    }
-  }
+  ]
 }

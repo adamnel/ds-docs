@@ -1,82 +1,175 @@
 ---
 title: Action ribbon
-last_edited: '2026-04-03T20:18:16.000Z'
+last_edited: '2026-04-03T12:00:00.000Z'
 auto_generated: false
 ---
 
-Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.
+Provide a common, dynamic region for user actions and feedback that applies to a **subset** of the UI (for example above a table or form region).
 
-[Default / inactive](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=xrVH4M3t6W)
+## Usage
 
-[Active](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=SBpuLooid9)
+<imagePlaceholder imageId="cv-action-ribbon_hero" />
 
-[Caution](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=3ueuxC011k)
+### When to use
 
-[Negative](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=04wy8HmIJl)
+Use the action ribbon to surface **save**, **edit**, **delete**, **configure**, and related actions in a **consistent** place—especially in data-heavy or form-heavy views.
 
-[Positive](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=78JmyZgiv8)
+**Variants**
 
-[Loading](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=PX4CXlob7k)
+| Variant | Purpose |
+| --- | --- |
+| **Default** | Group related actions in a visible strip for complex tasks. |
 
-[Pending](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=I15dIgeIM4)
+### Bulk selection
 
-[Bulk selection default / inactive](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=sNiAamckj3)
+When selection is enabled, the same strip can show **general** actions when nothing is selected and **bulk** actions when items are selected.
 
-[Bulk selection active](/site/covalent/latest/pattern/action-ribbon?templateId=web-components-v3gk7O39kO&demoId=aQE9OP2U6t)
+<imagePlaceholder imageId="cv-action-ribbon_bulk-selection_default" />
 
-LightShare
+<imagePlaceholder imageId="cv-action-ribbon_bulk-selection_selected" />
 
-## Default / inactive
+### Mini-toolbar vs. action ribbon
 
-No changes
+These look similar but behave differently; they can be used together.
 
-labelText
+**Mini-toolbar**
 
-stateactivenegativepositivecaution
+- Contains a **title**
+- Contains a **close** control
+- Does **not** surface status feedback messages
 
-icon
+<imagePlaceholder imageId="cv-action-ribbon_ribbon-vs-toolbar_toolbar" />
 
-iconAriaLabel
+**Action ribbon**
 
-centered
+- **No** title
+- **No** close button
+- **Does** show status and feedback messages
 
-action-items
+<imagePlaceholder imageId="cv-action-ribbon_ribbon-vs-toolbar_action-ribbon" />
 
-Main
+### Recommendations
 
-Main
+<doDont
+  doBody={<>
+    Use in **forms or data management** contexts where quick access helps. **Group** actions for the current page or region. **Prioritize** by frequency and keep placement **consistent** across the product.
+  </>}
+  dontBody={<>
+    Use in **minimal** UIs with few actions, **overload** the strip with too many actions, or **mix unrelated** actions that confuse outcomes.
+  </>}
+/>
 
+### Additional resources
 
-icon
+- [Toolbar pattern](https://teradata.github.io/covalent/docs/components/?path=/docs/components-toolbar--overview)
+- [Color](/docs/foundations/color)
+- [Angular Material — Toolbar](https://material.angular.io/components/toolbar/overview)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-action-ribbon_anatomy2" />
+
+Action ribbons split into two regions: **context** (often a title or status on the left) and **actions** on the right.
+
+1. Status icon
+2. Status text
+3. Ribbon content
+4. Ribbon underline
+5. Status-related items
+6. Actions (buttons / icon buttons)—prefer **three or fewer** primary actions when possible.
+
+### Typography
+
+Use **caption** styles for ribbon text.
+
+<imagePlaceholder imageId="cv-action-ribbon_typography" />
+
+### Placement
+
+Embed the ribbon **directly above** the region it affects.
+
+<imagePlaceholder imageId="cv-action-ribbon_placement" />
+
+### Action order
+
+From **right to left**: primary add (if any), search, less common functions, overflow menu (if any).
+
+<imagePlaceholder imageId="cv-action-ribbon_placement-order" />
+
+### Area of influence
+
+Actions and messages apply only to the region **immediately below** the ribbon.
+
+<imagePlaceholder imageId="cv-action-ribbon_area-of-influence" />
+
+### Content guidelines
+
+Keep labels short (**up to three words**), icons **universal**, and tooltips **≤ ~30 characters**. Voice: direct and supportive.
+
+### States
+
+Reference visuals for default, active, caution, negative, positive, loading, and pending—use design tokens documented in Figma.
+
+<imagePlaceholder imageId="cv-action-ribbon_state_default-colors" />
+
+<imagePlaceholder imageId="cv-action-ribbon_state_active-colors" />
+
+<imagePlaceholder imageId="cv-action-ribbon_state_caution-colors" />
+
+<imagePlaceholder imageId="cv-action-ribbon_state_negative-colors" />
+
+## Web components
+
+Live demos: [Storybook — Action ribbon](https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview).
+
+### Example (default / inactive)
 
 ```
-<cv-action-ribbon labelText="No changes" iconAriaLabel="info">  <div slot="action-items">    <cv-button label="Cancel" outlined color="secondary"> </cv-button>    <cv-button label="Save" raised disabled> </cv-button>  </div></cv-action-ribbon>
+<cv-action-ribbon labelText="No changes" iconAriaLabel="info">
+  <div slot="action-items">
+    <cv-button label="Cancel" outlined color="secondary"></cv-button>
+    <cv-button label="Save" raised disabled></cv-button>
+  </div>
+</cv-action-ribbon>
 ```
 
-### How to Import
+### Import
 
-`   import '@covalent/components/action-ribbon';   `
+```
+import "@covalent/components/action-ribbon";
+```
 
 ### Methods
 
-Method signature
+| Method | Description |
+| --- | --- |
+| `show()` | Opens the ribbon |
+| `close(reason: CloseReason)` | Closes with a reason code |
 
-Description
+### References
 
-`show() => void`
+- [MDC Banner](https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme)
+- [Covalent — Action ribbon](https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview)
 
-Opens the action ribbon.
+## Accessibility
 
-`close(reason: CloseReason) => void`
+### Overview
 
-Closes the action ribbon, with the specified action indicating why it was closed.
+The action ribbon exposes actions and status in one region; keyboard users must reach every control in a **logical order**, and disabled actions must be **skipped** in tab order.
 
-* * *
+### Keyboard
 
-#### 
+- **Tab** moves into the ribbon and through interactive controls.
+- **Space** activates the focused action (buttons follow native behavior).
 
-References
+### Focus
 
-[MDC banner](https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme)
+Use **`tabindex="0"`** on interactive elements, clear **focus indicators**, and exclude **disabled** actions from the tab sequence.
 
-[Covalent design system - Action ribbon](https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview)
+<imagePlaceholder imageId="cv-action_ribbon_accessibility" />
+
+### Additional resources
+
+- [Angular Material — Toolbar accessibility](https://material.angular.io/components/toolbar/overview#accessibility)

@@ -6,6 +6,37 @@ fragment MinimisedNavigationBarParts on NavigationBar {
     __typename
     ... on NavigationBarTabsDocsTab {
       title
+      sidebarTopLinks {
+        label
+        slug {
+          ... on Docs {
+            __typename
+            seo {
+              __typename
+              title
+              description
+              canonicalUrl
+              ogImage
+            }
+            title
+            last_edited
+            auto_generated
+            tocIsHidden
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              hasReferences
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
       supermenuGroup {
         __typename
         title

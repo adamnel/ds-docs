@@ -28,5 +28,7 @@ export interface NavTitleProps {
 
 export interface DocsNavProps {
   navItems: any[];
+  /** Links shown above supermenu groups (e.g. Home) */
+  sidebarTopLinks?: { label?: string; slug?: string }[];
   onNavigate?: () => void;
 }

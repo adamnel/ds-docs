@@ -1,5 +1,6 @@
 import siteConfig from "@/content/siteConfig.json";
-import client from "@/tina/__generated__/client";
+import { normalizeHrefPath } from "@/utils/get-url";
+import { titleCase } from "title-case";
 
 /**
  * A single navigation item
@@ -21,12 +22,19 @@ export interface SupermenuGroup {
   [key: string]: unknown;
 }
 
+/** Link rendered above grouped nav (not inside a supermenu group) */
+export interface SidebarTopLink {
+  label?: string;
+  slug?: string;
+}
+
 /**
  * A tab in the navigation bar
  */
 export interface Tab {
   title?: string | null;
   __typename?: string | null;
+  sidebarTopLinks?: SidebarTopLink[] | null;
   supermenuGroup?: SupermenuGroup[] | null;
 }
 
@@ -93,6 +101,7 @@ export interface FormattedNavigation {
     title: string;
     __typename: string;
     items: SupermenuGroup[];
+    sidebarTopLinks?: SidebarTopLink[];
   }[];
   sha: string;
   preview: boolean;
@@ -108,19 +117,104 @@ const transformReferencesToSlugs = (navItems: NavItem[]): NavItem[] => {
   navItems.forEach((item, index, array) => {
     if (item._template) {
       if (item._template === "items") {
-        array[index].items = transformReferencesToSlugs(item.items || []);
+        array[index].items = transformReferencesToSlugs(
+          cloneNavItems(item.items || [])
+        );
       } else {
-        // Handle the docs homepage case as a special case with no slug
-        // Otherwise reformat the path from content reference to URL path
+        const raw = array[index].slug;
+        const str =
+          typeof raw === "string"
+            ? raw
+            : raw && typeof raw === "object" && "id" in raw
+              ? String((raw as { id?: string }).id ?? "")
+              : "";
         array[index].slug =
-          array[index].slug === `content${siteConfig.docsHomepage}.mdx`
+          str === `content${siteConfig.docsHomepage}.mdx`
             ? "/docs"
-            : item.slug?.replace(/^content\/|\.mdx$/g, "/") || "";
+            : str.replace(/^content\/|\.mdx$/g, "/") || "";
+        const resolved = array[index].slug;
+        if (
+          typeof resolved === "string" &&
+          resolved &&
+          !(array[index] as NavItem).title
+        ) {
+          (array[index] as NavItem).title =
+            resolved === "/docs" ? "Home" : titleFromResolvedSlug(resolved);
+        }
       }
     }
   });
   return navItems;
 };
+
+/** Derive a readable label from a resolved docs path when JSON has no `title`. */
+function titleFromResolvedSlug(slug: string): string {
+  const trimmed = slug.replace(/\/$/, "");
+  const last = trimmed.split("/").filter(Boolean).pop() ?? "";
+  const base = last.replace(/\.mdx$/i, "");
+  if (!base) return "";
+  return titleCase(base.replace(/-/g, " "));
+}
+
+/** Avoid mutating shared JSON module / Tina cache — transform runs on a fresh copy. */
+function cloneNavItems(items: NavItem[]): NavItem[] {
+  return JSON.parse(JSON.stringify(items)) as NavItem[];
+}
+
+function normalizeSidebarTopLink(link: {
+  label?: string | null;
+  slug?: unknown;
+}): SidebarTopLink {
+  const raw = link.slug;
+  if (raw == null || raw === "") {
+    return { label: link.label ?? undefined, slug: "" };
+  }
+  return {
+    label: link.label ?? undefined,
+    slug: normalizeHrefPath(raw),
+  };
+}
+
+/** First page path in a nav subtree (formatted tab content). */
+function firstPageSlugInNavItems(
+  navItems: NavItem[] | undefined
+): string | undefined {
+  if (!navItems?.length) return undefined;
+  for (const item of navItems) {
+    if (item._template === "items" && item.items?.length) {
+      const nested = firstPageSlugInNavItems(item.items);
+      if (nested) return nested;
+    }
+    if (item.slug != null && item.slug !== "") {
+      return typeof item.slug === "string"
+        ? item.slug
+        : normalizeHrefPath(item.slug);
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Landing URL for a docs bar tab (first top link, else first page in first group).
+ * Used when switching tabs so the route matches the active section.
+ */
+export function getFirstPathForDocsTab(tabContent: {
+  sidebarTopLinks?: SidebarTopLink[];
+  items?: SupermenuGroup[];
+}): string | null {
+  const firstTop = tabContent.sidebarTopLinks?.[0];
+  if (firstTop?.slug) {
+    const s = firstTop.slug;
+    if (typeof s === "string" && s.startsWith("/")) return s;
+    const p = normalizeHrefPath(s);
+    return p || null;
+  }
+  for (const group of tabContent.items || []) {
+    const href = firstPageSlugInNavItems(group.items);
+    if (href) return href;
+  }
+  return null;
+}
 
 /**
  * Processes navigation data into a standardized structure
@@ -141,13 +235,20 @@ export const formatNavigationData = (
   const tabsData = tabs.map((tab) => {
     const groups = (tab.supermenuGroup || []).map((group) => ({
       ...group,
-      items: transformReferencesToSlugs(group.items || []),
+      items: transformReferencesToSlugs(cloneNavItems(group.items || [])),
     }));
+
+    const sidebarTopLinks = (
+      JSON.parse(JSON.stringify(tab.sidebarTopLinks || [])) as SidebarTopLink[]
+    )
+      .map((link) => normalizeSidebarTopLink(link))
+      .filter((link) => link.slug && link.slug !== "/");
 
     return {
       title: tab.title || "",
       __typename: tab.__typename || "",
       items: groups,
+      sidebarTopLinks,
       lightModeLogo: lightModeLogo,
       darkModeLogo: darkModeLogo,
     };

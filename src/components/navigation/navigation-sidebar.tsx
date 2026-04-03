@@ -10,18 +10,20 @@ export const NavigationSideBar = ({
 }: {
   tableOfContents: any;
 }) => {
-  const typename = tableOfContents.__typename;
+  const typename = tableOfContents.__typename ?? "";
+  const isApiTab = typename === "NavigationBarTabsApiTab";
 
   return (
     <div className="overflow-y-auto overflow-x-hidden">
-      {typename?.includes("DocsTab") ? (
-        <DocsNavigationItems
+      {isApiTab ? (
+        <ApiNavigationItems
           navItems={tableOfContents.items}
           __typename={tableOfContents.__typename}
         />
       ) : (
-        <ApiNavigationItems
+        <DocsNavigationItems
           navItems={tableOfContents.items}
+          sidebarTopLinks={tableOfContents.sidebarTopLinks}
           __typename={tableOfContents.__typename}
         />
       )}

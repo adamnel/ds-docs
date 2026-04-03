@@ -10,6 +10,26 @@ const docsNavigationBarFields = [
     type: "string",
   },
   {
+    name: "sidebarTopLinks",
+    label: "Top links (outside groups)",
+    type: "object",
+    list: true,
+    ui: {
+      itemProps: (item: { label?: string }) => ({
+        label: item?.label ? `↗ ${item.label}` : "Top link",
+      }),
+    },
+    fields: [
+      { name: "label", label: "Label", type: "string" },
+      {
+        name: "slug",
+        label: "Page",
+        type: "reference",
+        collections: ["docs"],
+      },
+    ],
+  },
+  {
     name: "supermenuGroup",
     label: "Supermenu Group",
     type: "object",

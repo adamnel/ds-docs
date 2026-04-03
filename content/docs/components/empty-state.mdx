@@ -1,0 +1,270 @@
+---
+title: Empty State
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+## Usage
+
+Placeholder content displayed when there is no data to show.
+
+<imagePlaceholder imageId="cv-empty-state_hero" />
+
+
+When to use
+
+Provides feedback and guidance in the event that content can’t be shown, like when no data is available.
+
+**Variants**
+
+**Purpose**
+
+Empty cards
+
+Provides feedback and guidance in the event that content can’t be shown on a card.
+
+Empty pages
+
+Provides feedback and guidance in the event that content can’t be shown on a page.
+
+Empty autocomplete
+
+Provides feedback and guidance in the event that no content is available in an autocomplete dropdown.
+
+
+Empty cards
+
+### 
+
+Without action
+
+Simple, single line of text. Unobtrusive so that at a glance the card looks empty.
+
+<imagePlaceholder imageId="cv-empty-state_variant_card_without_action" />
+
+### 
+
+With action
+
+Include a primary action only if there is an action you specifically want to encourage.
+
+<imagePlaceholder imageId="cv-empty-state_variant_card_with_action" />
+
+
+Empty pages
+
+### 
+
+No action
+
+Informational. Does not provide an action item.
+
+<imagePlaceholder imageId="cv-empty-state_variant_page_1" />
+
+### 
+
+With one action
+
+Provides an action.
+
+<imagePlaceholder imageId="cv-empty-state_variant_page_2" />
+
+### 
+
+With two actions
+
+Provides two action options. One action often has more prominence.
+
+<imagePlaceholder imageId="cv-empty-state_variant_page_3" />
+
+
+Empty autocomplete
+
+### 
+
+No content at all
+
+Informational. Does not provide an action item.
+
+<imagePlaceholder imageId="cv-empty-state_variant_autocomplete_no_content" />
+
+### 
+
+No content matches the search/filter
+
+Informational. Does not provide an action item.
+
+<imagePlaceholder imageId="cv-empty-state_variant_autocomplete_no_match" />
+
+
+Recommendations
+
+  
+
+##### Do
+
+*   **Do** make it clear if this is an expected situation or an error.
+    
+*   **Do** provide a next step for the user to take to resolve the situation if possible.
+    
+
+##### Don't
+
+*   **Don't** steal visual focus from the rest of the page.
+    
+
+
+Additional resources
+
+[
+
+Current design
+
+Empty state
+
+
+
+](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-12558)
+
+[
+
+Legacy document
+
+Empty states
+
+
+
+](https://www.figma.com/design/b7geqz0aCeDo4NbzTBWAiw/Empty-states?m=auto&t=vBlOgv4letIOllWB-6)
+## Style
+
+Placeholder content displayed when there is no data to show.
+
+
+Anatomy
+
+<imagePlaceholder imageId="cv-empty-state_anatomy" />
+
+1.  (Optional) Icon to help communicate the message.
+    
+2.  (Optional) Give a quick overview of the empty state message.
+    
+3.  Give details of why the empty state is present.
+    
+4.  (Optional) Actions that can be taken on the empty state. 
+    
+
+  
+
+
+Alignment
+
+To prevent the empty state from jumping when switching to the progress or error state, define a container that is centered and align the empty state within it, ensuring that the layout remains consistent during state transitions.
+
+<imagePlaceholder imageId="cv-empty-state_transitions" />
+
+
+Button usage
+
+Follow the rule of keeping only one primary button on each page when possible. If there is no primary button on the page, a primary button may be used in the empty state. If one exists already, use an outlined button or text button for less emphasis. 
+
+
+Content guidelines
+
+Explain to the user that no data is available. Make it clear if this is an expected situation or an error. Provide a next step for the user to take to resolve the situation.
+## Web components
+
+### Empty state
+
+Placeholder content displayed when there is no data to show.
+
+LightShare
+
+## Main
+
+headline
+
+subtitle
+
+icon
+
+card
+
+buttons
+
+```
+<cv-empty-state  headline="You don't have access to this area"  subtitle="You don't have permission to view this application. Please contact your system administrator for further details."  icon="lock">  <div slot="button"></div>  <div slot="buttons"></div></cv-empty-state>
+```
+
+#### 
+
+References
+
+[Covalent design system - Empty state](https://teradata.github.io/covalent/docs/components/?path=/docs/components-empty-state--overview)
+
+### Empty state
+
+Placeholder content displayed when there is no data to show.
+
+LightShare
+
+## Main
+
+headline
+
+subtitle
+
+icon
+
+card
+
+buttons
+
+```
+<cv-empty-state  headline="You don't have access to this area"  subtitle="You don't have permission to view this application. Please contact your system administrator for further details."  icon="lock">  <div slot="button"></div>  <div slot="buttons"></div></cv-empty-state>
+```
+
+#### 
+
+References
+
+[Covalent design system - Empty state](https://teradata.github.io/covalent/docs/components/?path=/docs/components-empty-state--overview)
+## Accessibility
+
+Placeholder content displayed when there is no data to show.
+
+
+Overview
+
+Empty states are designed to be accessible to everyone. They are built to ensure the UI state is understandable and actionable.
+
+
+Keyboard interactions
+
+To support accessibility through keyboard navigation, empty states include the following interactions:
+
+
+Tab index focus
+
+Ensures that the action buttons in empty states are included in sequential keyboard navigation, allowing users to reach and interact with them using the tab key.
+
+
+Hit area state
+
+A visible focus indicator highlights the action buttons when they gain keyboard focus, ensuring users can easily identify which element is active.
+
+<imagePlaceholder imageId="cv-empty-state_accessibility" />
+
+
+Additional resources
+
+Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.
+
+[
+
+See also
+
+Web Content Accessibility Guidelines (WCAG) component standards
+
+
+
+](https://www.w3.org/TR/WCAG21/)

@@ -3,7 +3,12 @@ import React from "react";
 import { titleCase } from "title-case";
 import { NavLevel } from "./nav-level";
 import type { ApiEndpoint, DocsNavProps } from "./types";
-import { getEndpointSlug, getTagSlug, processApiGroups } from "./utils";
+import {
+  getDocsNavTree,
+  getEndpointSlug,
+  getTagSlug,
+  processApiGroups,
+} from "./utils";
 
 export const ApiNavigationItems: React.FC<
   DocsNavProps & { __typename: string }
@@ -18,6 +23,9 @@ export const ApiNavigationItems: React.FC<
 
   // Ensure apiGroups is not undefined and has the correct type
   const safeApiGroups: Record<string, ApiEndpoint[]> = apiGroups || {};
+  const { items: normalDocsFlat, startLevel: normalDocsNavLevel } =
+    React.useMemo(() => getDocsNavTree(normalDocs || []), [normalDocs]);
+
   const processedApiGroups = React.useMemo(() => {
     return Object.entries(safeApiGroups).map(([tag, endpoints]) => {
       return {
@@ -41,8 +49,8 @@ export const ApiNavigationItems: React.FC<
       ref={navListElem}
     >
       {/* Render normal documents first */}
-      {normalDocs?.length > 0 &&
-        normalDocs.map((categoryData, index) => (
+      {normalDocsFlat?.length > 0 &&
+        normalDocsFlat.map((categoryData, index) => (
           <div
             key={`api-docs-${
               categoryData.slug
@@ -57,6 +65,7 @@ export const ApiNavigationItems: React.FC<
             <NavLevel
               navListElem={navListElem}
               categoryData={categoryData}
+              level={normalDocsNavLevel}
               onNavigate={onNavigate}
               endpoint_slug={categoryData.items?.map(
                 (item: any) => item.endpoint_slug
@@ -80,7 +89,7 @@ export const ApiNavigationItems: React.FC<
       ))}
 
       {/* Show message if no content */}
-      {normalDocs?.length === 0 && processedApiGroups.length === 0 && (
+      {normalDocsFlat?.length === 0 && processedApiGroups.length === 0 && (
         <div className="p-4 text-gray-500 text-sm">No content configured</div>
       )}
     </div>

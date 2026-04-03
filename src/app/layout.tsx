@@ -4,6 +4,7 @@ import { TailwindIndicator } from "@/components/ui/tailwind-indicator";
 import { ThemeSelector } from "@/components/ui/theme-selector";
 import settings from "@/content/settings/config.json";
 import client from "@/tina/__generated__/client";
+import { mergeDocsNavigationBarFromRepo } from "@/utils/docs/navigation";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { ThemeProvider } from "next-themes";
 import { Inter, Roboto_Flex } from "next/font/google";
@@ -39,6 +40,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#E6FAF8" />
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={`${body.variable} ${heading.variable}`}>
         {!isDev && gtmId && (
@@ -74,11 +79,13 @@ const Content = ({ children }: { children?: React.ReactNode }) => (
 );
 
 const DocsMenu = async ({ children }: { children?: React.ReactNode }) => {
-  // Fetch navigation data that will be shared across all docs pages
-
   const navigationData = await client.queries.minimisedNavigationBarFetch({
     relativePath: "docs-navigation-bar.json",
   });
+
+  const data = mergeDocsNavigationBarFromRepo(
+    (navigationData.data ?? {}) as Record<string, unknown>
+  );
 
   return (
     <div className="relative flex flex-col w-full pb-2">
@@ -87,7 +94,7 @@ const DocsMenu = async ({ children }: { children?: React.ReactNode }) => {
           children,
           query: navigationData.query,
           variables: navigationData.variables,
-          data: navigationData.data,
+          data,
         }}
         Component={TabsLayout}
       />

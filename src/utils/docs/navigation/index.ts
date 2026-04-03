@@ -3,4 +3,8 @@
  */
 export { getTableOfContents } from "./tableOfContents";
 export { createTocListener, useTocListener } from "./tocListener";
-export { formatNavigationData } from "./documentNavigation";
+export {
+  formatNavigationData,
+  getFirstPathForDocsTab,
+} from "./documentNavigation";
+export { mergeDocsNavigationBarFromRepo } from "./mergeDocsNavigationBarFromRepo";

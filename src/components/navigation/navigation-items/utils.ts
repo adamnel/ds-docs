@@ -125,3 +125,24 @@ export const processApiGroups = (
 
   return { normalDocs, apiGroups };
 };
+
+export type DocsNavTree = { items: any[]; startLevel: number };
+
+/**
+ * When there is exactly one supermenu group with no link of its own, omit the
+ * redundant group heading (e.g. "Foundations") and show its children at the top level.
+ * Those children use `startLevel: 1` so `NavTitle` keeps nested typography and
+ * selected styles (level 0 ignores `selected` in NavTitle).
+ */
+export function getDocsNavTree(navItems: any[]): DocsNavTree {
+  const raw = navItems || [];
+  if (
+    raw.length === 1 &&
+    !raw[0]?.slug &&
+    Array.isArray(raw[0]?.items) &&
+    raw[0].items.length > 0
+  ) {
+    return { items: raw[0].items, startLevel: 1 };
+  }
+  return { items: raw, startLevel: 0 };
+}

@@ -1,0 +1,259 @@
+---
+title: Toolbar
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+## Usage
+
+Provide wayfinding, context and actions for the current page
+
+<imagePlaceholder imageId="cv-toolbar_hero" />
+
+
+When to use
+
+Used to show the title of the current page and actions that affect the current page.
+
+Variant
+
+Purpose
+
+[Default](https://design.teradata.com/site/covalent/3MEWkdMLax/pattern/toolbar?templateId=web-components-A6-16QhSaM&demoId=NXMdeiHjKO)
+
+Placed at the top of the current page to provide its name and page-wide actions like filtering, searching, and creating items.
+
+[Mini toolbar](https://design.teradata.com/site/covalent/3MEWkdMLax/pattern/toolbar?templateId=web-components-A6-16QhSaM&demoId=jBi2h7tnlI)
+
+A simplified variant of the toolbar for use in tighter spaces. Uses 3 icons or less for actions. 
+
+
+Recommendations
+
+
+Page action order
+
+Page-wide buttons included in the toolbar should be shown in the following order from left to right:
+
+*   Lesser functions represented as icon buttons.
+    
+*   Secondary action buttons.
+    
+*   Primary action button (many pages will not have a primary action).
+    
+
+  
+
+Icon buttons included in the toolbar should be shown in the following order from left to right:
+
+*   Less common functions
+    
+*   Search button
+    
+*   Add button
+    
+
+<imagePlaceholder imageId="cv-toolbar_action_order" />
+
+##### Do
+
+*   **Do** show the title of the entire page.
+    
+*   **Do** include actions that affect the entire page.
+    
+
+##### Don't
+
+*   **Don't** use a title that only applies to one section of the page.
+    
+*   **Don't** include actions that only apply to one section of the page.
+    
+
+
+Additional resources
+
+[
+
+Current design
+
+Toolbar
+
+
+
+](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-30661)
+
+[
+
+Legacy document
+
+Toolbars
+
+
+
+](https://www.figma.com/design/OZGyytUGDqjqoyvftu1Kid/Toolbars?m=auto&t=igsBXlZlwwHQzjtQ-6)
+
+[
+
+Angular Material
+
+Toolbar
+
+
+
+](https://material.angular.io/components/toolbar/overview)
+## Style
+
+Provide wayfinding, context and actions for the current page
+
+
+Anatomy
+
+<imagePlaceholder imageId="cv-toolbar_anatomy" />
+
+1.  The page title.
+    
+2.  Icon buttons, most commonly filtering, adding, and searching. These actions apply to the entire page.
+    
+3.  Action buttons. These actions apply to the entire page.
+    
+
+Toolbars are split vertically with the page title aligned to the left, and the page actions aligned to the right.
+
+<imagePlaceholder imageId="cv-toolbar_alignment" />
+
+
+Content guidelines
+
+The page title should be no more than a few words. 
+
+
+Variants
+
+
+Mini toolbar
+
+A simplified variant of the toolbar for use in tighter spaces. Uses only icon buttons. Limit number of actions to 3 or less.
+
+The mini toolbar and action ribbon are similar, but function differently. In some cases they are used together. [View details for action ribbons here](https://teradata.github.io/covalent/docs/components/?path=/docs/action-ribbon).
+
+### 
+
+Mini toolbar
+
+Contains a title and a close button. Does not provide user feedback messages.
+
+### 
+
+Action ribbon
+
+Does not contain a title or close button. Provides user feedback messages.
+
+<imagePlaceholder imageId="cv-toolbar_mini_toolbar" />
+## Web components
+
+### Toolbar
+
+Provide wayfinding, context and actions for the current page
+
+[Main](https://teradata.github.io/covalent/docs/components/?path=/docs/toolbar?templateId=web-components-A6-16QhSaM&demoId=NXMdeiHjKO)
+
+[Mini](https://teradata.github.io/covalent/docs/components/?path=/docs/toolbar?templateId=web-components-A6-16QhSaM&demoId=jBi2h7tnlI)
+
+LightShare
+
+## Main
+
+dense
+
+centerTitle
+
+prominent
+
+scrollTarget
+
+sticky
+
+title
+
+Page toolbar
+
+### Toolbar
+
+Provide wayfinding, context and actions for the current page
+
+[Main](https://teradata.github.io/covalent/docs/components/?path=/docs/toolbar?templateId=web-components-A6-16QhSaM&demoId=NXMdeiHjKO)
+
+[Mini](https://teradata.github.io/covalent/docs/components/?path=/docs/toolbar?templateId=web-components-A6-16QhSaM&demoId=jBi2h7tnlI)
+
+LightShare
+
+## Main
+
+dense
+
+centerTitle
+
+prominent
+
+scrollTarget
+
+sticky
+
+title
+
+Page toolbar
+## Accessibility
+
+Provide wayfinding, context and actions for the current page
+
+
+Overview
+
+Toolbars are designed to be accessible to everyone, enabling all users, regardless of ability, to understand the context of a page and take action there effectively.
+
+
+Keyboard interactions
+
+To support accessibility through keyboard navigation, toolbars include the following interactions:
+
+*   **Tab key:** Focuses the buttons on the toolbar.
+    
+*   **Enter/spacebar:** Selects the button currently focused.
+    
+
+
+Tab index focus
+
+Ensures that toolbars are included in the sequential keyboard navigation, allowing users to reach and interact with the toolbar buttons using the Tab key.
+
+
+Hit area state
+
+A visible focus indicator highlights the toolbar buttons when they gain keyboard focus, ensuring that users can easily identify which element is active.
+
+<imagePlaceholder imageId="cv-toolbar_accessibility" />
+
+
+Additional resources
+
+Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.
+
+[
+
+See also
+
+Web Content Accessibility Guidelines (WCAG) component standards
+
+
+
+](https://www.w3.org/TR/WCAG21/)
+
+[
+
+See also
+
+Material accessibility component guidelines
+
+
+
+](https://m2.material.io/components/app-bars-top/web#basic-usage)

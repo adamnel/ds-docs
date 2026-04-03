@@ -7,6 +7,8 @@ import CardGridTemplate from "@/tina/templates/markdown-embeds/card-grid.templat
 import CodeTabsTemplate from "@/tina/templates/markdown-embeds/code-tabs.template";
 import DoDontTemplate from "@/tina/templates/markdown-embeds/do-dont.template";
 import { FileStructureTemplate } from "@/tina/templates/markdown-embeds/file-structure.template";
+import IconUsageTablesTemplate from "@/tina/templates/markdown-embeds/icon-usage-tables.template";
+import IconsUsageGuideTemplate from "@/tina/templates/markdown-embeds/icons-usage-guide.template";
 import ImagePlaceholderTemplate from "@/tina/templates/markdown-embeds/image-placeholder.template";
 import RecipeTemplate from "@/tina/templates/markdown-embeds/recipe.template";
 import ScrollShowcaseTemplate from "@/tina/templates/markdown-embeds/scroll-showcase.template";
@@ -98,6 +100,8 @@ export const docsCollection = {
         YoutubeTemplate as Template,
         CodeTabsTemplate as Template,
         ImagePlaceholderTemplate as Template,
+        IconsUsageGuideTemplate as Template,
+        IconUsageTablesTemplate as Template,
         DoDontTemplate as Template,
         CalloutTemplate as Template,
         StorybookEmbedTemplate as Template,

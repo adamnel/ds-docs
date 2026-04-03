@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+/* Covalent Icons — package exports only "." so import file via path (see @covalent/icons package.json). */
+@import "../../node_modules/@covalent/icons/covalent-icons.css";
+
 /* DEFAULT MONOCHROME THEME */
 :root {
   /* Tailwind Slate's */

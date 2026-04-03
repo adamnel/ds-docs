@@ -1,13 +1,16 @@
 "use client";
 
-import { formatNavigationData } from "@/src/utils/docs/navigation/documentNavigation";
 import type {
   FormattedNavigation,
-  NavigationBarData,
   SupermenuGroup,
 } from "@/src/utils/docs/navigation/documentNavigation";
+import {
+  formatNavigationData,
+  getFirstPathForDocsTab,
+  mergeDocsNavigationBarFromRepo,
+} from "@/utils/docs/navigation";
 import * as Tabs from "@radix-ui/react-tabs";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { Body } from "./body";
 import { NavigationProvider } from "./navigation-context";
@@ -17,7 +20,12 @@ import { findTabWithPath } from "./utils";
 
 type TabItem = {
   label: string;
-  content: { title: string; __typename: string; items: SupermenuGroup[] };
+  content: {
+    title: string;
+    __typename: string;
+    items: SupermenuGroup[];
+    sidebarTopLinks?: { label?: string; slug?: string }[];
+  };
   __typename: string;
 };
 
@@ -39,12 +47,11 @@ export const TabsLayout = ({
     TabItem | undefined
   >();
   const pathname = usePathname();
+  const router = useRouter();
 
   React.useEffect(() => {
-    const formattedNavData = formatNavigationData(
-      tinaProps.data as unknown as NavigationBarData,
-      false
-    );
+    const merged = mergeDocsNavigationBarFromRepo(tinaProps.data);
+    const formattedNavData = formatNavigationData(merged, false);
     setNavigationDocsData(formattedNavData);
     const tabs = formattedNavData.data.map((tab) => ({
       label: tab.title,
@@ -62,22 +69,18 @@ export const TabsLayout = ({
 
     const initialTab = findTabWithPath(tabs, pathname);
     setSelectedTab(initialTab);
-    // Dispatch initial tab change with index
-    const initialIndex = tabs.findIndex((tab) => tab.label === initialTab);
-    window.dispatchEvent(
-      new CustomEvent("tabChange", {
-        detail: { value: initialIndex.toString() },
-      })
-    );
   }, [tabs, pathname]);
 
   const handleTabChange = (value: string) => {
+    const tab = tabs.find((t) => t.label === value);
     setSelectedTab(value);
-    setObjectOfSelectedTab(tabs.find((tab) => tab.label === value));
-    const newIndex = tabs.findIndex((tab) => tab.label === value);
-    window.dispatchEvent(
-      new CustomEvent("tabChange", { detail: { value: newIndex.toString() } })
-    );
+    setObjectOfSelectedTab(tab);
+    if (tab?.content && tab.content.__typename !== "NavigationBarTabsApiTab") {
+      const target = getFirstPathForDocsTab(tab.content);
+      if (target) {
+        router.push(target);
+      }
+    }
   };
 
   return (

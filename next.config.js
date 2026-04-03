@@ -27,6 +27,17 @@ module.exports = {
         hostname: "assets.tina.io",
         port: "",
       },
+      // Legacy Knapsack exports in MDX (prefer <imagePlaceholder> in content)
+      {
+        protocol: "https",
+        hostname: "knapsack.imgix.net",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "design-src.knapsack.cloud",
+        port: "",
+      },
     ],
   },
 

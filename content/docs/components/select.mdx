@@ -1,0 +1,417 @@
+---
+title: Select
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+## Usage
+
+A drop-down menu, or select menu, allows the user to choose from a list of options presented in a collapsible format. Drop-downs are ideal when you have many options to present but want to save space on the form.
+
+<imagePlaceholder imageId="cv-select_hero" />
+
+
+When to use
+
+Use drop-down menus when you need to present the user with a large set of options that would be impractical to display in full on the page. For smaller sets of options (e.g., yes/no or a handful of options), consider using [**radio buttons**](#) or [**toggles**](#)**.**
+
+**Variants**
+
+**Purpose**
+
+[Select](https://teradata.github.io/covalent/docs/components/?path=/docs/select?templateId=web-components-qWXTtv81jY)
+
+To provide a compact way for users to choose from a large list of options, saving space and keeping the interface clean
+
+
+Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+<imagePlaceholder imageId="cv-select_do_length" />
+
+<imagePlaceholder imageId="cv-select_dont_length" />
+
+##### Do
+
+Use a drop-down menu for long lists of options, such as selecting a country, state, or payment method.   
+  
+
+##### Don't
+
+Use drop-down menus for small sets of options—use [radio buttons](https://teradata.github.io/covalent/docs/components/?path=/docs/radio) or a toggle instead.
+
+<imagePlaceholder imageId="cv-select_do_placeholder" />
+
+<imagePlaceholder imageId="cv-select_dont_placeholder" />
+
+##### Do
+
+Ensure that the label is clear and concise.
+
+##### Don't
+
+The label should not be a verb phrase.
+
+##### Do
+
+*   Ensure the list of options is clearly labeled and sorted logically (e.g., alphabetically or by frequency of use).  
+    
+
+  
+
+
+Additional resources
+
+Can't find what you're looking for? We provide full documentation transparency. Here are additional resources to provide further clarity 
+
+[
+
+See also
+
+Angular Material component
+
+
+
+](https://m2.material.io/components/text-fields)
+
+[
+
+See also
+
+Figma Component
+
+
+
+](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8066-25102)
+## Style
+
+A drop-down menu, or select menu, allows the user to choose from a list of options presented in a collapsible format. Drop-downs are ideal when you have many options to present but want to save space on the form.
+
+
+Anatomy
+
+<imagePlaceholder imageId="cv-select_anatomy" />
+
+1.  Either placeholder text prior to user input, or the currently selected option.
+    
+2.  Communicates the type of input requested. 
+    
+3.  Container for the field.
+    
+4.  Dropdown icon. Use 'arrow\_drop\_down' from the Material Symbols collection.
+    
+5.  Communicates an in-line error message.
+    
+
+
+Label behavior
+
+Before a selection has been made, the label should be shown inside the input area. After the select field has been focused, the label should move above the input area to make room for user input.
+
+<imagePlaceholder imageId="cv-select_anatomy_label_behavior" />
+
+
+Help and errors
+
+The line of text directly underneath the select field should only be used to communicate an in-line error message.
+
+To provide helpful content about the input being requested, use the header and message above the text field.
+
+<imagePlaceholder imageId="cv-select_help_and_errors" />
+
+
+Menu behavior
+
+To learn about behavior for the menu component that appears when focusing the select component, see the [Menu](https://teradata.github.io/covalent/docs/components/?path=/docs/menu-copy) page.
+
+
+Typography
+
+Use these text styles for select:
+
+1.  body-1
+    
+2.  caption
+    
+3.  caption
+    
+
+<imagePlaceholder imageId="cv-select_typography" />
+
+
+Content guidelines
+
+Drop-downs help users navigate large option sets efficiently. Content labels guide accurate selection.
+
+*   **Categorization**: Options should be logically grouped if exceeding 10.
+    
+*   **Tone**: Use imperative verbs and short phrases to be clear and direct.
+    
+*   **Word Limit**: Label text up to 20 characters. Options should be concise (2-4 words).
+    
+
+##### Do
+
+**Example label**
+
+"Country"
+
+##### Don't
+
+**Example label**
+
+"Please pick a country from this list"
+
+
+States
+
+
+Enabled
+
+<imagePlaceholder imageId="cv-select_anatomy_enabled" />
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface
+
+2, 4, 5
+
+on-surface-variant
+
+3
+
+outline
+
+
+Hovered
+
+<imagePlaceholder imageId="cv-select_anatomy_hovered" />
+
+**Anatomy**
+
+**Color token**
+
+1, 2, 3
+
+on-surface
+
+4, 5
+
+on-surface-variant
+
+
+Focused
+
+<imagePlaceholder imageId="cv-select_anatomy_focused" />
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface
+
+2, 3
+
+primary
+
+4, 5
+
+on-surface-variant
+
+
+Error
+
+<imagePlaceholder imageId="cv-select_anatomy_error" />
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface
+
+2, 3, 5
+
+negative
+
+4
+
+on-surface-variant
+
+
+Error Focused
+
+<imagePlaceholder imageId="cv-select_anatomy_error_focused" />
+
+**Anatomy**
+
+**Color token**
+
+1
+
+on-surface
+
+2, 3, 5
+
+negative
+
+4
+
+on-surface-variant
+
+
+Disabled
+
+<imagePlaceholder imageId="cv-select_anatomy_error_disabled" />
+
+**Anatomy**
+
+**Color token**
+
+1, 2, 4, 5
+
+on-surface-38
+
+3
+
+outline-12
+## Web components
+
+### Select
+
+A drop-down menu, or select menu, allows the user to choose from a list of options presented in a collapsible format. Drop-downs are ideal when you have many options to present but want to save space on the form.
+
+LightShare
+
+## Main
+
+label
+
+value
+
+validationMessage
+
+helper
+
+icon
+
+required
+
+outlined\*
+
+naturalMenuWidth
+
+fixedMenuPosition
+
+disabled
+
+validateOnInitialRender
+
+default
+
+Main
+
+Main
+
+### Select
+
+A drop-down menu, or select menu, allows the user to choose from a list of options presented in a collapsible format. Drop-downs are ideal when you have many options to present but want to save space on the form.
+
+LightShare
+
+## Main
+
+label
+
+value
+
+validationMessage
+
+helper
+
+icon
+
+required
+
+outlined\*
+
+naturalMenuWidth
+
+fixedMenuPosition
+
+disabled
+
+validateOnInitialRender
+
+default
+
+Main
+
+Main
+## Accessibility
+
+A drop-down menu, or select menu, allows the user to choose from a list of options presented in a collapsible format. Drop-downs are ideal when you have many options to present but want to save space on the form.
+
+
+Overview
+
+Select fields enable users to choose a single option from a list. They require clear labeling, keyboard operability, and assistive technology compatibility to guide decision-making effectively.
+
+
+Keyboard interactions
+
+*   **Tab key**: Focuses the select field.
+    
+*   **Arrow keys**: Navigate between options.
+    
+*   **Enter/Spacebar**: Opens the dropdown or selects an option.
+    
+*   **Escape key**: Closes the dropdown.
+    
+
+<imagePlaceholder imageId="cv-select_accessibility1" />
+
+
+Tab index focus
+
+*   Ensure the field is in the tab order (**tabindex="0"**).
+    
+*   Provide a visible focus indicator for dropdown states.
+    
+*   Remove disabled fields from the tab order.
+    
+
+<imagePlaceholder imageId="cv-select_accessibility2" />
+
+
+Additional resources
+
+Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.
+
+[
+
+See also
+
+Web Content Accessibility Guidelines (WCAG) component standards
+
+
+
+](https://www.w3.org/TR/WCAG21/)
+
+[
+
+See also
+
+Material accessibility component guidelines
+
+
+
+](https://m2.material.io/components/text-fields/web#using-text-fields)

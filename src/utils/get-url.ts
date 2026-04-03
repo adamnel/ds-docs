@@ -23,3 +23,9 @@ export function getUrl(input: any): string {
   }
   return url;
 }
+
+/** Path suitable for `Link` / `matchActualTarget` when slug may be a string or Tina `Docs` ref. */
+export function normalizeHrefPath(slug: unknown): string {
+  if (slug == null || slug === "") return "";
+  return getUrl(slug).replace(/\/$/, "");
+}

@@ -1,3 +1,8 @@
+import {
+  IconUsageTables,
+  type IconUsageTablesVariant,
+} from "@/components/docs/icon-usage/icon-usage-tables";
+import { IconsUsageGuide } from "@/components/docs/icon-usage/icons-usage-guide";
 import type { ReactNode } from "react";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import Accordion, { AccordionBlock } from "./embedded-elements/accordion";
@@ -37,6 +42,11 @@ type ComponentMapping = {
     doBody: TinaMarkdownContent | ReactNode;
     dontBody: TinaMarkdownContent | ReactNode;
   };
+  iconUsageTables: {
+    variant: IconUsageTablesVariant;
+  };
+  iconsUsageGuide: Record<string, unknown>;
+  IconsUsageGuide: Record<string, unknown>;
   typeDefinition: {
     property: {
       name: string;
@@ -147,6 +157,9 @@ export const MarkdownComponentMapping: Components<ComponentMapping> = {
   codeTabs: (props) => <CodeTabs {...props} />,
   imagePlaceholder: (props) => <ImagePlaceholder {...props} />,
   doDont: (props) => <DoDont {...props} />,
+  iconUsageTables: (props) => <IconUsageTables {...props} />,
+  iconsUsageGuide: () => <IconsUsageGuide />,
+  IconsUsageGuide: () => <IconsUsageGuide />,
   Callout: (props: { body: TinaMarkdownContent; variant: string }) => (
     <Callout {...props} variant={props.variant as CalloutVariant} />
   ),

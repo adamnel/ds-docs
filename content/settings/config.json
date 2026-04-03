@@ -5,6 +5,11 @@
       "source": "/",
       "destination": "/docs",
       "permanent": true
+    },
+    {
+      "source": "/docs/getting-started",
+      "destination": "/docs/getting-started/index",
+      "permanent": true
     }
   ],
   "title": "Covalent Design System",

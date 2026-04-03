@@ -1,0 +1,393 @@
+---
+title: Snackbar
+last_edited: '2026-04-03T12:00:00.000Z'
+auto_generated: false
+---
+
+## Usage
+
+Temporary notification displayed at the bottom of the screen.
+
+<imagePlaceholder imageId="cv-snackbar_hero" />
+
+
+When to use
+
+For providing unobtrusive feedback to user actions. These are valuable as confirmations to provide reassurance when a request has been received, or when a longer-longer running process reaches a conclusion.
+
+Need to display a long-term state or app-wide notice? Use an [Alert](/site/covalent/M2hm1RnCDV/pattern/alert) or [Empty state](/site/covalent/M2hm1RnCDV/pattern/empty-state) instead of a snackbar.
+
+Variant
+
+Purpose
+
+Action not available
+
+No further input needed
+
+Action optional
+
+Longer duration before auto-hide to allow user action
+
+Action required
+
+Keep visible until user acts or dismisses manually
+
+
+Action not available
+
+Because these disappear automatically, do not add a dismiss or cancel action.
+
+Auto-hides after 4 seconds.
+
+<imagePlaceholder imageId="cv-snackbar_action_none" />
+
+
+Action optional
+
+Longer duration before auto-hide to allow user action.
+
+Auto-hides after 10 seconds.
+
+<imagePlaceholder imageId="cv-snackbar_action_optional" />
+
+
+Action required
+
+Keep visible until user acts or dismisses manually.
+
+Always includes a close icon. May also include an action button.
+
+<imagePlaceholder imageId="cv-snackbar_action_required" />
+
+
+Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+##### Do
+
+*   **Do** use for non-interrupting feedback.
+    
+
+##### Don't
+
+*   **Don't** use for long-term state or app-wide notices. Use an [Alert](https://teradata.github.io/covalent/docs/components/?path=/docs/alert) or [Empty state](https://teradata.github.io/covalent/docs/components/?path=/docs/empty-state) for that.
+    
+*   **Don't** overuse the manual dismissal type. For most cases, a self-hiding snackbar is preferable.
+    
+
+
+Additional resources
+
+Can't find what you're looking for? We provide full documentation transparency. Here are additional resources to provide further clarity 
+
+[
+
+Current design
+
+Snackbar
+
+
+
+](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-30618)
+
+[
+
+Material Design
+
+Snackbars
+
+
+
+](https://m2.material.io/components/snackbars)
+
+[
+
+Angular Material
+
+Snackbar
+
+
+
+](https://material.angular.io/components/snack-bar/overview)
+## Style
+
+Temporary notification displayed at the bottom of the screen.
+
+
+Anatomy
+
+<imagePlaceholder imageId="cv-snackbar_anatomy" />
+
+Snackbars are split into two regions, with the message aligned to the left, and the actions (when present) aligned to the right.
+
+1.  Contains the snackbar contents.
+    
+2.  Text to communicate with the user.
+    
+3.  (optional) A single regular action is allowed.
+    
+4.  (optional) A close button.
+    
+
+
+Typography
+
+Use these text styles for the snackbar:
+
+1.  body-2
+    
+
+<imagePlaceholder imageId="cv-snackbar_typography" />
+
+
+Placement
+
+Place the snackbar at the bottom left of the screen, 24px from the bottom and 24px from the left.
+
+<imagePlaceholder imageId="cv-snackbar_position" />
+
+
+Animation
+
+Animate the snackbar when it shows up and also when it leaves.
+
+View this in action by clicking the “leading” button on [this demo](https://material-components.github.io/material-components-web-catalog/#/component/snackbar).
+
+<imagePlaceholder imageId="snackbar-animation.gif" />
+## Web components
+
+### Snackbar
+
+Temporary notification displayed at the bottom of the screen.
+
+[Action not available](https://teradata.github.io/covalent/docs/components/?path=/docs/snackbar?templateId=web-components-3ERE1Ai9lo&demoId=5aKkBtql-E)
+
+[Action optional](https://teradata.github.io/covalent/docs/components/?path=/docs/snackbar?templateId=web-components-3ERE1Ai9lo&demoId=skLYgeusTs)
+
+[Action required](https://teradata.github.io/covalent/docs/components/?path=/docs/snackbar?templateId=web-components-3ERE1Ai9lo&demoId=N-JOY8DOHe)
+
+LightShare
+
+## Action not available
+
+open\*
+
+leading
+
+stacked
+
+closeOnEscape
+
+timeoutMs
+
+labelText
+
+action
+
+dismiss
+
+```
+<cv-snackbar  open  labelText="Settings saved"  leading  timeoutMs="4000"  closeOnEscape>  <div slot="action"></div>  <div slot="dismiss"></div></cv-snackbar>
+```
+
+Show More
+
+### Methods
+
+Method signature
+
+Description
+
+`show() => void`
+
+Opens the snackbar.
+
+`close(reason: string = '') => void`
+
+Closes the snackbar, optionally with the specified reason indicating why it was closed.
+
+### Events
+
+Event name
+
+Detail
+
+Description
+
+`opening`
+
+`{}`
+
+Indicates when the snackbar begins its opening animation.
+
+`opened`
+
+`{}`
+
+Indicates when the snackbar finishes its opening animation.
+
+`closing`
+
+`{reason?: string}`
+
+Indicates when the snackbar begins its closing animation. `reason` contains the reason why the snackbar closed (`'dismiss'`, `'action'`, or a custom `string` via the `close` method).
+
+`closed`
+
+`{reason?: string}`
+
+Indicates when the snackbar finishes its closing animation. `reason` contains the reason why the snackbar closed (`'dismiss'`, `'action'`, or a custom `string` via the `close` method).
+
+#### 
+
+References
+
+[MWC snackbar](https://www.npmjs.com/package/@material/mwc-snackbar)
+
+[Covalent design system - Snackbar](https://www.npmjs.com/package/@material/mwc-snackbar)
+
+### Snackbar
+
+Temporary notification displayed at the bottom of the screen.
+
+[Action not available](https://teradata.github.io/covalent/docs/components/?path=/docs/snackbar?templateId=web-components-3ERE1Ai9lo&demoId=5aKkBtql-E)
+
+[Action optional](https://teradata.github.io/covalent/docs/components/?path=/docs/snackbar?templateId=web-components-3ERE1Ai9lo&demoId=skLYgeusTs)
+
+[Action required](https://teradata.github.io/covalent/docs/components/?path=/docs/snackbar?templateId=web-components-3ERE1Ai9lo&demoId=N-JOY8DOHe)
+
+LightShare
+
+## Action not available
+
+open\*
+
+leading
+
+stacked
+
+closeOnEscape
+
+timeoutMs
+
+labelText
+
+action
+
+dismiss
+
+```
+<cv-snackbar  open  labelText="Settings saved"  leading  timeoutMs="4000"  closeOnEscape>  <div slot="action"></div>  <div slot="dismiss"></div></cv-snackbar>
+```
+
+Show More
+
+### Methods
+
+Method signature
+
+Description
+
+`show() => void`
+
+Opens the snackbar.
+
+`close(reason: string = '') => void`
+
+Closes the snackbar, optionally with the specified reason indicating why it was closed.
+
+### Events
+
+Event name
+
+Detail
+
+Description
+
+`opening`
+
+`{}`
+
+Indicates when the snackbar begins its opening animation.
+
+`opened`
+
+`{}`
+
+Indicates when the snackbar finishes its opening animation.
+
+`closing`
+
+`{reason?: string}`
+
+Indicates when the snackbar begins its closing animation. `reason` contains the reason why the snackbar closed (`'dismiss'`, `'action'`, or a custom `string` via the `close` method).
+
+`closed`
+
+`{reason?: string}`
+
+Indicates when the snackbar finishes its closing animation. `reason` contains the reason why the snackbar closed (`'dismiss'`, `'action'`, or a custom `string` via the `close` method).
+
+#### 
+
+References
+
+[MWC snackbar](https://www.npmjs.com/package/@material/mwc-snackbar)
+
+[Covalent design system - Snackbar](https://www.npmjs.com/package/@material/mwc-snackbar)
+## Accessibility
+
+Temporary notification displayed at the bottom of the screen.
+
+
+Overview
+
+Snackbars are designed to be accessible to everyone, enabling all users, regardless of ability, to receive important information and alerts effectively. These components are built to ensure that notifications are perceivable, operable, and understandable for users with various accessibility needs.
+
+
+Keyboard Interactions
+
+To support accessibility through keyboard navigation, snackbars include the following interactions:
+
+### 
+
+Tab index focus
+
+Ensures that snackbars are included in the sequential keyboard navigation, allowing users to reach and interact with them using the Tab key.
+
+  
+
+### 
+
+Hit area state
+
+A visible focus indicator highlights the snackbar when it gains keyboard focus, ensuring that users can easily identify which element is active.
+
+<imagePlaceholder imageId="cv-snackbar_accessibility" />
+
+
+Additional resources
+
+Explore other guidelines and tools to ensure components and patterns meet accessibility standards and provide inclusive user experiences.
+
+[
+
+See also
+
+Web Content Accessibility Guidelines (WCAG) component standards
+
+
+
+](https://www.w3.org/TR/WCAG21/)
+
+[
+
+See also
+
+Material accessibility component guidelines
+
+
+
+](https://m2.material.io/components/snackbars/web#design-amp-api-documentation)

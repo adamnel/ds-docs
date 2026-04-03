@@ -29,6 +29,29 @@ const getEndpointSlug = (endpoint_slug: string | string[] | undefined) => {
     : "";
 };
 
+/** `slug` is usually a path string; never use `.title` on a string (was always undefined). */
+function labelForNavItem(categoryData: {
+  slug?: unknown;
+  title?: string;
+}): string {
+  if (categoryData.title) return categoryData.title;
+  if (typeof categoryData.slug === "string") {
+    const trimmed = categoryData.slug.replace(/\/$/, "");
+    const last = trimmed.split("/").filter(Boolean).pop() ?? "";
+    const base = last.replace(/\.mdx$/i, "");
+    if (!base) return "";
+    return titleCase(base.replace(/-/g, " "));
+  }
+  if (
+    categoryData.slug &&
+    typeof categoryData.slug === "object" &&
+    "title" in categoryData.slug
+  ) {
+    return String((categoryData.slug as { title?: string }).title ?? "");
+  }
+  return "";
+}
+
 export const NavLevel: React.FC<NavLevelProps> = ({
   navListElem,
   categoryData,
@@ -43,12 +66,23 @@ export const NavLevel: React.FC<NavLevelProps> = ({
   // If there is only one endpoint slug, use it as the default title
   // This will be used only when endpoint title is not set
   const defaultTitle = getEndpointSlug(endpoint_slug);
-  const slug = getUrl(categoryData.slug).replace(/\/$/, "");
-  const [expanded, setExpanded] = React.useState(
-    matchActualTarget(slug || getUrl(categoryData.href), path) ||
-      hasNestedSlug(categoryData.items, path) ||
-      level === 0
-  );
+  const slug = categoryData.slug
+    ? getUrl(categoryData.slug).replace(/\/$/, "")
+    : "";
+  const expandedByRoute = () =>
+    Boolean(
+      (slug && matchActualTarget(slug, path)) ||
+        (categoryData.href &&
+          matchActualTarget(getUrl(categoryData.href), path)) ||
+        hasNestedSlug(categoryData.items, path) ||
+        level === 0
+    );
+
+  const [expanded, setExpanded] = React.useState(expandedByRoute);
+
+  React.useEffect(() => {
+    setExpanded(expandedByRoute());
+  }, [path]);
 
   const selected =
     path.split("#")[0] === slug || (slug === "/docs" && path === "/docs/");
@@ -179,9 +213,7 @@ export const NavLevel: React.FC<NavLevelProps> = ({
                   className="flex-1 min-w-0"
                   style={{ overflowWrap: "anywhere" }}
                 >
-                  {categoryData.slug.title ||
-                    categoryData.title ||
-                    defaultTitle}
+                  {labelForNavItem(categoryData) || defaultTitle}
                 </span>
                 <ChevronRightIcon className="ml-2 flex-shrink-0 opacity-0 w-5 h-auto" />
               </span>

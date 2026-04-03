@@ -1,5 +1,6 @@
+import { getFirstPathForDocsTab } from "@/utils/docs/navigation";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { MdArrowDropDown, MdClose } from "react-icons/md";
 import { findTabWithPath } from "../docs/layout/utils";
@@ -25,6 +26,7 @@ export const NavigationDropdownContent = ({
   onClose: () => void;
 }) => {
   const pathname = usePathname();
+  const router = useRouter();
   const path = pathname || "";
 
   const [selectedValue, setSelectedValue] = useState(
@@ -37,6 +39,7 @@ export const NavigationDropdownContent = ({
     value: option.label,
     label: option.label,
     content: option.content.items,
+    sidebarTopLinks: option.content.sidebarTopLinks,
     __typename: option.__typename,
   }));
 
@@ -107,6 +110,18 @@ export const NavigationDropdownContent = ({
                   onClick={() => {
                     setSelectedValue(option.value);
                     setIsOpen(false);
+                    const tab = tocData?.find(
+                      (t: { label: string }) => t.label === option.value
+                    );
+                    if (
+                      tab?.content &&
+                      tab.content.__typename !== "NavigationBarTabsApiTab"
+                    ) {
+                      const target = getFirstPathForDocsTab(tab.content);
+                      if (target) {
+                        router.push(target);
+                      }
+                    }
                   }}
                 >
                   {option.label}
@@ -135,6 +150,10 @@ export const NavigationDropdownContent = ({
               navItems={
                 options.find((opt) => opt.value === selectedValue)?.content ||
                 []
+              }
+              sidebarTopLinks={
+                options.find((opt) => opt.value === selectedValue)
+                  ?.sidebarTopLinks
               }
               __typename={
                 options.find((opt) => opt.value === selectedValue)
