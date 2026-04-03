@@ -1,0 +1,56 @@
+---
+title: Button
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+The Button component triggers actions: submit a form, open a dialog, or run a command. Covalent ships **primary**, **secondary**, **tertiary**, and **destructive** variants, plus **ghost** and **link** styles for low-emphasis actions. Sizes follow the **sm**, **md**, and **lg** scale so dense admin UIs and marketing surfaces can share the same primitive.
+
+## Variants
+
+Use **primary** for the single most important action on a surface (often one per region). **Secondary** supports alternative paths without competing with the primary call. **Destructive** is reserved for irreversible or sensitive operations (delete, remove access) and should always pair with confirmation. **Tertiary** and **ghost** work well in toolbars and repeated actions where visual weight must stay low.
+
+## Usage guidelines
+
+- Prefer a **verb** for the label: “Save draft”, “Invite user”, not “OK” or “Submit” unless the context is obvious.
+- Do not nest interactive elements inside a button; use a single clear target.
+- When an action is **in progress**, show a loading state and disable duplicate clicks rather than leaving the user guessing.
+
+## Do and don't
+
+| Do | Don't |
+| --- | --- |
+| Use one primary button per logical section | Stack multiple primary buttons side by side |
+| Pair destructive actions with confirmation dialogs | Use destructive styling for benign actions |
+| Keep labels short and readable at a glance | Rely on icons alone without accessible names |
+
+## Code examples
+
+<codeTabs
+  tabs={[
+    {
+      name: "React",
+      content: "import { Button } from '@covalent/react';\n\nexport function Example() {\n  return (\n    <Button variant=\"primary\" size=\"md\">\n      Save changes\n    </Button>\n  );\n}",
+      language: "tsx"
+    },
+    {
+      name: "Anatomy",
+      content: "Button\n├── Root (button | a)\n├── Optional leading icon\n├── Label text\n└── Optional trailing icon / loading spinner",
+      language: "text"
+    }
+  ]}
+  initialSelectedIndex={0}
+/>
+
+## Accessibility
+
+- Native `<button>` is used unless the control navigates, in which case render as a link styled as a button.
+- **Focus** is visible in all themes; do not remove outlines without an equivalent focus ring.
+- **Disabled** buttons are not focusable in strict mode; if you must explain why an action is unavailable, use helper text or a tooltip on a wrapper, not a disabled control alone.
+
+<Callout
+  body={<>
+    **WCAG:** Ensure contrast between label and background meets **4.5:1** for normal text. Icon-only buttons require `aria-label` or `aria-labelledby`.
+  </>}
+  variant="warning"
+/>

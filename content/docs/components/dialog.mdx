@@ -1,0 +1,39 @@
+---
+title: Dialog
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Dialogs (modals) focus the user on a discrete task or decision: confirming a destructive action, collecting a small amount of information, or presenting critical details. Covalent’s Dialog uses a **focus trap**, **Escape** to dismiss when appropriate, and **restore focus** to the element that opened the dialog when it closes.
+
+## When to use a dialog
+
+Use a dialog when the user must **acknowledge** or **complete** something before continuing, and when that work is **short** and **contextual**. Good fits: confirm delete, quick “rename” or “add note”, and lightweight multi-field subforms that would clutter the page if inline.
+
+## When to avoid modals
+
+Prefer **inline** panels, **drawers**, or **dedicated pages** when the user needs to compare content behind the overlay, complete long forms, or follow complex workflows. Repeated modal use causes fatigue and breaks mobile ergonomics; reserve dialogs for moments that truly interrupt.
+
+## Keyboard behavior
+
+- **Tab** cycles through focusable elements inside the dialog only.
+- **Shift+Tab** moves backward within the trap.
+- **Escape** closes the dialog if closing is allowed; destructive flows may require an explicit “Cancel” for clarity.
+- On open, focus moves to the **first focusable control** or a designated **heading** (via `tabIndex` or `autoFocus` strategy).
+
+## Anatomy
+
+The dialog includes a **title** (required for accessibility), an optional **description**, a **body** region for content, and a **footer** for primary and secondary actions. Backdrops block interaction with the page underneath; use `aria-modal="true"` on the container and `aria-labelledby` pointing at the title.
+
+## Accessibility
+
+- Screen readers should announce the dialog **role** and **name** when opened.
+- **Scroll locking** prevents background scrolling on small viewports; ensure the dialog body scrolls instead of the page behind it.
+- Avoid nesting dialogs; if you need a second layer, use a full-screen pattern or sequential steps.
+
+<Callout
+  body={<>
+    **Testing:** Verify focus order with VoiceOver and NVDA, and confirm that closing returns focus to the triggering control without dropping focus on `body`.
+  </>}
+  variant="info"
+/>

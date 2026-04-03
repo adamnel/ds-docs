@@ -1,0 +1,36 @@
+---
+title: Form validation
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Form validation ensures users can correct mistakes before consequences (failed API calls, bad data, or security issues). Covalent distinguishes **inline** feedback next to fields from **summary** feedback at the top of long forms—use both when a flow has many interdependent fields.
+
+## Inline validation
+
+Validate **on blur** for simple constraints (format, length) so users get early feedback without aggressive validation on every keystroke. For **password strength** or **async checks** (username taken), debounce server calls and show a clear loading state on the field.
+
+## Summary validation
+
+On **submit**, if errors span multiple fields, show an **error summary** with links that move focus to each invalid control. This pattern helps keyboard and screen reader users discover issues that are not visible in the current viewport.
+
+## Error message guidelines
+
+- State **what went wrong** and **how to fix it** (“Use at least 8 characters” vs “Invalid”).
+- Avoid blame (“You entered…”)—neutral, concise language reduces frustration.
+- Associate messages with inputs using `aria-describedby` or live regions as appropriate.
+
+## Do and don't
+
+| Do | Don't |
+| --- | --- |
+| Disable submit until required fields are empty vs invalid | Block submit silently with no message |
+| Preserve user input when showing errors | Clear the form on any error |
+| Announce critical form-level errors to screen readers | Rely on color alone for errors |
+
+<Callout
+  body={<>
+    **Security:** Never put sensitive validation details in client-only messages that could leak account enumeration; mirror generic copy for auth flows.
+  </>}
+  variant="lock"
+/>

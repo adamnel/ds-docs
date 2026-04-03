@@ -7,22 +7,22 @@
       "permanent": true
     }
   ],
-  "title": "Tina",
-  "description": "TinaCMS is a fully open-source headless CMS that supports Git",
-  "seoDefaultTitle": "TinaCMS – Headless CMS with GitHub & Markdown Support",
-  "publisher": "TinaCMS",
-  "applicationName": "TinaCMS",
-  "siteUrl": "https://tina.io",
-  "roadmapUrl": "https://tina.io/roadmap/",
-  "licenseUrl": "https://github.com/tinacms/tinacms/blob/master/LICENSE",
-  "keywords": "nextjs, react, cms, next, tina, markdown, git, open-source, headless",
+  "title": "Covalent Design System",
+  "description": "Documentation for the Covalent product design system—components, foundations, patterns, and guidelines.",
+  "seoDefaultTitle": "Covalent Design System",
+  "publisher": "Covalent",
+  "applicationName": "Covalent Design System",
+  "siteUrl": "http://localhost:3000",
+  "roadmapUrl": "",
+  "licenseUrl": "",
+  "keywords": "design-system, covalent, components, accessibility, react",
   "docsHomepage": "/docs/index",
   "autoApiTitles": true,
-  "defaultOGImage": "/og/tina-og.png",
+  "defaultOGImage": "",
   "social": {
-    "twitterHandle": "@tinacms",
-    "twitter": "https://twitter.com/tinacms",
-    "github": "https://github.com/tinacms/tinacms",
-    "forum": "https://tina.io/community"
+    "twitterHandle": "",
+    "twitter": "",
+    "github": "",
+    "forum": ""
   }
 }

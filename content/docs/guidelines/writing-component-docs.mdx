@@ -1,0 +1,55 @@
+---
+title: Writing component docs
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Good component documentation accelerates adoption and reduces one-off Slack questions. Every Covalent component page should answer **what it is**, **when to use it**, **how to implement it**, and **how to avoid common mistakes**—in that order of reader need.
+
+## Template structure
+
+1. **Overview** — One paragraph on purpose and scope.
+2. **Examples** — Primary usage first; progressive disclosure for advanced cases.
+3. **Props / API** — Generated tables where possible; link to Storybook for live play.
+4. **Accessibility** — Roles, keyboard, labels, and known limitations.
+5. **Related** — Links to patterns, foundations, and sibling components.
+
+## Required sections
+
+| Section | Why it matters |
+| ------- | -------------- |
+| Usage guidelines | Prevents misuse across brands |
+| Do / don’t | Fast scanning for reviewers |
+| Accessibility | Contract with a11y reviewers |
+| Changelog / migration | Trust during version bumps |
+
+## Voice and tone
+
+Write in **second person** (“Use the primary button for…”) and prefer **active** verbs. Avoid internal codenames unless they are part of the public API.
+
+## Review criteria
+
+Before publishing, confirm: examples run **copy-paste**, images have **alt text**, and terminology matches **Foundations** token names. Peer review should include at least one **designer** and one **engineer** owner for the component.
+
+<codeTabs
+  tabs={[
+    {
+      name: "Outline",
+      content: "## Dialog\n### Overview\n### Examples\n### Props\n### Accessibility\n### Changelog",
+      language: "markdown"
+    },
+    {
+      name: "Anti-patterns",
+      content: "- Screenshots without alt text\n- Lorem ipsum in examples\n- Missing focus behavior for custom widgets",
+      language: "text"
+    }
+  ]}
+  initialSelectedIndex={0}
+/>
+
+<Callout
+  body={<>
+    **Tip:** Keep “Known issues” near the top if they block common use cases—readers should not discover blockers at the bottom of the page.
+  </>}
+  variant="warning"
+/>

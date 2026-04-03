@@ -1,0 +1,38 @@
+---
+title: Color
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Covalent’s color system separates **brand**, **neutral**, and **semantic** palettes. Brand colors express identity; neutrals structure UI chrome and typography; semantic colors communicate status (success, warning, error, info) and must never be the only cue—pair with icons and text.
+
+## Primitive tokens
+
+Primitives are the raw palette: `blue.500`, `gray.750`, `red.400`. They are useful for design tooling and occasional marketing layouts, but **application UI should avoid binding directly to primitives** except in rare cases (data visualization with distinct series colors).
+
+## Semantic tokens
+
+Semantic tokens describe **intent**: `color.text.default`, `color.text.muted`, `color.border.subtle`, `color.surface.elevated`. Components consume semantic tokens so that when we tune contrast or shift dark-mode curves, updates propagate consistently.
+
+| Role | Typical use |
+| ---- | ----------- |
+| `text.default` | Primary reading text |
+| `text.muted` | Secondary labels, captions |
+| `border.default` | Inputs, dividers |
+| `surface.canvas` | Page background |
+| `focus.ring` | Keyboard focus indicator |
+
+## Dark mode
+
+Dark mode is not a simple invert: we **lift** surfaces in steps, soften borders, and reduce pure white text to off-white for comfort. Status colors are **retuned** for sufficient contrast on dark backgrounds—especially yellow and orange warnings.
+
+## Charts and data viz
+
+For categorical charts, use the **data visualization** ramp rather than status colors, so “error red” is not confused with a series color. Provide **patterns or labels** in addition to color for accessibility.
+
+<Callout
+  body={<>
+    **Contrast:** Interactive text and UI chrome should meet **WCAG 2.2** contrast targets for the chosen level (AA by default for body text and controls).
+  </>}
+  variant="warning"
+/>

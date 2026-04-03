@@ -1,0 +1,46 @@
+---
+title: Typography
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Typography establishes hierarchy and readability across marketing pages, logged-in apps, and dense admin tools. Covalent uses a **modular type scale** tied to semantic roles—display, title, heading, body, label, and code—so teams do not guess font sizes per screen.
+
+## Type scale
+
+Headings **H1–H4** map to page and section structure; **body** sizes cover long-form reading and compact UI. **Label** styles power form fields and table headers. Do not skip levels for visual effect: if something “looks like H2” but semantically is H3, fix the semantics rather than the token.
+
+## Font usage
+
+**Sans** is the default UI face; **monospace** is reserved for code, IDs, and technical strings. Avoid mixing more than two families in a single product surface unless a marketing exception is documented.
+
+## Line height and spacing
+
+Line height (`leading`) is tuned per role: **tighter** for headings, **relaxed** for body copy. Vertical rhythm between blocks uses **spacing tokens** (for example `space.4`, `space.6`) rather than ad hoc margins so layouts align across breakpoints.
+
+## Responsive behavior
+
+On small viewports, **scale down** display and title sizes using responsive tokens so headlines do not dominate the viewport. Body size may stay constant for readability; adjust padding and measure instead of shrinking text below comfortable minimums.
+
+<codeTabs
+  tabs={[
+    {
+      name: "Roles (example)",
+      content: "display.lg → hero marketing headlines\ntitle.md → page titles in app shell\nbody.md → default paragraphs\nlabel.sm → form labels, metadata",
+      language: "text"
+    },
+    {
+      name: "Measure",
+      content: "Aim for roughly 60–75 characters per line for body copy.\nUse max-width utilities or grid columns—not manual br tags.",
+      language: "text"
+    }
+  ]}
+  initialSelectedIndex={0}
+/>
+
+<Callout
+  body={<>
+    **Accessibility:** Users can enlarge text with browser zoom; avoid fixed pixel heights on text containers that clip content when zoomed to 200%.
+  </>}
+  variant="info"
+/>

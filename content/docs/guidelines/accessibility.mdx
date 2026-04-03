@@ -1,0 +1,32 @@
+---
+title: Accessibility
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Accessibility is a **product requirement** for Covalent. We target **WCAG 2.2 Level AA** for customer-facing experiences unless a specific regulation requires stricter conformance. Meeting AA does not replace usability testing with assistive technology—automated checks catch only a fraction of issues.
+
+## Checklist (baseline)
+
+- **Keyboard** — All interactive controls reachable and operable without a mouse; visible focus states.
+- **Color** — Contrast for text and UI components per level AA; information not conveyed by color alone.
+- **Structure** — Semantic headings, landmarks (`header`, `nav`, `main`), and labels on form controls.
+- **Motion** — Respect `prefers-reduced-motion`; avoid auto-playing distracting animation.
+- **Forms** — Errors identified, described, and associated with fields; suggestions where known.
+
+## Testing tools
+
+- **Automated:** axe DevTools, Lighthouse accessibility audits (supplemental).
+- **Screen readers:** VoiceOver (Safari), NVDA (Firefox/Chrome on Windows), TalkBack on Android for mobile patterns.
+- **Zoom:** Browser zoom to 200% and 400% for reflow checks on critical flows.
+
+## Manual scenarios
+
+Exercise **real tasks**: complete a form, sort a table with the keyboard, open and close dialogs, and navigate with rotor or landmarks in VoiceOver. Document known gaps with tickets and user impact.
+
+<Callout
+  body={<>
+    **Note:** Third-party embeds must meet the same bar or be replaced; “inaccessible vendor widget” is not an exception without a documented mitigation path.
+  </>}
+  variant="error"
+/>

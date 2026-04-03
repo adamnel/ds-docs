@@ -1,0 +1,27 @@
+---
+title: Foundations overview
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+Foundations define the **visual and verbal substrate** of Covalent: how color encodes meaning, how type establishes hierarchy, and how spacing creates rhythm. Product teams should reach for **tokens** before hard-coding hex values or font sizes so themes (including dark mode) stay coherent when global decisions change.
+
+## Why tokens matter
+
+**Primitive tokens** capture raw values—brand blues, neutral grays, spacing units. **Semantic tokens** map those primitives to roles: `color.text.primary`, `color.surface.canvas`, `space.section.gap`. When marketing refreshes brand blue, semantic mappings update once; applications that consume tokens do not need a find-and-replace across every screen.
+
+## Light and dark
+
+Covalent treats **dark mode** as a first-class theme, not an inversion of light. Surfaces, borders, and text colors have dedicated semantic pairs so contrast stays within our targets without clipping or halo artifacts around inputs.
+
+## In this section
+
+- **Color** — Semantic vs primitive roles, status hues, and focus rings
+- **Typography** — Type scale, font stacks, line height, and layout spacing
+
+<Callout
+  body={<>
+    **Pair with components:** When a component doc references “primary” or “muted” text, it means **semantic** roles from Foundations—not ad hoc hex codes.
+  </>}
+  variant="success"
+/>

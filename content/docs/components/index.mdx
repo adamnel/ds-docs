@@ -1,0 +1,30 @@
+---
+title: Components overview
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+The Covalent component library is a curated set of React primitives built on accessible, headless behaviors and styled with design tokens. Components are versioned with the design system package and documented with usage rules so product teams do not fork one-off variants that drift from brand and accessibility commitments.
+
+## Principles
+
+We optimize for **clarity**, **predictability**, and **inclusive defaults**. Every component exposes a small, intentional API surface: variants map to real product needs (not every possible permutation), and behavior like focus management and keyboard support is built in—not left to each consumer.
+
+## When to add a new component
+
+Before proposing a new component, check whether an existing primitive or composition pattern already covers the use case. New components need a design partner, engineering owner, and documentation that includes anatomy, props, states, accessibility, and examples. If the need is only visual, prefer tokens and layout utilities instead of a new named component.
+
+## In this section
+
+| Topic | What you will find |
+| ----- | ------------------ |
+| Button | Variants, loading states, icon usage, and accessibility for actions |
+| Dialog | Modal patterns, focus traps, and when not to use a dialog |
+| Data table | Sorting, pagination, column configuration, and responsive behavior |
+
+<Callout
+  body={<>
+    **Tip:** For full-page layouts and navigation chrome, see Patterns and Guidelines. Components here assume they are embedded in application UI that already provides landmarks and routing context.
+  </>}
+  variant="idea"
+/>

@@ -1,0 +1,46 @@
+---
+title: Data table
+last_edited: '2026-04-02T12:00:00.000Z'
+auto_generated: false
+---
+
+The Data Table component displays structured, tabular data with sorting, pagination, and optional row selection. It is built for **large datasets** and **keyboard-first** navigation: arrow keys move between cells, and sortable headers expose `aria-sort` so assistive technologies announce the current ordering.
+
+## Sorting
+
+Clicking a column header toggles **ascending**, **descending**, and **unsorted** (where applicable). Server-driven tables should debounce requests and show a **loading** state on the header or table body while the next page arrives. Only one primary sort column is active at a time unless product requirements explicitly call for multi-sort (advanced).
+
+## Pagination
+
+Use **offset** or **cursor** pagination depending on API design. Surface **current range** (“Showing 21–40 of 512”) and avoid orphan pages with tiny result sets. Page size controls belong near the table footer; default to a sensible page size (often 25 or 50) for admin tools.
+
+## Column configuration
+
+Columns support **fixed** and **flex** widths, **truncation** with tooltips for overflow, and **right alignment** for numeric data. Hide low-value columns on small screens using **responsive** priority rules rather than horizontal scroll alone—when scroll is unavoidable, preserve a sticky first column for row identity.
+
+## Responsive behavior
+
+On narrow viewports, consider **card stacking** or **stacked key-value rows** for each record. If the table remains, enable horizontal scroll with a visible scrollbar and preserve header visibility via sticky headers or a condensed column set.
+
+<codeTabs
+  tabs={[
+    {
+      name: "Column def (example)",
+      content: "const columns = [\n  { id: 'name', header: 'Name', sortable: true },\n  { id: 'status', header: 'Status', cell: StatusBadge },\n  { id: 'updated', header: 'Updated', align: 'end' },\n];",
+      language: "typescript"
+    },
+    {
+      name: "Accessibility",
+      content: "Use <table> semantics or grid role with:\n- <caption> or aria-label for the table purpose\n- <th scope=\"col\"> for headers\n- Keyboard support for sort buttons in headers",
+      language: "text"
+    }
+  ]}
+  initialSelectedIndex={0}
+/>
+
+<Callout
+  body={<>
+    **Performance:** Virtualize rows when lists exceed a few hundred visible items; otherwise scrolling and selection can become sluggish.
+  </>}
+  variant="idea"
+/>
