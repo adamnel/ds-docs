@@ -1,5 +1,3 @@
-export const dynamic = "force-static";
-
 import { client } from "@/tina/__generated__/client";
 import { type NextRequest, NextResponse } from "next/server";
 

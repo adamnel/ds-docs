@@ -1,5 +1,3 @@
-export const dynamic = "force-static";
-
 import fs from "node:fs";
 import path from "node:path";
 import { NextResponse } from "next/server";

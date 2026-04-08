@@ -8,7 +8,7 @@
     "build": "tinacms build --local --skip-cloud-checks && next build",
     "postbuild": "npx pagefind --site .next --output-path .next/static/pagefind && next-sitemap",
     "build-local-pagefind": "tinacms build --local --skip-cloud-checks && next build && npx pagefind --site .next --output-subdir ../public/pagefind",
-    "export": "tinacms build --local --skip-cloud-checks && EXPORT_MODE=static next build",
+    "export": "tinacms build --local --skip-cloud-checks && node scripts/hide-api-routes.mjs && EXPORT_MODE=static next build; status=$?; node scripts/restore-api-routes.mjs; exit $status",
     "start": "tinacms build --local --skip-cloud-checks && next start",
     "lint": "biome check src/ tina/",
     "lint:fix": "biome check src/ tina/ --fix",
