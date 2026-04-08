@@ -1,4 +1,3 @@
-import { getBearerAuthHeader } from "@/src/utils/tina/get-bearer-auth-header";
 import { ApiReferencesSelector } from "../customFields/api-reference-selector";
 import { itemTemplate } from "../templates/navbar-ui.template";
 import submenuTemplate from "../templates/submenu.template";
@@ -104,35 +103,6 @@ export const docsNavigationBarCollection = {
     allowedActions: {
       create: false,
       delete: false,
-    },
-    beforeSubmit: async ({ values }: { values: Record<string, any> }) => {
-      try {
-        // Generate .mdx files for API endpoints when navigation is saved
-        const response = await fetch("/api/process-api-docs", {
-          method: "POST",
-          headers: getBearerAuthHeader(),
-          body: JSON.stringify({
-            data: values,
-          }),
-        });
-
-        if (response.ok) {
-          const result = await response.json();
-        } else {
-          const error = await response.json();
-          // Log error but don't block the save operation
-        }
-
-        // Always return the values, don't block the save operation if file generation fails
-        return {
-          ...values,
-        };
-      } catch (error) {
-        // Don't block the save operation if file generation fails
-        return {
-          ...values,
-        };
-      }
     },
   },
   fields: [

@@ -86,40 +86,17 @@ Open [http://localhost:3000](http://localhost:3000) to see your docs in action.
 
 ## 🌐 Production Setup
 
-### **Step 3: Set Up GitHub and TinaCloud**
-
-1. **Add your docs to GitHub**: Push your local repository to GitHub if you haven't already  
-2. **Create a TinaCloud account**: Sign up at [app.tina.io](https://app.tina.io)  
-3. **Link your repository**: Connect your GitHub repository to TinaCloud through the dashboard  
-Note: if you don’t see your repo in the list, click the button “Configure your TinaCloud permissions on GitHub” at the bottom of the page
-4. **Sync Media**: In your TinaCloud project, click on Media and then "Sync Media". This will import your media files (like images) from your GitHub repository into Tina’s Media Manager so they’re available in the visual editor.
-
-### **Step 4: Configure Environment**
+### **Step 3: Configure Environment**
 
 1. Rename `.env.example` to `.env`
-2. Add your Tina credentials:
+2. Configure your environment:
 
-```env
-NEXT_PUBLIC_TINA_CLIENT_ID=<get this from app.tina.io>
-TINA_TOKEN=<get this from app.tina.io>
-NEXT_PUBLIC_TINA_BRANCH=<your content branch>
-NEXT_PUBLIC_ENABLE_THEME_SELECTION=<display theme selector>
-```
-
-If you want to test `pnpm build` locally, you need to add:
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-**Theme Preview Mode:**
-To enable a theme selector in the UI for previewing all themes, add:
-```env
 NEXT_PUBLIC_ENABLE_THEME_SELECTION=true
 ```
 
-> 💡 **Note:** The theme selector allows you to preview different themes in real-time, but these changes are temporary and won't persist when you open a new browser window/tab. To make a theme permanent, update the `Selected Them` field in your Settings through TinaCMS.
-
-### **Step 5 (Optional): Enable GitHub Metadata**
+### **Step 4 (Optional): Enable GitHub Metadata**
 
 To display commit history and last updated information on your documentation pages:
 
@@ -144,7 +121,7 @@ GITHUB_REPO=<your repository name>
 > 💡 **Note:** The `GITHUB_TOKEN` field is optional. However, if you choose to provide it, you must also provide `GITHUB_OWNER` and `GITHUB_REPO`. If you're deploying to Vercel, the `GITHUB_OWNER` and `GITHUB_REPO` fields will be automatically populated from Vercel's environment variables (`VERCEL_GIT_REPO_OWNER` and `VERCEL_GIT_REPO_SLUG`), so you only need to provide the `GITHUB_TOKEN`.
 
 
-### **Step 6: Build for Production**
+### **Step 5: Build for Production**
 
 ```bash
 pnpm build
@@ -154,9 +131,9 @@ pnpm build
 
 ## 🚀 Deployment
 
-### **Step 7: Deploy to Vercel** 
+### **Step 6: Deploy**
 
-TinaDocs works great with Vercel. Check out our [deployment guide](https://tina.io/docs/tina-cloud/deployment-options/vercel) for detailed instructions.
+TinaDocs can be deployed as a static site to GitHub Pages, Vercel, or any static hosting provider.
 
 ---
 

@@ -123,4 +123,4 @@ myEmbed: (props) => <MyEmbed {...props} />,
 
 ## Environment
 
-Copy `.env.example`. Required: `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `NEXT_PUBLIC_TINA_BRANCH` (from app.tina.io). Optional: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_BASE_PATH`.
+Copy `.env.example`. TinaCMS runs in local-only mode (no TinaCloud). Optional: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_BASE_PATH`, `NEXT_PUBLIC_ENABLE_THEME_SELECTION`.

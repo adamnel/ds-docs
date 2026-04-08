@@ -22,13 +22,7 @@ module.exports = {
   images: {
     ...(isStatic ? { unoptimized: true } : {}),
     ...(assetPrefix ? { path: `${assetPrefix}/_next/image` } : {}),
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "assets.tina.io",
-        port: "",
-      },
-    ],
+    remotePatterns: [],
   },
 
   outputFileTracingIncludes: {
