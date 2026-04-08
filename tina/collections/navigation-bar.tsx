@@ -10,6 +10,12 @@ const docsNavigationBarFields = [
     type: "string",
   },
   {
+    name: "overviewSlug",
+    label: "Overview Page",
+    type: "string",
+    description: "Slug of the overview page to navigate to when clicking this tab (e.g. content/docs/foundations.mdx)",
+  },
+  {
     name: "supermenuGroup",
     label: "Supermenu Group",
     type: "object",

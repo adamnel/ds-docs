@@ -19,10 +19,15 @@
     },
     {
       "title": "Getting Started",
+      "overviewSlug": "content/docs/getting-started.mdx",
       "supermenuGroup": [
         {
           "title": "Getting Started",
           "items": [
+            {
+              "slug": "content/docs/getting-started.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/getting-started/get-started.mdx",
               "_template": "item"
@@ -38,10 +43,15 @@
     },
     {
       "title": "Foundations",
+      "overviewSlug": "content/docs/foundations.mdx",
       "supermenuGroup": [
         {
           "title": "Foundations",
           "items": [
+            {
+              "slug": "content/docs/foundations.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/foundations/color.mdx",
               "_template": "item"
@@ -61,10 +71,15 @@
     },
     {
       "title": "Components",
+      "overviewSlug": "content/docs/components.mdx",
       "supermenuGroup": [
         {
           "title": "Components",
           "items": [
+            {
+              "slug": "content/docs/components.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/components/action-ribbon.mdx",
               "_template": "item"
@@ -274,10 +289,15 @@
     },
     {
       "title": "Patterns",
+      "overviewSlug": "content/docs/patterns.mdx",
       "supermenuGroup": [
         {
           "title": "Patterns",
           "items": [
+            {
+              "slug": "content/docs/patterns.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/patterns/errors.mdx",
               "_template": "item"
@@ -293,10 +313,15 @@
     },
     {
       "title": "Content",
+      "overviewSlug": "content/docs/content-guidelines.mdx",
       "supermenuGroup": [
         {
           "title": "Content Guidelines",
           "items": [
+            {
+              "slug": "content/docs/content-guidelines.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/content-guidelines/voice-and-tone.mdx",
               "_template": "item"
@@ -312,10 +337,15 @@
     },
     {
       "title": "Feedback",
+      "overviewSlug": "content/docs/feedback-section.mdx",
       "supermenuGroup": [
         {
           "title": "Feedback",
           "items": [
+            {
+              "slug": "content/docs/feedback-section.mdx",
+              "_template": "item"
+            },
             {
               "slug": "content/docs/feedback-section/feedback.mdx",
               "_template": "item"

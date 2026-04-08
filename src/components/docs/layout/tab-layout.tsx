@@ -19,6 +19,7 @@ type TabItem = {
   label: string;
   content: { title: string; __typename: string; items: SupermenuGroup[] };
   __typename: string;
+  overviewSlug?: string;
 };
 
 export const TabsLayout = ({
@@ -50,6 +51,7 @@ export const TabsLayout = ({
       label: tab.title,
       content: tab,
       __typename: tab.__typename,
+      overviewSlug: tab.overviewSlug,
     }));
     setTabs(tabs);
     setSelectedTab(tabs[0]?.label);

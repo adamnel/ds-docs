@@ -1,6 +1,7 @@
 import { MobileNavSidebar } from "@/components/navigation/mobile-navigation-sidebar";
 import * as Tabs from "@radix-ui/react-tabs";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type React from "react";
 import { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -12,9 +13,10 @@ export const TopNav = ({
   tabs,
   navigationDocsData,
 }: {
-  tabs: { label: string; content: any }[];
+  tabs: { label: string; content: any; overviewSlug?: string }[];
   navigationDocsData: any;
 }) => {
+  const router = useRouter();
   const ctaButtons = navigationDocsData?.ctaButtons;
   const hasButtons = ctaButtons && (ctaButtons.button1 || ctaButtons.button2);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -45,6 +47,11 @@ export const TopNav = ({
                 key={tab.label}
                 value={tab.label}
                 className="px-1 text-lg relative text-brand-primary-contrast mx-4 focus:text-brand-secondary-hover cursor-pointer font-semibold data-[state=active]:text-brand-primary-text after:content-[''] after:absolute after:bottom-1.5 after:left-0 after:h-0.25 after:bg-brand-primary-text after:transition-all after:duration-300 after:ease-out data-[state=active]:after:w-full after:w-0"
+                onClick={() => {
+                  if (tab.overviewSlug) {
+                    router.push(tab.overviewSlug);
+                  }
+                }}
               >
                 {tab.label || "Untitled Tab"}
               </Tabs.Trigger>

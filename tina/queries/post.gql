@@ -6,6 +6,7 @@ fragment MinimisedNavigationBarParts on NavigationBar {
     __typename
     ... on NavigationBarTabsDocsTab {
       title
+      overviewSlug
       supermenuGroup {
         __typename
         title

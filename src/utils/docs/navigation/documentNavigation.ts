@@ -28,6 +28,7 @@ export interface Tab {
   title?: string | null;
   __typename?: string | null;
   supermenuGroup?: SupermenuGroup[] | null;
+  overviewSlug?: string | null;
 }
 
 /**
@@ -93,6 +94,7 @@ export interface FormattedNavigation {
     title: string;
     __typename: string;
     items: SupermenuGroup[];
+    overviewSlug?: string;
   }[];
   sha: string;
   preview: boolean;
@@ -144,10 +146,15 @@ export const formatNavigationData = (
       items: transformReferencesToSlugs(group.items || []),
     }));
 
+    const overviewSlug = tab.overviewSlug
+      ? tab.overviewSlug.replace(/^content\/|\.mdx$/g, "/")
+      : undefined;
+
     return {
       title: tab.title || "",
       __typename: tab.__typename || "",
       items: groups,
+      overviewSlug,
       lightModeLogo: lightModeLogo,
       darkModeLogo: darkModeLogo,
     };
