@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { type NextRequest, NextResponse } from "next/server";
