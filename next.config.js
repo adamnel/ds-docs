@@ -20,6 +20,7 @@ module.exports = {
   basePath,
   assetPrefix,
   images: {
+    ...(isStatic ? { unoptimized: true } : {}),
     ...(assetPrefix ? { path: `${assetPrefix}/_next/image` } : {}),
     remotePatterns: [
       {
