@@ -1,0 +1,210 @@
+---
+title: List
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Collection of items displayed vertically or horizontally.
+
+## Usage
+
+<imagePlaceholder imageId="cv-list_hero" />
+
+### When to use
+
+Lists excel when displaying homogeneous data that users need to scan quickly, compare at a glance, or act upon systematically. They work best when each item represents a similar type of entity with consistent structure.
+
+| Variant | Purpose |
+| --- | --- |
+| **Info** | Provides detail about a number of facets of an individual item, or the same info about multiple similar items. |
+| **Menu** | Displays actions the user can take. |
+| **Select** | Displays choices in a form. |
+| **Navigation** | Presents locations a user can browse to. |
+
+Lists are containers for [list items](/docs/components/list-item). See that doc for further detail.
+
+### Info lists
+
+Provides detail about a number of facets of an individual item, or the same info about multiple similar items. Often these appear in cards, as depicted here.
+
+<imagePlaceholder imageId="cv-list_type--info" />
+
+### Menu lists
+
+Displays actions the user can take.
+
+<imagePlaceholder imageId="cv-list_type--menu" />
+
+### Select lists
+
+Displays choices in a form.
+
+<imagePlaceholder imageId="cv-list_type--select" />
+
+### Navigation lists
+
+Presents locations a user can browse to.
+
+<imagePlaceholder imageId="cv-list_type--navigation" />
+
+### Recommendations
+
+Maintain consistency within each list by using the same variant, content structure, and action patterns. Group related items using subheaders to create logical sections. Implement meaningful sorting (alphabetical, chronological, or priority-based) rather than random ordering.
+
+Limit actions per item to maintain clarity -- use primary actions for the main interaction and secondary actions sparingly.
+
+Consider switching to data tables when real estate permits to show greater density of information.
+
+### Usage -- additional resources
+
+* [List item](/docs/components/list-item)
+* [Lists - Legacy document](https://www.figma.com/design/7olNUGb4brjY7hLX4tq1Tp/Lists?m=auto&t=vBlOgv4letIOllWB-6)
+* [Material Design - Lists](https://m2.material.io/components/lists)
+* [Angular Material - List](https://material.angular.io/components/list/overview)
+
+## Style
+
+<imagePlaceholder imageId="cv-list_anatomy" />
+
+1. List items.
+2. List divider.
+
+### Typography
+
+Review the content for [list items](/docs/components/list-item) for details.
+
+### Content guidelines
+
+Review the content for [list items](/docs/components/list-item) for details.
+
+### States
+
+Review the content for [list items](/docs/components/list-item) for details.
+
+### Responsive
+
+Consider switching to data tables when real estate permits to show greater density of information.
+
+## Web components
+<storybookEmbed storyId="components-list--with-avatar" height={300} embedMode="story" />
+
+
+### Demos
+
+* Main
+* Check list
+* Radio list
+* Navigation list
+* Sub navigation
+
+### Main
+
+```html
+<cv-list activatible items="{}" selected="{}" index="{}">
+  <cv-list-item tabindex="-1">
+    <div slot="secondary"></div>
+    <div slot="graphic"></div>
+    <div slot="meta"></div>
+    List item
+  </cv-list-item>
+  <cv-list-item tabindex="-1">
+    <div slot="secondary"></div>
+    <div slot="graphic"></div>
+    <div slot="meta"></div>
+    List item
+  </cv-list-item>
+</cv-list>
+```
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `activatible` | Whether list items are activatible |
+| `rootTabbable` | Whether the root element is tabbable |
+| `multi` | Whether multiple items can be selected |
+| `wrapFocus` | Whether focus wraps from last to first item |
+| `noninteractive` | Whether the list is non-interactive |
+| `itemRoles` | ARIA role for list items |
+| `innerAriaLabel` | ARIA label for the inner list |
+| `innerRole` | ARIA role for the inner list |
+
+### Readonly properties
+
+| Prop | Default | Type | Details |
+| --- | --- | --- | --- |
+| `items` | `[]` | `ListItemBase[]` | All list items that are available for selection. Eligible items have the `[mwc-list-item]` attribute which `ListItemBase` applies automatically. |
+| `index` | `-1` | `MWCListIndex` (`number\|Set<number>`) | Index / indices of selected item(s). When `multi` is `true`, `index` is of type `number` and when `false`, `index` is of type `Set<number>`. Unset indices are `-1` and empty `Set<number>` for single and multi selection respectively. |
+| `selected` | `null` | `ListItemBase\|ListItemBase[]\|null` | Currently-selected list item(s). When `multi` is `true`, `selected` is of type `ListItemBase[]` and when `false`, `selected` is of type `ListItemBase`. `selected` is `null` when no item is selected. |
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `select(index: MWCListIndex) => void` | Selects the elements at the given index / indices. |
+| `toggle(index: number, force?: boolean) => void` | Toggles the selected index, and forcibly selects or deselects the value of `force` if attribute is provided. |
+| `getFocusedItemIndex() => number` | Returns the index of the currently-focused item. `-1` if none are focused. |
+| `focusItemAtIndex(index) => void` | Focuses the item at the given index and manages tabindex on all other items. |
+| `layout(updateItems = true) => void` | Resets tabindex on all items and will update items model if provided true. It may be required to call layout if selectability of an element is dynamically changed. |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `action` | `cv-list` | `ActionDetail` | Fired when a selection has been made via click or keyboard action. |
+| `selected` | `cv-list` | `SelectedDetail` | Fired when a selection has been made. `index` is the selected index (will be of type `Set<number>` if multi and `number` if single), and `diff` (of type `IndexDiff`) represents the diff of added and removed indices from previous selection. |
+
+**ActionDetail** interface:
+
+```js
+interface ActionDetail {
+  index: number;
+}
+```
+
+**SelectedDetail** interface:
+
+```js
+interface SelectedDetail<T extends MWCListIndex = MWCListIndex> {
+  index: T;
+  diff: T extends Set<number> ? IndexDiff : undefined;
+}
+```
+
+**IndexDiff** interface:
+
+```js
+interface IndexDiff {
+  added: number[];
+  removed: number[];
+}
+```
+
+### References
+
+* [MWC list](https://www.npmjs.com/package/@material/mwc-list?activeTab=readme)
+* [Covalent design system - List](https://teradata.github.io/covalent/docs/components/?path=/docs/components-list--overview)
+
+## Accessibility
+
+### Overview
+
+List items implement semantic HTML structure using appropriate ARIA roles and landmarks to ensure screen reader compatibility. The component supports comprehensive keyboard navigation with tab order management and focus indicators. Color and contrast meet WCAG 2.1 AA standards for all text and interactive elements.
+
+Screen readers announce list structure, item count, and current position to provide spatial context. Interactive elements include proper labeling and state descriptions. Focus management ensures logical navigation flow and proper focus restoration after actions.
+
+### Keyboard interactions
+
+#### Tab index
+
+**The tab key** moves focus between interactive elements within and across list items, following logical reading order.
+
+**Arrow keys** (up/down) navigate between list items when the list has focus, providing efficient scanning without tabbing through every element.
+
+**Space or Enter** activates the primary action on focused items. **Escape** exits selection modes or dismisses contextual interfaces. **Home/End keys** jump to first/last items in long lists for efficient navigation.
+
+<imagePlaceholder imageId="cv-list_accessibility" />
+
+### Accessibility -- additional resources
+
+* [Web Content Accessibility Guidelines (WCAG) component standards](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility component guidelines](https://m2.material.io/components/lists/web#using-lists)

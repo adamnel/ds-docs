@@ -1,0 +1,90 @@
+---
+title: App Shell
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+The structural foundation of an application, including its layout and navigation.
+
+## Usage
+
+Design documentation coming soon.
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `appName` | The application name displayed in the shell. |
+| `sectionName` | The name of the current section. |
+| `helpOpen` | Whether the help panel is open. |
+| `drawerOpen` | Whether the navigation drawer is open. |
+| `contained` | Whether the shell is contained within a parent element. |
+| `forcedOpen` | Whether the drawer is forced open. |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `default` | Main content area. |
+| `logo` | Logo displayed in the app shell header. |
+| `navigation` | Navigation list content for the drawer. |
+| `help` | Help panel content. |
+| `section-action` | Action items for the section header. |
+| `user-menu` | User menu content. |
+
+### Example
+
+```html
+<cv-app-shell appName="[App name]" sectionName="[Section name]" contained forcedOpen open>
+  <svg slot="logo" width="103" height="20" viewBox="0 0 103 20"
+    style="fill: var(--cv-theme-text-logo-on-background)" fill="none">
+    <!-- logo paths -->
+  </svg>
+  <div slot="section-action">
+    <cv-icon-button icon="arrow_back"> </cv-icon-button>
+  </div>
+  <cv-tab-bar>
+    <cv-tab label="Tab label"> </cv-tab>
+    <cv-tab label="Tab label"> </cv-tab>
+    <cv-tab label="Tab label"> </cv-tab>
+  </cv-tab-bar>
+  <cv-empty-state
+    headline="You don't have access to this area"
+    subtitle="You don't have permission to view this application."
+    icon="lock">
+    <div slot="button"></div>
+    <div slot="buttons"></div>
+  </cv-empty-state>
+  <div slot="user-menu">
+    <cv-toolbar>
+      <div slot="title">Page toolbar</div>
+      <div slot="actionItems">
+        <cv-icon-button icon="filter_list"> </cv-icon-button>
+        <cv-icon-button icon="search"> </cv-icon-button>
+        <cv-icon-button icon="add"> </cv-icon-button>
+      </div>
+    </cv-toolbar>
+  </div>
+  <div slot="navigation">
+    <cv-list activatible>
+      <cv-nav-list-item hasChildren graphic="avatar">
+        Navigation item
+        <div slot="graphic">
+          <cv-icon> houseboat </cv-icon>
+        </div>
+        <div slot="expansion-panel">
+          <cv-list activatible subNav>
+            <cv-nav-list-item tabindex="-1" subnav> sub item </cv-nav-list-item>
+            <cv-nav-list-item tabindex="-1" subnav> sub item </cv-nav-list-item>
+          </cv-list>
+        </div>
+      </cv-nav-list-item>
+    </cv-list>
+  </div>
+</cv-app-shell>
+```
+
+### References
+
+* [MDC drawer](https://www.npmjs.com/package/@material/drawer)

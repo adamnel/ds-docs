@@ -1,0 +1,202 @@
+# Covalent / Inclusive language
+
+Inclusive writing is about using clear and thoughtful language to create a welcoming experience for all users. Follow these guidelines to ensure that everyone interacting with Teradata products feels welcome and included.
+
+These guidelines focus on using inclusive language in all customer-facing content. You'll see non-inclusive terms in programming language syntax or code. The guidelines provide you with ways to write around those terms and make a difference in promoting inclusive language.
+
+# 
+
+Gender
+
+Avoid assumptions about gender and identity. If you know a person’s preferred pronouns, use them. Otherwise, use “they” and “them.”
+
+# 
+
+Culture
+
+Do not use jargon, slang, colloquialisms, and idioms, especially those that refer to culture, folklore, and sports. They can be specific to certain groups of people or cultures, potentially excluding people who are not familiar with the references.
+
+##### Do
+
+Now, you can create your dashboard by selecting the widgets you want and arranging them the way you like.
+
+##### Don't
+
+Creating your personalized dashboard using widgets is now a breeze.
+
+  
+
+# 
+
+Race
+
+Even if unintentional, language can exclude or harm people who have been historically marginalized due to their race, ethnicity, or culture. Consider the diverse experiences of users and be intentional about using language that is bias-free. For example, do not use expressions that may have racist origins or connotations.
+
+##### Do
+
+primary
+
+secondary
+
+##### Don't
+
+master
+
+slave
+
+##### Do
+
+Synchronize the primary and secondary repositories. Otherwise, the secondary repository may not function correctly after you switch it to the primary mode.
+
+##### Don't
+
+Synchronize the master and slave repositories. Otherwise, the slave repository may not function correctly after you switch it to the master mode.
+
+##### Do
+
+blocklist (noun)
+
+allowlist (noun)
+
+block (verb)
+
+allow (verb)
+
+##### Don't
+
+blacklist (noun)
+
+whitelist (noun)
+
+##### Do
+
+ethical hacker
+
+unethical hacker
+
+##### Don't
+
+white hat
+
+black hat
+
+# 
+
+Disability
+
+Use language that is direct, clear, and welcoming for all users, including people with disabilities. Avoid euphemisms or patronizing terms such as differently abled, special needs, or hearing impaired to refer to people with disabilities.
+
+Never use "enable" or "disable" to directly describe people when you're referring to adding a capability for them or removing a capability from them.     
+
+##### Do
+
+Disable advanced reporting access for admin users.
+
+##### Don't
+
+Disable admin users for advanced reporting access.
+
+If you're referring to simple toggles or settings, use "turn on" and "turn off."
+
+##### Do
+
+You can turn off notifications.
+
+##### Don't
+
+You can disable notifications.
+
+For capabilities that involve permissions, access control, or a complex process, it's okay to use "enable" and "disable” as long as they don't directly describe people.
+
+# 
+
+Humor
+
+Humor varies widely across cultures, and what one group finds funny, another may find offensive or perplexing. Humor that can be interpreted as racist, ageist, or sexist can make users feel excluded. Also, it can distract users from the primary purpose of the content, which is to ensure users can do the job they set out to do.
+
+##### Do
+
+You can create a user in three steps.
+
+##### Don't
+
+Creating a user is so easy even my grandmother could do it.
+
+# 
+
+Figurative language
+
+Do not use figurative language that can be interpreted as insensitive or violent. You may need to work around such words that are established keywords in code, such as the keyword ABORT often used in programming languages and SQL. Minimize the use of the keyword in text and make sure to format it as a keyword. In Teradata documents, these types of commands or functions are frequently uppercase.
+
+##### Do
+
+ABORT SESSION
+
+Stops any outstanding request or transaction of one or more sessions.
+
+##### Don't
+
+ABORT SESSION
+
+Aborts any outstanding request or transaction of one or more sessions.
+
+##### Do
+
+end
+
+quit
+
+stop
+
+cancel
+
+##### Don't
+
+abort
+
+##### Do
+
+run
+
+process
+
+##### Don't
+
+execute
+
+##### Do
+
+stop responding
+
+pause
+
+suspend
+
+##### Don't
+
+hang
+
+##### Do
+
+end
+
+stop
+
+##### Don't
+
+kill
+
+To pick up a draggable item, press the space bar. While dragging, use the arrow keys to move the item. Press space again to drop the item in its new position, or press escape to cancel.
+
+Contents
+
+*   [Gender](#gender)
+*   [Culture](#culture)
+*   [Race](#race)
+*   [Disability](#disability)
+*   [Humor](#humor)
+*   [Figurative language](#figurative-language)
+
+*   [Workspace Repo](https://github.com/Teradata/covalent)
+
+[Powered by Knapsack](https://knapsack.cloud)Sign In

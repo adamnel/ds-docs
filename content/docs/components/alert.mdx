@@ -1,0 +1,219 @@
+---
+title: Alert
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Notification informing users about important information or events.
+
+## Usage
+
+<imagePlaceholder imageId="cv-alert_hero" />
+
+### When to use
+
+For making the user aware of a state of affairs that is preexisting when they load the page, but isn't important enough to stop them from continuing with their task.
+
+| Variant | Purpose |
+| --- | --- |
+| Full-page alert | For page-wide messaging. |
+| Inline alert | For messaging inside cards, dialogs and other containers. |
+
+### Full-page alerts
+
+Use these for page-wide messaging. They "float" among other page elements and do not touch edges.
+
+<imagePlaceholder imageId="cv-alert_type--full-page" />
+
+### Inline alerts
+
+Use these for messaging inside cards, dialogs and other containers. They are visually attached to the container around them, with no space between the alert and the edge of the container.
+
+<imagePlaceholder imageId="cv-alert_type--inline" />
+
+### Recommendations
+
+Use alerts for important information only. Overusing them can result in desensitization. For example, users may develop fatigue and stop paying attention to any of the alerts.
+
+### Usage — additional resources
+
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36756)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-alert_anatomy" />
+
+1. Icon to communicate the status or urgency.
+2. Gives a brief description.
+3. Gives a more detailed description.
+4. Contains the alert.
+5. and 6. Action buttons.
+
+### Typography
+
+Use these text styles for alert:
+
+1. body-1
+2. body-2
+
+<imagePlaceholder imageId="cv-alert_typography" />
+
+### Content guidelines
+
+<doDont
+  doBody={<>
+    * Write a header (body-1) and a description (body-2).
+    * For the header, include _no_ ending punctuation (even if it's a full sentence).
+    * For the description, always include ending punctuation.
+  </>}
+  dontBody={<>
+    Don't write one long description.
+  </>}
+/>
+
+### States
+
+#### Positive
+
+Use to indicate that a task or process has completed successfully. Use the "state\_positive" Covalent icon.
+
+<imagePlaceholder imageId="cv-alert_positive" />
+
+| Anatomy | Elements | Color token |
+| --- | --- | --- |
+| Full-page | 1, 2, 3, 5, 6 | on-positive |
+| Full-page | 4 | positive |
+| Inline | 1, 2, 3, 5, 6 | on-positive-container |
+| Inline | 4 | positive-container |
+
+#### Caution
+
+Use to indicate that a non-critical error has occurred. Use the "state\_caution" Covalent icon.
+
+<imagePlaceholder imageId="cv-alert_caution" />
+
+| Anatomy | Elements | Color token |
+| --- | --- | --- |
+| Full-page | 1, 2, 3, 5, 6 | on-caution |
+| Full-page | 4 | caution |
+| Inline | 1, 2, 3, 5, 6 | on-caution-container |
+| Inline | 4 | caution-container |
+
+#### Negative
+
+Use to indicate that a critical or blocking error has occurred. Use the "state\_error" Covalent icon. See also: [Errors](/docs/patterns/errors).
+
+<imagePlaceholder imageId="cv-alert_negative" />
+
+| Anatomy | Elements | Color token |
+| --- | --- | --- |
+| Full-page | 1, 2, 3, 5, 6 | on-negative |
+| Full-page | 4 | negative |
+| Inline | 1, 2, 3, 5, 6 | on-negative-container |
+| Inline | 4 | negative-container |
+
+#### Active
+
+Use for general informational messages. Default to the "info\_outlined" Material Symbols icon, but you may change this if the circumstance requires it.
+
+<imagePlaceholder imageId="cv-alert_active" />
+
+| Anatomy | Elements | Color token |
+| --- | --- | --- |
+| Full-page | 1, 2, 3, 5, 6 | on-secondary |
+| Full-page | 4 | secondary |
+| Inline | 1, 2, 3, 5, 6 | on-secondary-container |
+| Inline | 4 | secondary-container |
+
+#### Neutral
+
+Use for messages that require less visual prominence. Default to the "info\_outlined" Material Symbols icon, but you may change this if the circumstance requires it.
+
+<imagePlaceholder imageId="cv-alert_neutral" />
+
+| Anatomy | Elements | Color token |
+| --- | --- | --- |
+| Full-page | 1, 2, 3, 5, 6 | on-surface |
+| Full-page | 4 | surface-container-highest |
+| Inline | 1, 2, 3, 5, 6 | on-surface |
+| Inline | 4 | surface-container |
+
+### Responsive
+
+When expanding vertically, the elements within remain positioned as they were before expansion. They do not vertically center.
+
+<doDont
+  doBody={<>
+    Icon and buttons maintain their position relative to the top of the alert even if the content expands.
+  </>}
+  dontBody={<>
+    The icon and buttons should not vertically center when the alert grows in height.
+  </>}
+/>
+
+## Web components
+<storybookEmbed storyId="components-alert--page-level" height={300} embedMode="story" />
+
+
+### Full-page alert
+
+For page-wide messaging.
+
+**Props (summary)**
+
+icon · state: neutral | active | negative | positive | caution · inline · titleText · iconAriaLabel · descriptionText · action-items
+
+```html
+<cv-alert
+  icon="info"
+  state="neutral"
+  titleText="Alert title"
+  iconAriaLabel="aria-label for the icon"
+  descriptionText="Alert description">
+  <div slot="action-items">
+    <cv-button label="Label"> </cv-button>
+  </div>
+</cv-alert>
+```
+
+### How to import
+
+```js
+import '@covalent/components/alert';
+```
+
+### Methods
+
+| Method Signature | Description |
+| --- | --- |
+| `show() => void` | Opens the alert. |
+| `close(reason: CloseReason) => void` | Closes the alert, with the specified action indicating why it was closed. |
+
+### Web components — references
+
+* [MDC banner](https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0)
+* [Covalent design system — Alert](https://teradata.github.io/covalent/docs/components/?path=/docs/components-alert--overview)
+
+## Accessibility
+
+### Overview
+
+Banner notifications are designed to be accessible to everyone, enabling all users, regardless of ability, to receive important information and alerts effectively. These components are built to ensure that notifications are perceivable, operable, and understandable for users with various accessibility needs.
+
+### Keyboard interactions
+
+#### Tab index focus
+
+Ensures that banner notifications are included in the sequential keyboard navigation, allowing users to reach and interact with them using the Tab key.
+
+#### Hit area state
+
+A visible focus indicator highlights the banner notification when it gains keyboard focus, ensuring that users can easily identify which element is active.
+
+<imagePlaceholder imageId="cv-alert_accessibility" />
+
+### Accessibility — additional resources
+
+* [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility — banners](https://m2.material.io/components/banners/web#using-banners)

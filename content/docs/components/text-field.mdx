@@ -1,0 +1,297 @@
+---
+title: Text Field
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+A text field is an input element that allows users to type text into a form. It is used for capturing short text entries, such as names, email addresses, or any other single-line information. Text fields can be single-line or multi-line (text area) for longer inputs.
+
+## Usage
+
+<imagePlaceholder imageId="cv-text-field_hero" />
+
+### When to use
+
+Use a text field when you need to capture short, free-form input from users. For longer text or paragraphs, consider using a text area instead.
+
+| Variant | Purpose |
+| --- | --- |
+| Default | Use a text field to capture short, free-form input from users. |
+| Autocomplete | To help users quickly find and select options by typing and receiving predictive suggestions. |
+
+### Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+<doDont
+  doBody={<>
+    Use text fields for short, single-line input, such as names, email addresses, and search queries.
+  </>}
+  dontBody={<>
+    Long input in text fields can cause frustration and reduce efficiency.
+  </>}
+/>
+
+<doDont
+  doBody={<>
+    Make text fields large enough to display common inputs fully (e.g., email addresses).
+  </>}
+  dontBody={<>
+    Do not make text fields too small for the expected input.
+  </>}
+/>
+
+<doDont
+  doBody={<>
+    Provide clear error messages and highlight incorrect fields if validation fails.
+  </>}
+  dontBody={<>
+    Do not leave validation errors unclear or unmarked.
+  </>}
+/>
+
+<doDont
+  doBody={<>
+    Use text fields for fields like usernames or passwords where the input needs to be hidden.
+  </>}
+  dontBody={<>
+    Do not expose sensitive input in plain text fields without a visibility toggle.
+  </>}
+/>
+
+**Do:**
+
+* Ensure that text fields have clear and descriptive labels that indicate what information is required.
+* Provide input constraints (e.g., max-length, patterns) where necessary to guide user input.
+* Include helper or placeholder text sparingly, as it should not be used as a substitute for labels.
+* Use proper text field widths, ensuring they are large enough to accommodate typical input.
+* If applicable, provide inline validation messages to guide users as they fill out the form.
+
+**Don't:**
+
+* Overuse text fields for all inputs — use the appropriate input type for different data (e.g., use **email** for email address).
+* Use text fields without labels — always provide a label for accessibility and clarity.
+* Allow unbounded, unvalidated user input in critical fields (e.g., email addresses or phone numbers).
+
+### Usage — additional resources
+
+* [Angular Material component](https://material.angular.io/components/input/overview)
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8054-37781)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-text-field_anatomy" />
+
+1. Icon that is commonly used to indicate search functionality.
+2. Communicates the type of text input being requested.
+3. Serves as placeholder text and will be replaced by the user's input.
+4. Contains the input field.
+5. Icon that is commonly used to clear the input field, communicate a warning or error, or toggle visibility.
+6. Communicates an in-line error message.
+
+#### Label behavior
+
+Before text input has been entered, the label for the text field should be shown inside the input area. After the text field has been focused, the label should move above the input area to make room for user input.
+
+<imagePlaceholder imageId="cv-text_field_anatomy_label_behavior" />
+
+#### Placeholder behavior
+
+A placeholder is optional and may be used to better communicate the type of input being requested. It becomes visible once the text field has been focused to show an example of appropriate input.
+
+<imagePlaceholder imageId="cv-text_field_anatomy_placeholder_behavior" />
+
+#### Help and errors
+
+The line of text directly underneath the text field should only be used to communicate an in-line error message.
+
+To provide helpful content about the input being requested, use the header and message above the text field.
+
+<imagePlaceholder imageId="cv-text_field_help_and_errors" />
+
+### Typography
+
+Use these text styles for text field:
+
+1. caption
+2. body-1
+3. caption
+
+<imagePlaceholder imageId="cv-text-field_typography" />
+
+### Content guidelines
+
+Text fields are for collecting input. Clear labels and placeholders minimize input errors.
+
+* **Categorization**: Use text fields for short, single-line inputs. Use text areas for longer text inputs.
+* **Tone**: Use imperative verbs and short phrases to be clear and direct.
+* **Word Limit**: Labels should be as few words as possible. Use one or two words to describe the input requested. Placeholder text up to 30 characters.
+
+<doDont
+  doBody={<>
+    Label: "Email address"
+  </>}
+  dontBody={<>
+    Label: "Your email address goes here."
+  </>}
+/>
+
+### States
+
+#### Enabled
+
+<imagePlaceholder imageId="cv-text-field_anatomy_enabled" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2, 5, 6 | on-surface-variant |
+| 3 | on-surface |
+| 4 | outline |
+
+#### Hovered
+
+<imagePlaceholder imageId="cv-text-field_anatomy_hovered" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 5, 6 | on-surface-variant |
+| 2, 3, 4 | on-surface |
+
+#### Focused
+
+<imagePlaceholder imageId="cv-text-field_anatomy_focused" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 5, 6 | on-surface-variant |
+| 2, 4 | primary |
+| 3 | on-surface |
+
+#### Error
+
+<imagePlaceholder imageId="cv-text-field_anatomy_error" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2, 4, 5, 6 | negative |
+| 3 | on-surface |
+
+#### Error focused
+
+<imagePlaceholder imageId="cv-text-field_anatomy_error_focused" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2, 4, 5, 6 | negative |
+| 3 | on-surface |
+
+#### Disabled
+
+<imagePlaceholder imageId="cv-text-field_anatomy_disabled" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2, 3, 5, 6 | on-surface-38 |
+| 4 | outline-12 |
+
+## Web components
+<storybookEmbed storyId="components-text-field--basic" height={300} embedMode="story" />
+
+
+### Demos
+
+* Main
+* AI Chat
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `value` | Current value of the text field |
+| `type` | Input type (text, search, tel, url, email, password, date, month, week, time, datetime-local, number, color) |
+| `label` | Label text |
+| `name` | Name attribute |
+| `placeholder` | Placeholder text |
+| `helper` | Helper text |
+| `helperPersistent` | Keep helper text visible |
+| `outlined` | Outlined style variant |
+| `required` | Whether input is required |
+| `disabled` | Whether the field is disabled |
+| `dense` | Dense layout variant |
+| `prefix` | Prefix text |
+| `suffix` | Suffix text |
+| `pattern` | Validation pattern |
+| `min` | Minimum value |
+| `max` | Maximum value |
+| `size` | Size attribute |
+| `step` | Step increment |
+| `icon` | Leading icon |
+| `iconTrailing` | Trailing icon |
+| `maxLength` | Maximum character length |
+| `charCounter` | Show character counter |
+| `validity` | Validity state |
+| `autoValidate` | Auto-validate on change |
+| `validationMessage` | Custom validation message |
+| `willValidate` | Whether the field will validate |
+| `validityTransform` | Custom validity transform |
+| `validateOnInitialRender` | Validate on initial render |
+
+### Code example
+
+```html
+<cv-textfield
+  placeholder="Placeholder"
+  helper="helper text"
+  label="Text field"
+  icon="person"
+  outlined
+  validity="{}"
+  willValidate="{}"
+  validityTransform="{}">
+</cv-textfield>
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `checkValidity() => boolean` | Returns `true` if the textfield passes validity checks. Returns `false` and fires an `invalid` event on the textfield otherwise. |
+| `reportValidity() => boolean` | Runs `checkValidity()` method, and if it returns false, then it reports to the user that the input is invalid. |
+| `setCustomValidity(message:string) => void` | Sets a custom validity message (also overwrites `validationMessage`). If this message is not the empty string, then the element is suffering from a custom validity error and does not validate. |
+| `layout() => Promise<void>` | Re-calculate layout. If a textfield is styled with `display:none` before it is first rendered, and it has a label that is floating, then you must call `layout()` the first time you remove `display:none`, or else the notch surrounding the label will not render correctly. |
+
+### References
+
+* [MWC textfield](https://www.npmjs.com/package/@material/mwc-textfield)
+* [Covalent design system - Textfield](https://teradata.github.io/covalent/docs/components/?path=/docs/components-text-field--overview)
+
+## Accessibility
+
+### Overview
+
+Text fields must provide clear labels, error messaging, and accessible feedback to help all users confidently complete tasks. Visual focus states and assistive technology support ensure inclusivity and clarity.
+
+### Keyboard interactions
+
+* **Tab key**: Focuses the field.
+* **Shift + tab**: Moves focus to the previous element.
+* **Arrow keys**: Navigate within the field's content.
+* **Enter/Return key**: Submits associated forms, where applicable.
+
+<imagePlaceholder imageId="cv-text-field_accessibility1" />
+
+### Tab index focus
+
+* **tabindex="0"** includes fields in the natural tab flow.
+* Disabled fields are removed from the tab order.
+* Focus states must be clear and WCAG-compliant.
+
+<imagePlaceholder imageId="cv-text-field_accessibility2" />
+
+### Accessibility — additional resources
+
+* [Web Content Accessibility Guidelines (WCAG) component standards](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility component guidelines](https://m2.material.io/components/text-fields)

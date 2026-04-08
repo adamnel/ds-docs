@@ -5,9 +5,13 @@ import { ApiReferenceTemplate } from "@/tina/templates/markdown-embeds/api-refer
 import CalloutTemplate from "@/tina/templates/markdown-embeds/callout.template";
 import CardGridTemplate from "@/tina/templates/markdown-embeds/card-grid.template";
 import CodeTabsTemplate from "@/tina/templates/markdown-embeds/code-tabs.template";
+import DoDontTemplate from "@/tina/templates/markdown-embeds/do-dont.template";
 import { FileStructureTemplate } from "@/tina/templates/markdown-embeds/file-structure.template";
+import IconsUsageGuideTemplate from "@/tina/templates/markdown-embeds/icons-usage-guide.template";
+import ImagePlaceholderTemplate from "@/tina/templates/markdown-embeds/image-placeholder.template";
 import RecipeTemplate from "@/tina/templates/markdown-embeds/recipe.template";
 import ScrollShowcaseTemplate from "@/tina/templates/markdown-embeds/scroll-showcase.template";
+import StorybookEmbedTemplate from "@/tina/templates/markdown-embeds/storybook-embed.template";
 import { TypeDefinitionTemplate } from "@/tina/templates/markdown-embeds/type-definition.template";
 import YoutubeTemplate from "@/tina/templates/markdown-embeds/youtube.template";
 import type { Template } from "tinacms";
@@ -94,7 +98,11 @@ export const docsCollection = {
         ApiReferenceTemplate as Template,
         YoutubeTemplate as Template,
         CodeTabsTemplate as Template,
+        ImagePlaceholderTemplate as Template,
+        IconsUsageGuideTemplate as Template,
+        DoDontTemplate as Template,
         CalloutTemplate as Template,
+        StorybookEmbedTemplate as Template,
         TypeDefinitionTemplate as Template,
         FileStructureTemplate as unknown as Template,
       ],

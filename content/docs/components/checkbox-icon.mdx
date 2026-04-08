@@ -1,0 +1,232 @@
+---
+title: Checkbox Icon
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Checkbox styled with an icon as its visual representation.
+
+## Usage
+
+<imagePlaceholder imageId="cv-checkbox-icon_hero" />
+
+### When to use
+
+Checkbox icons should be used when multiple selections are allowed from a set of options. These function identically to [standard checkboxes](/docs/components/checkbox), but present in a more visually impactful way, and provide a much larger click target.
+
+### Recommendations
+
+<doDont
+  doBody={<>
+    * Provide clear labels and group checkbox icons logically.
+    * Use checkbox icons for tasks like agreeing to terms and conditions, selecting multiple items, or confirming options.
+    * Ensure that checkbox icons are large enough to be easily clickable and usable on all screen sizes.
+    * When necessary, include a "select all" checkbox icon that allows the user to select all available options.
+    * Use checkbox icons when users need to select more than one option.
+  </>}
+  dontBody={<>
+    * Use checkbox icons for mutually exclusive choices -- use [radio icons](/docs/components/radio-icon) instead.
+    * **Overuse checkbox icons for secondary or non-critical options.** This can overwhelm users and make forms feel cluttered.
+    * Leave checkbox icons unchecked without a clear indication of their current state.
+  </>}
+/>
+
+### Usage -- additional resources
+
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=20575-47522)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy" />
+
+1. Icon.
+2. (optional) Primary label.
+3. (optional) Description / supporting text.
+
+### Content guidelines
+
+The checkbox icon helps users make binary choices. Clear labeling and contextual guidance ensure correct usage and understanding.
+
+* **Categorization**: Group related checkbox icons with a clear group label.
+* **Voice & tone**: Direct and supportive. Avoid jargon.
+* **Word limit**: Limit label text to 3-5 words. Helper text can be up to 50 characters.
+
+### Typography
+
+<imagePlaceholder imageId="cv-checkbox-icon_typography" />
+
+| Anatomy | Typography token |
+| --- | --- |
+| 1 | body-1 |
+| 2 | body-2 |
+
+### States
+
+#### Selected
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_selected" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | primary |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | inverse-on-primary |
+| 5 | primary |
+| 6 | primary-12 |
+| 7 | primary |
+
+#### Unselected
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_unselected" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | transparent |
+| 5 | outline |
+
+#### Disabled
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_disabled" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-38 |
+| 2 | on-surface-38 |
+| 3 | on-surface-38 |
+| 4 | transparent |
+| 5 | outline-variant |
+
+#### Interaction states
+
+The following interaction states are available for checkboxes. See the state layers section on the [Colors page](/docs/foundations/color) for more details.
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_interaction-states" />
+
+#### Selected (hovered)
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_selected_hovered" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | primary |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | inverse-on-primary |
+| 5 | primary |
+| 6 | primary-16 |
+| 7 | primary |
+
+#### Selected (focused) and selected (pressed)
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_selected_focused_pressed" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | primary |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | inverse-on-primary |
+| 5 | primary |
+| 6 | primary-20 |
+| 7 | primary |
+
+#### Unselected (hovered)
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_unselected_hovered" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | on-surface-8 |
+| 5 | outline |
+
+#### Unselected (focused) and unselected (pressed)
+
+<imagePlaceholder imageId="cv-checkbox-icon_anatomy_unselected_focused_pressed" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | on-surface-12 |
+| 5 | outline |
+
+## Web components
+<storybookEmbed storyId="components-icon-checkbox--template" height={300} embedMode="story" />
+
+
+### Demos
+
+* Unchecked
+* Checked
+* Disabled
+
+### Unchecked
+
+```html
+<cv-checkbox-icon width="200" height="160">
+  <div slot="text">Balance Every week</div>
+  <div slot="icon">
+    <cv-icon> houseboat </cv-icon>
+  </div>
+</cv-checkbox-icon>
+```
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `checked` | Whether the checkbox icon is checked |
+| `disabled` | Whether the checkbox icon is disabled |
+| `iconOnly` | Whether to show only the icon |
+| `value` | The value of the checkbox icon |
+| `width` | Width of the component |
+| `height` | Height of the component |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `change` | `cv-checkbox-icon` | `{}` | Fired when the user modifies the checkbox `checked` state from an input device interaction. Note that, like native `<input>`, the `change` event is *not* fired when the `checked` property is set from JavaScript. |
+
+### References
+
+* [MWC checkbox](https://www.npmjs.com/package/@material/mwc-checkbox)
+* [Covalent design system - Icon checkbox](https://teradata.github.io/covalent/docs/components/?path=/docs/components-icon-checkbox--overview)
+
+## Accessibility
+
+### Overview
+
+Checkboxes support multiple selections and require clear labeling, focus states, and error handling to guide user actions effectively.
+
+### Keyboard interactions
+
+Checkbox icons should be fully operable via keyboard:
+
+* **Tab key**: Focuses the checkbox icon.
+* **Spacebar**: Toggles the checkbox icon on or off.
+* **Arrows**: Moves the selection.
+
+<imagePlaceholder imageId="cv-checkbox-icon_accessibility1" />
+
+### Tab index focus
+
+* **tabindex="0"** for active checkboxes.
+* Provide clear focus and selection indicators.
+* Exclude disabled checkboxes from the tab order.
+
+<imagePlaceholder imageId="cv-checkbox-icon_accessibility2" />
+
+### Accessibility -- additional resources
+
+* [Web Content Accessibility Guidelines (WCAG) component standards](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility component guidelines](https://m2.material.io/components/checkboxes/web#using-checkboxes)

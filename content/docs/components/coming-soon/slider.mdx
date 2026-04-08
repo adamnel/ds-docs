@@ -1,0 +1,80 @@
+---
+title: Slider
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Input control allowing users to select a value within a range.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design: Slider](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8074-25562)
+* [Legacy document: Sliders](https://www.figma.com/design/5o27U9LkUuhyWCDC0BNpZN/Sliders?m=auto&t=igsBXlZlwwHQzjtQ-6)
+* [Material Design: Sliders](https://m2.material.io/components/sliders)
+* [Angular Material: Sliders](https://material.angular.io/components/slider/overview)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `value` | Current value |
+| `valueEnd` | End value (for range) |
+| `min` | Minimum value |
+| `max` | Maximum value |
+| `step` | Step increment |
+| `withTickMarks` | Show tick marks |
+| `disabled` | Disables the slider |
+| `discrete` | Enables discrete mode with value indicator |
+
+```html
+<cv-slider value="0" valueEnd="0" min="0" step="1" withTickMarks="0"></cv-slider>
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `valueToValueIndicatorTransform(value: number) => string` | Override this method to transform the value of a given knob to the text that should be displayed in the value indicator of a discrete slider. Additionally, this will set the `aria-valuetext`. |
+| `layout(skipUpdateUI = false) => Promise<void>` | Recomputes the dimensions and re-lays out the component. This should be called if the dimensions of the slider itself or any of its parent elements change programmatically (it is called automatically on pointerdown). The `skipUpdateUI` parameter determines whether the UI should be updated alongside the internal clientRect model. |
+
+### Events
+
+| Event name | Detail | Description |
+| --- | --- | --- |
+| `input` | `{value: number, thumb: Thumb}` | Fired when the value changes due to user input. Similar to the `input` event of the native `<input type="range">` element, the `input` event will not fire when `value` is modified via JavaScript. |
+| `change` | `{value: number, thumb: Thumb}` | Fired when the value changes and the user has finished interacting with the slider. Similar to the `change` event of the native `<input type="range">` element, the `change` event will not fire when `value` is modified via JavaScript. |
+
+`Thumb` is a TypeScript enum exported by this component with types `START` and `END`.
+
+### Range slider
+
+The range slider variant allows selecting a range with start and end values.
+
+```html
+<cv-slider-range> </cv-slider-range>
+```
+
+#### Range slider properties
+
+| Property | Description |
+| --- | --- |
+| `disable` | Disables the slider |
+| `discrete` | Enables discrete mode |
+| `withTickMarks` | Show tick marks |
+| `valueStart` | Start value |
+| `valueEnd` | End value |
+| `min` | Minimum value |
+| `max` | Maximum value |
+| `step` | Step increment |
+
+The range slider shares the same methods and events as the standard slider.
+
+### References
+
+* [MWC Slider](https://www.npmjs.com/package/@material/mwc-slider)
+* [Covalent design system - Slider](https://teradata.github.io/covalent/docs/components/?path=/docs/components-slider--overview)

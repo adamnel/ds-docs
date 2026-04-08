@@ -1,0 +1,62 @@
+---
+title: Notebook Cell
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+A cell component for notebook-style interfaces, supporting code editing and output display.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design: Notebook cell](https://www.figma.com/design/18vXeywqkVXdRO6Ta8RbZd/Notebook-cell-component?node-id=12361-7538)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `code` | Code content for the cell |
+| `editorTheme` | Theme for the editor |
+| `hideCount` | Hides the execution count |
+| `hideEditor` | Hides the editor |
+| `index` | Cell index |
+| `language` | Programming language |
+| `loading` | Shows loading state |
+| `selected` | Whether the cell is selected |
+| `timesExecuted` | Number of times executed |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `context-menu` | Context menu content |
+| `drag-handle` | Drag handle element |
+| `error` | Error output |
+| `output` | Cell output |
+
+```html
+<cv-notebook-cell
+  code="Select * from DBC.UserInfo;"
+  language="sql"
+  editorTheme="cv-light"
+  selected
+  timesExecuted="2">
+  <div slot="drag-handle">
+    <cv-icon-button icon="drag_indicator"> </cv-icon-button>
+  </div>
+</cv-notebook-cell>
+```
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `code-change` | `cv-notebook-cell` | `{ code: string }` | Event emitted when the code in the editor is changed. |
+
+### References
+
+* [Covalent design system - Notebook cell](https://teradata.github.io/covalent/docs/components/?path=/docs/components-notebook-cell--overview)

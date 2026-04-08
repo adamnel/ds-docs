@@ -149,6 +149,318 @@
         }
       ],
       "_template": "apiTab"
+    },
+    {
+      "title": "Getting Started",
+      "supermenuGroup": [
+        {
+          "title": "Getting Started",
+          "items": [
+            {
+              "slug": "content/docs/getting-started/get-started.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/getting-started/designers.mdx",
+              "_template": "item"
+            }
+          ]
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Foundations",
+      "supermenuGroup": [
+        {
+          "title": "Foundations",
+          "items": [
+            {
+              "slug": "content/docs/foundations/color.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/foundations/typography.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/foundations/icons.mdx",
+              "_template": "item"
+            }
+          ]
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Components",
+      "supermenuGroup": [
+        {
+          "title": "Components",
+          "items": [
+            {
+              "slug": "content/docs/components/action-ribbon.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/alert.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/button.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/checkbox.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/checkbox-icon.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/dialog.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/empty-state.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/list.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/menu.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/radio.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/radio-icon.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/select.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/snackbar.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/text-field.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/toolbar.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/tree-list.mdx",
+              "_template": "item"
+            }
+          ]
+        },
+        {
+          "title": "Coming soon",
+          "defaultCollapsed": true,
+          "items": [
+            {
+              "slug": "content/docs/components/coming-soon/app-shell.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/badge.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/breadcrumbs.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/card.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/chip.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/chip-set.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/circular-progress.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/code-snippet.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/expansion-panel.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/expansion-panel-item.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/focused-page.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/form-field.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/full-screen-dialog.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/icon.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/icon-button.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/icon-button-toggle.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/icon-lockup.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/linear-progress.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/notebook-cell.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/range-slider.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/side-sheet.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/slider.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/status-dialog.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/status-header.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/switch.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/tab.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/tab-bar.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/text-area.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/text-lockup.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/tooltip.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/top-app-bar.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/tree-list-item.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/components/coming-soon/typography.mdx",
+              "_template": "item"
+            }
+          ]
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Patterns",
+      "supermenuGroup": [
+        {
+          "title": "Patterns",
+          "items": [
+            {
+              "slug": "content/docs/patterns/errors.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/patterns/onboarding-cards.mdx",
+              "_template": "item"
+            }
+          ]
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Content",
+      "supermenuGroup": [
+        {
+          "title": "Content Guidelines",
+          "items": [
+            {
+              "slug": "content/docs/content-guidelines/voice-and-tone.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/content-guidelines/inclusive-language.mdx",
+              "_template": "item"
+            }
+          ]
+        }
+      ],
+      "_template": "docsTab"
+    },
+    {
+      "title": "Feedback",
+      "supermenuGroup": [
+        {
+          "title": "Feedback",
+          "items": [
+            {
+              "slug": "content/docs/feedback-section/feedback.mdx",
+              "_template": "item"
+            },
+            {
+              "slug": "content/docs/feedback-section/info-and-help.mdx",
+              "_template": "item"
+            }
+          ]
+        }
+      ],
+      "_template": "docsTab"
     }
   ],
   "ctaButtons": {

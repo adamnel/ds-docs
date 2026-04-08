@@ -1,0 +1,79 @@
+---
+title: Full-Screen Dialog
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+A dialog that takes over the entire screen, used for complex tasks requiring full user attention.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Full-screen dialog (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=13613-303)
+* [New pattern document - Full-screen takeovers (Figma)](https://www.figma.com/design/6w5IaiDUeLVuAPsOBu9JYM/Full-screen-takeover?node-id=4460-42291&t=aTj3STGtCbCocR8w-4)
+
+## Web components
+
+This component extends `cv-dialog`. Refer to the dialog documentation for a complete list of available methods, listeners, and events.
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `open` | `boolean` | Whether the dialog is open. |
+| `escapeKeyAction` | `string` | Action to take when the escape key is pressed (e.g., `"close"`). |
+| `helpResizable` | `boolean` | Whether the help panel is resizable. |
+| `helpOpen` | `boolean` | Whether the help panel is open. |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `default` | Main dialog content. |
+| `help` | Help panel content displayed in a side panel. |
+
+### Example
+
+```html
+<cv-full-screen-dialog escapeKeyAction="close" open>
+  <div style="display: flex; width: 100%; flex-flow: column; gap: 100px">
+    <cv-toolbar>
+      <div slot="title">Full-screen dialog demo</div>
+      <div slot="actionItems">
+        <cv-textfield icon="forum" placeholder="Message Ask.ai" dense>
+        </cv-textfield>
+        <cv-icon-button icon="help"> </cv-icon-button>
+        <cv-icon-button icon="notifications"> </cv-icon-button>
+        <cv-icon-button icon="person"> </cv-icon-button>
+      </div>
+    </cv-toolbar>
+    <cv-empty-state
+      headline="You don't have access to this area"
+      subtitle="You don't have permission to view this application."
+      icon="lock">
+      <div slot="button">
+        <cv-button label="test"> </cv-button>
+      </div>
+    </cv-empty-state>
+  </div>
+  <div slot="help">
+    <cv-toolbar>
+      <div slot="title">Help</div>
+      <div slot="actionItems">
+        <cv-icon-button icon="fullscreen"> </cv-icon-button>
+      </div>
+    </cv-toolbar>
+    <cv-typography scale="body1">
+      <div style="padding-left: 12px; padding-right: 12px">
+        Help content goes here.
+      </div>
+    </cv-typography>
+  </div>
+</cv-full-screen-dialog>
+```
+
+### References
+
+* [MWC dialog](https://www.npmjs.com/package/@material/mwc-dialog)

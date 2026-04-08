@@ -1,0 +1,54 @@
+---
+title: Status Header
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Header section indicating the status or context of the content.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Legacy document: Status header](https://www.figma.com/design/QEsEBeodi4w7nL2Gt2Xxlb/Status-header?m=auto&t=igsBXlZlwwHQzjtQ-6)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `titleText` | Title text |
+| `statusText` | Status label text |
+| `statusHelper` | Helper text for the status |
+| `state` | Visual state. One of: `active`, `positive`, `caution`, `error`, `neutral` |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `status-header-actions` | Action buttons (e.g., close icon) |
+| `status-header-icon` | Custom icon or indicator |
+| `status-header-text` | Additional text content |
+
+```html
+<cv-status-header
+  titleText="Active item details"
+  statusText="In progress"
+  statusHelper="the helper text for the status"
+  state="active">
+  <div slot="status-header-text"></div>
+  <div slot="status-header-actions">
+    <cv-icon-button icon="close"> </cv-icon-button>
+  </div>
+  <div slot="status-header-icon">
+    <cv-circular-progress indeterminate progress="0" density="0">
+    </cv-circular-progress>
+  </div>
+</cv-status-header>
+```
+
+### References
+
+* [Covalent design system - Status Header](https://teradata.github.io/covalent/docs/components/?path=/docs/components-status-header--overview)

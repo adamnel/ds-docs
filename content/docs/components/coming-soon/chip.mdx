@@ -1,0 +1,41 @@
+---
+title: Chip
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Individual item within a chip set.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Chips (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=8169-5797)
+* [Material Design - Chips](https://m2.material.io/components/chips)
+* [Angular Material - Chips](https://material.angular.io/components/chips/overview)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `label` | `string` | **Required.** The text label for the chip. |
+| `state` | `"secondary" \| "negative" \| "positive" \| "caution"` | Visual state variant. |
+| `icon` | `string` | Leading icon name. |
+| `filter` | `boolean` | Whether the chip is a filter chip (shows checkmark when selected). |
+| `trailingIcon` | `string` | Trailing icon name. |
+| `avatar` | `boolean` | Whether to show an avatar. |
+| `disabled` | `boolean` | Whether the chip is disabled. |
+
+### Example
+
+```html
+<cv-chip label="Chip" filter state="secondary"> </cv-chip>
+```
+
+### References
+
+* [MDC chips](https://www.npmjs.com/package/@material/chips)
+* [Covalent design system - Chips](https://teradata.github.io/covalent/docs/components/?path=/docs/components-chips--overview)

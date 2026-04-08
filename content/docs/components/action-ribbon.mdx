@@ -1,0 +1,308 @@
+---
+title: Action Ribbon
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Provide a common, dynamic region for user actions and feedback which applies to a subset of the UI.
+
+## Usage
+
+<imagePlaceholder imageId="cv-action-ribbon_hero" />
+
+### When to use
+
+Action Ribbon should be used to streamline user actions such as save, edit, delete, or configure, making them easily accessible in a consistent location. It's best applied in contexts like forms or data management interfaces where quick access to actions is beneficial.
+
+| Variant | Purpose |
+| --- | --- |
+| **Default** | To enhance user efficiency by grouping related actions in a visible, easily accessible manner, ideal for complex tasks in data-rich environments. |
+
+### Bulk selection
+
+Provide feedback and -- if warranted -- different actions for multi-selection. This allows the same actions area to provide general actions when nothing is selected, and specific bulk actions when relevant in the same space.
+
+#### Default / inactive
+
+No items have been selected.
+
+<imagePlaceholder imageId="cv-action-ribbon_bulk-selection--default" />
+
+#### Items selected
+
+Items have been selected. Replace actions with those that are relevant when applied to the selected items. Sometimes actions apply in both cases.
+
+<imagePlaceholder imageId="cv-action-ribbon_bulk-selection--selected" />
+
+### Mini-toolbar vs. action ribbon
+
+These two components are very similar looking, but function differently. In some cases they are used together.
+
+#### Mini-toolbar
+
+* Contains a title
+* Contains a close button
+* Does not provide user feedback messages
+
+<imagePlaceholder imageId="cv-action-ribbon_ribbon-vs-toolbar--toolbar" />
+
+#### Action ribbon
+
+* Does not contain a title
+* Does not contain a close button
+* Provides user feedback messages
+
+<imagePlaceholder imageId="cv-action-ribbon_ribbon-vs-toolbar--action-ribbon" />
+
+### Recommendations
+
+<doDont
+  doBody={<>
+    * **Do use in contexts like forms or data management interfaces** where quick access to actions is beneficial.
+    * **Do use the action ribbon for grouping actions** that are relevant to the current page or context to keep user workflows streamlined and intuitive.
+    * **Do prioritize actions** based on their importance and frequency of use, placing the most common actions within easy reach.
+    * **Do maintain consistency** in action placement and labeling across different parts of the application to reduce learning curves and enhance user experience.
+  </>}
+  dontBody={<>
+    * **Don't** use the action ribbon in simple interfaces where fewer actions are needed.
+    * **Don't overload the action ribbon** with too many actions, which can overwhelm users and dilute the importance of primary actions.
+    * **Don't mix action types** that aren't related, as this can confuse users about the expected outcomes of their interactions.
+  </>}
+/>
+
+### Usage -- additional resources
+
+* [Toolbars](/docs/components/toolbar)
+* [Color](/docs/foundations/color)
+* [Material Angular](https://material.angular.io/components/toolbar/overview)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-action-ribbon_anatomy2" />
+
+Action ribbons are split into two regions, with the section context (usually the title) aligned to the left, and the page actions aligned to the right.
+
+1. Icon to communicate status.
+2. Text to communicate status.
+3. Contains the action ribbon contents.
+4. Ribbon underline.
+5. All status related items.
+6. All actions, including icon buttons or regular buttons. Try to keep the number of page actions to three or less.
+
+### Typography
+
+Use these text styles for action ribbon:
+
+1. caption
+
+<imagePlaceholder imageId="cv-action-ribbon_typography" />
+
+### Placement
+
+Action ribbons are embedded in the page directly above the area to which they apply.
+
+<imagePlaceholder imageId="cv-action-ribbon_placement" />
+
+### Action placement order
+
+Use this order to help maintain consistency between applications.
+
+*From right to left:*
+
+* Add button (if any)
+* Search button (if any)
+* Less common functions
+* Overflow menu (if any)
+
+<imagePlaceholder imageId="cv-action-ribbon_placement-order" />
+
+### Area of influence
+
+Actions and messages delivered by the action ribbon apply ONLY to the region immediately below.
+
+<imagePlaceholder imageId="cv-action-ribbon_area-of-influence" />
+
+### Content guidelines
+
+Action Ribbons streamline workflows by facilitating user actions with clear icons and labels.
+
+**Categorization**
+
+* **Primary Actions**: Use prominent buttons for essential actions.
+* **Secondary Actions**: Employ smaller icons for less frequent tasks.
+
+**Voice & Tone:** Direct and supportive, providing immediate feedback.
+
+**Label and Icon Use:**
+
+* **Labels:** Up to 3 words.
+* **Icons:** Universally recognizable.
+* **Tooltips:** Concise, no more than 30 characters.
+
+### States
+
+#### Default/inactive
+
+Nothing in particular is happening.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--default-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 2 | on-surface-38 |
+| 4 | outline-variant |
+
+#### Active
+
+A change has been made in the page. For example, a bulk selection or a form edit.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--active-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 2 | primary |
+| 3 | primary-8 |
+| 4 | outline-variant |
+
+#### Caution
+
+A warning or other item that should draw attention but isn't necessarily an error.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--caution-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2 | caution |
+| 3 | caution-8 |
+| 4 | outline-variant |
+
+#### Negative
+
+Something negative happened, such as a form validation error.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--negative-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2 | negative |
+| 3 | negative-8 |
+| 4 | outline-variant |
+
+#### Positive
+
+Something good happened.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--positive-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2 | positive |
+| 3 | positive-8 |
+| 4 | outline-variant |
+
+#### Loading
+
+An ongoing operation is underway.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--loading-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2 | primary |
+| 4 | outline-variant |
+
+#### Pending
+
+Something is waiting before taking action.
+
+<imagePlaceholder imageId="cv-action-ribbon_state--pending-colors" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1, 2 | on-surface-variant |
+| 4 | outline-variant |
+
+## Web components
+<storybookEmbed storyId="components-action-ribbon--neutral" height={300} embedMode="story" />
+
+
+### Demos
+
+* Default / inactive
+* Active
+* Caution
+* Negative
+* Positive
+* Loading
+* Pending
+* Bulk selection default / inactive
+* Bulk selection active
+
+### Default / inactive
+
+```html
+<cv-action-ribbon labelText="No changes" iconAriaLabel="info">
+  <div slot="action-items">
+    <cv-button label="Cancel" outlined color="secondary"> </cv-button>
+    <cv-button label="Save" raised disabled> </cv-button>
+  </div>
+</cv-action-ribbon>
+```
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `labelText` | The text label displayed in the ribbon |
+| `state` | The state of the ribbon: `active`, `negative`, `positive`, `caution` |
+| `icon` | Icon to display |
+| `iconAriaLabel` | Accessible label for the icon |
+| `centered` | Whether to center the content |
+
+### How to import
+
+```js
+import '@covalent/components/action-ribbon';
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `show() => void` | Opens the action ribbon. |
+| `close(reason: CloseReason) => void` | Closes the action ribbon, with the specified action indicating why it was closed. |
+
+### References
+
+* [MDC banner](https://www.npmjs.com/package/@material/banner/v/11.0.0-canary.dc9c84023.0?activeTab=readme)
+* [Covalent design system - Action ribbon](https://teradata.github.io/covalent/docs/components/?path=/docs/components-action-ribbon--overview)
+
+## Accessibility
+
+### Overview
+
+The Action Ribbon is an essential component designed to enhance user interaction and feedback by providing a common, dynamic region for action controls. Accessibility in the Action Ribbon ensures that all users, including those with disabilities, can navigate and operate the component effectively, promoting inclusivity and usability.
+
+### Keyboard interactions
+
+Action Ribbon should be fully operable via keyboard:
+
+* **Tab Key**: Moves focus to the Action Ribbon.
+* **Spacebar**: Activates the focused action within the ribbon.
+
+### Tab index focus
+
+* **tabindex="0"**: Assigned to interactive elements of the Action Ribbon to include them in the sequential keyboard navigation.
+* Provide clear visual indicators when elements are focused or selected.
+* Ensure that disabled actions are excluded from the tab order to prevent confusion during navigation.
+
+<imagePlaceholder imageId="cv-action_ribbon_accessibility" />
+
+### Hit area state
+
+When focused, the Action Ribbon displays a clear visual indicator, making it easy for users to identify which part of the ribbon is active. This aids users who rely on visual cues to navigate.
+
+### Accessibility -- additional resources
+
+* [Material Angular - Accessibility](https://material.angular.io/components/toolbar/overview#accessibility)

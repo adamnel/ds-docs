@@ -1,0 +1,62 @@
+---
+title: Expansion Panel Item
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Individual item within an expansion panel.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* See also: [Expansion panel](/docs/components/expansion-panel)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `title` | `string` | The title displayed in the panel header. |
+| `contentPreview` | `string` | Preview text shown when the panel is collapsed. |
+| `index` | `number` | Index of the panel item within the parent expansion panel. |
+| `open` | `boolean` | Whether the panel item is expanded. |
+| `isTopPanel` | `boolean` | Whether this is the top panel in a group. |
+| `isBottomPanel` | `boolean` | Whether this is the bottom panel in a group. |
+| `isInnerPanel` | `boolean` | Whether this is an inner panel in a group. |
+| `isSinglePanel` | `boolean` | Whether this is the only panel in a group. |
+| `belowOpenInnerPanel` | `boolean` | Whether this panel is below an open inner panel. |
+| `aboveOpenInnerPanel` | `boolean` | Whether this panel is above an open inner panel. |
+| `separateSinglePanel` | `boolean` | Whether to visually separate a single panel. |
+| `showFooter` | `boolean` | Whether to show the footer area. |
+| `noSurface` | `boolean` | Whether to remove the surface background. |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `content` | The expandable content area. |
+| `footer` | Footer content shown when expanded. |
+
+### Example
+
+```html
+<cv-expansion-panel-item
+  title="Title"
+  index="0"
+  contentPreview="content preview">
+  <div slot="content"></div>
+</cv-expansion-panel-item>
+```
+
+### Events
+
+| Event name | Detail | Description |
+| --- | --- | --- |
+| `cv-expansionPanel-togglePanel` | `{ message: string, bubbles: boolean, composed: boolean, open: boolean, index: number }` | Fired when the expansion panel item is toggled open or closed. |
+
+### References
+
+* [Covalent design system - Expansion panel](https://teradata.github.io/covalent/docs/components/?path=/docs/components-expansion-panel--overview)

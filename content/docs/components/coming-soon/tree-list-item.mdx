@@ -1,0 +1,45 @@
+---
+title: Tree List Item
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Item within a tree list.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Tree list item (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=9965-44976)
+* [See also: Tree list](/site/covalent/latest/pattern/tree-list)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `icon` | `string` | Icon to display for the item. |
+| `isOpen` | `boolean` | Whether the item is expanded. |
+| `indentLevel` | `number` | The nesting level of the item. |
+| `indentMultiple` | `number` | Multiplier for indent spacing. |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `label` | Primary text label for the item. |
+| `extraContent` | Secondary text or additional content. |
+| `nest` | Nested child items. |
+
+```html
+<cv-tree-list-item icon="description">
+  <div slot="label">Tree list item</div>
+  <div slot="extraContent">Secondary text</div>
+</cv-tree-list-item>
+```
+
+### References
+
+* [Covalent design system - Tree list](https://teradata.github.io/covalent/docs/components/?path=/docs/components-tree-list--overview)

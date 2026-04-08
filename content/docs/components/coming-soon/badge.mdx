@@ -1,0 +1,49 @@
+---
+title: Badge
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+A small visual element indicating status or providing additional information.
+
+## Usage
+
+A badge can be attached to various other elements, but doesn't ever stand alone.
+
+### Indicating a change
+
+A simple badge can represent an unsaved item, or a change that happened elsewhere.
+
+### Showing an item count
+
+Useful for keeping tabs on a variable number of items.
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `content` | `string` | The content displayed in the badge. |
+| `max` | `number` | Maximum value before showing overflow (e.g., "99+"). |
+| `size` | `"small" \| "large"` | Size variant of the badge. |
+| `hideBadge` | `boolean` | Whether to hide the badge. |
+| `verticalAlignment` | `"top" \| "bottom"` | Vertical alignment of the badge. |
+| `horizontalAlignment` | `"left" \| "right"` | Horizontal alignment of the badge. |
+| `showZero` | `boolean` | Whether to show the badge when content is zero. |
+
+### Example
+
+```html
+<cv-badge
+  content="1000"
+  max="99"
+  size="large"
+  showZero
+  verticalAlignment="top"
+  horizontalAlignment="right">
+</cv-badge>
+```
+
+### References
+
+* [Covalent design system - Badge](https://teradata.github.io/covalent/docs/components/?path=/docs/components-badge--overview)

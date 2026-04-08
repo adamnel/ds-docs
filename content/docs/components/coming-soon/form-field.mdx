@@ -1,0 +1,38 @@
+---
+title: Form Field
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Input field within a form for users to enter data.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Form field (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7915-2071)
+* [Angular Material - Form field](https://material.angular.io/components/form-field/overview)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `label` | `string` | **Required.** The label displayed next to the form control. |
+| `alignEnd` | `boolean` | Whether to align the label at the end. |
+| `spaceBetween` | `boolean` | Whether to add space between the label and the control. |
+| `nowrap` | `boolean` | Whether to prevent the label from wrapping. |
+
+### Example
+
+```html
+<cv-formfield label="Form field">
+  <cv-checkbox value=""> </cv-checkbox>
+</cv-formfield>
+```
+
+### References
+
+* [MWC formfield](https://www.npmjs.com/package/@material/mwc-formfield)

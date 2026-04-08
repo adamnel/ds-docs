@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+/* Covalent Icons — custom icon font for state icons (see @covalent/icons package). */
+@import "../../node_modules/@covalent/icons/covalent-icons.css";
+
 /* DEFAULT MONOCHROME THEME */
 :root {
   /* Tailwind Slate's */

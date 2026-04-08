@@ -1,0 +1,306 @@
+---
+title: Menu
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Provide extended features or hide some items for usability.
+
+## Usage
+
+<imagePlaceholder imageId="cv-menu_hero" />
+
+### When to use
+
+Menus are used to provide extended features or hide some items for usability. They appear as a result of user action on a button, dropdown select, or other UI item. They are elevated above all other items.
+
+| Variant | Purpose |
+| --- | --- |
+| **Default** | Provide extended features or hide some items for usability. |
+| **Scrollable** | If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar. |
+
+### Recommendations
+
+#### Use icons and dividers
+
+Use descriptive icons that provide quickly recognizable cues about each menu item's purpose. Use only filled icons on menu items.
+
+Create visual distinction between selection categories using dividers. Destructive actions should be separated from other options with a divider.
+
+<imagePlaceholder imageId="cv-menu_item_dividers" />
+
+#### Leave disabled items visible
+
+When certain actions are disabled, do not hide them. Instead, make them visible as disabled.
+
+<imagePlaceholder imageId="cv-menu_rec_disabled_item" />
+
+#### Multi-select
+
+A menu may sometimes allow for multiple selections, like when presenting filter choices. When multiple selections can be made, indicate the selected items using checkmarks.
+
+<imagePlaceholder imageId="cv-menu_rec_multi_select" />
+
+#### Customization
+
+Menus can be further customized to suit specific use cases.
+
+<imagePlaceholder imageId="cv-menu_rec_avatar" />
+
+### Usage -- additional resources
+
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36810)
+* [Legacy document](https://www.figma.com/design/n808q0jZjqoPvyzXacqn9N/Menus?node-id=35-236)
+* [Material design](https://m2.material.io/components/menus)
+* [Angular material](https://material.angular.io/components/menu/overview)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-menu_anatomy" />
+
+1. Contains the menu contents.
+2. Clickable menu item. See [List item](/docs/components/list-item) for detailed interactions.
+3. (Optional) Divider used to separate destructive actions or otherwise categorize the items.
+
+#### Padding
+
+There should always be 8px at the top and bottom of a menu.
+
+<imagePlaceholder imageId="cv-menu_top_bottom_padding" />
+
+#### Positioning
+
+When a button opens a menu, the menu should be positioned relative to the button's placement on the screen. For example, if there is not enough room above the button, the menu should appear below the button. All possible positioning is shown below.
+
+Default positioning is at the bottom right. Positioning should be done responsively according to the button's location on the screen.
+
+<imagePlaceholder imageId="cv-menu_positioning1" />
+<imagePlaceholder imageId="cv-menu_positioning2" />
+<imagePlaceholder imageId="cv-menu_positioning3" />
+<imagePlaceholder imageId="cv-menu_positioning4" />
+
+### Typography
+
+Use these text styles for menu:
+
+1. body-1
+
+<imagePlaceholder imageId="cv-menu_typography" />
+
+### Content guidelines
+
+Items in a menu should be labelled as concisely as possible for quick comprehension. Items should be labelled with a single word if possible.
+
+### Opening a menu
+
+A menu can be opened in the following ways.
+
+#### Using a button
+
+A regular button that opens a menu should always have a dropdown arrow icon. An icon button that opens a menu should use a "more vertical / 3-dot menu" icon.
+
+<imagePlaceholder imageId="cv-menu_variant_opened_by_button" />
+
+When a button or icon button is used to open a menu, the button should return to its enabled state after opening the menu.
+
+<imagePlaceholder imageId="cv-menu_opening element" />
+
+#### Using a select dropdown
+
+The [cv-select](/docs/components/select) component uses a menu to display selectable options.
+
+<imagePlaceholder imageId="cv-menu_variant_opened_by_select" />
+
+#### Using another UI item
+
+Other UI items, such as items in a table, can be used to open a menu. The item can be right-clicked to open a contextual menu.
+
+<imagePlaceholder imageId="cv-menu_variant_opened_by_UI item" />
+
+### States
+
+Menus items use the [list item](/docs/components/list-item) component. Interaction states for menu items match the interaction states for cv-list-item.
+
+#### Selected
+
+Use a check icon to indicate which items are selected when multiple selections can be made. Otherwise, just use a color fill on the selected item.
+
+<imagePlaceholder imageId="cv-menu_item_selection_single_item_color" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface-variant |
+| 3 | primary-8 |
+| 4 | surface-container |
+
+#### Enabled
+
+<imagePlaceholder imageId="cv-menu_state_enabled" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface-variant |
+| 3 | surface-container |
+
+#### Hovered
+
+<imagePlaceholder imageId="cv-menu_state_hovered" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface-variant |
+| 3 | on-surface-variant-8 |
+| 4 | surface-container |
+
+#### Focused
+
+<imagePlaceholder imageId="cv-menu_state_focused" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface-variant |
+| 3 | on-surface-variant-12 |
+| 4 | surface-container |
+
+#### Pressed
+
+<imagePlaceholder imageId="cv-menu_state_pressed" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface-variant |
+| 3 | on-surface-variant-12 |
+| 4 | surface-container |
+
+#### Disabled
+
+<imagePlaceholder imageId="cv-menu_state_disabled" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant-38 |
+| 2 | on-surface-variant-38 |
+| 3 | surface-container |
+
+### Variants
+
+#### Scrollbar
+
+If a maximum height has been applied to a menu or the menu is too large to display all items inside the current screen height, apply a scrollbar.
+
+<imagePlaceholder imageId="cv-menu_variant_scrollbar" />
+
+## Web components
+<storybookEmbed storyId="components-menu--basic" height={300} embedMode="story" />
+
+
+### Demos
+
+* Main
+* Use icons
+* Disabled items
+* Multi-select
+* Customization
+
+### Main
+
+```html
+<cv-menu open>
+  <cv-list-item tabindex="-1">
+    <div slot="secondary"></div>
+    <div slot="graphic"></div>
+    <div slot="meta"></div>
+    List item
+  </cv-list-item>
+  <cv-list-item tabindex="-1">
+    <div slot="secondary"></div>
+    <div slot="graphic"></div>
+    <div slot="meta"></div>
+    List item
+  </cv-list-item>
+</cv-menu>
+```
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `open` | Whether the menu is open |
+| `anchor` | The anchor element |
+| `corner` | Corner of the anchor to align to: `TOP_LEFT`, `TOP_RIGHT`, `BOTTOM_LEFT`, `BOTTOM_RIGHT`, `TOP_START`, `TOP_END`, `BOTTOM_START`, `BOTTOM_END` |
+| `menuCorner` | Corner of the menu to align: `START`, `END` |
+| `x` | Horizontal offset |
+| `y` | Vertical offset |
+| `defaultFocus` | Default focus behavior: `NONE`, `LIST_ROOT`, `FIRST_ITEM`, `LAST_ITEM` |
+| `innerAriaLabel` | ARIA label for the inner list |
+| `innerRole` | ARIA role for the inner list: `menu`, `listbox` |
+| `quick` | Whether to skip open/close animations |
+| `absolute` | Whether to use absolute positioning |
+| `fixed` | Whether to use fixed positioning |
+| `forceGroupSelection` | Whether to force group selection |
+| `fullwidth` | Whether the menu should be full width |
+| `stayOpenOnBodyClick` | Whether menu stays open when body is clicked |
+| `wrapFocus` | Whether focus wraps from last to first item |
+| `multi` | Whether multiple items can be selected |
+| `activatable` | Whether items are activatable |
+
+### Readonly properties
+
+| Prop | Default | Type | Details |
+| --- | --- | --- | --- |
+| `items` | `[]` | `ListItemBase[]` | Proxies to `cv-list`'s `items` property. |
+| `index` | `-1` | `MWCListIndex` (`number\|Set<number>`) | Proxies to `cv-list`'s `index` property. |
+| `selected` | `null` | `ListItemBase\|ListItemBase[]\|null` | Proxies to `cv-list`'s `selected` property. |
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `show() => void` | Sets `open` to true. |
+| `close() => void` | Sets `open` to false. |
+| `select(index: MWCMenuIndex) => void` | Selects the elements at the given index / indices. |
+| `getFocusedItemIndex() => number` | Returns the index of the currently-focused item. `-1` if none are focused. |
+| `focusItemAtIndex(index) => void` | Focuses the item at the given index and manages tabindex on all other items. |
+| `layout(updateItems = true) => void` | Resets tabindex on all items and will update `items` model if provided true. It may be required to call layout if selectability of an element is dynamically changed. |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `opened` | `cv-menu-surface` | none | Fired when opened. |
+| `closing` | `cv-menu-surface` | none | Fired when closing but animation may not have completed yet. Use for time-sensitive logic that must be run immediately upon close. |
+| `closed` | `cv-menu-surface` | none | Fired when closed. |
+| `action` | `cv-list` | `ActionDetail` | Fired when a selection has been made via click or keyboard action. |
+| `selected` | `cv-list` | `SelectedDetail` | Fired when a selection has been made. See cv-list's Events section for more details. |
+
+### References
+
+* [MWC menu](https://www.npmjs.com/package/@material/mwc-menu)
+* [Covalent design system - Menu](https://teradata.github.io/covalent/docs/components/?path=/docs/components-menu--overview)
+
+## Accessibility
+
+### Overview
+
+Menus enable users to select items from a list. They require clear labeling, keyboard operability, and assistive technology compatibility to guide decision-making effectively.
+
+### Keyboard interactions
+
+* **Up and Down Arrow keys**: Navigate between options while skipping disabled options.
+* **Enter key/Spacebar**: Selects an option.
+* **Escape key**: Closes the menu.
+
+After clicking the UI element to open the menu, the tab index focus should move to the menu.
+
+<imagePlaceholder imageId="cv-menu_accessibility" />
+
+### Accessibility -- additional resources
+
+* [Web Content Accessibility Guidelines (WCAG) component standards](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility component guidelines](https://m2.material.io/components/menus/web#style-customization)

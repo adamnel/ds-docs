@@ -1,0 +1,63 @@
+---
+title: Errors
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+An error occurs when users expect one thing to happen but something else (or nothing) happens. These moments are frustrating. They make it harder to get things done yet present an opportunity to build trust.
+
+## Principles for writing error messages
+
+Thoughtful error handling enhances the usefulness of products and plays a crucial role in building trust with users. It can also reduce support resources.
+
+### Avoid showing a message
+
+The best error message is no error happening at all. The message and the error itself are disruptive to a user's experience. They stand in the way between the user and their job to be done. Make sure the system can address errors on the back end to avoid showing an error message.
+
+### Consider the message before the design components
+
+If we have to display an error message, first write out what the content needs to say and think through how you're going to say it and in which order you'll place the words.
+
+### Anatomy of an error message
+
+Not every error message you design will look the same, but the most useful error message includes 3 distinct parts in this order:
+
+1. **What happened** - Write it from the perspective of the user, not the system. Focus on what the user intended to do but couldn't do because of the error.
+2. **The underlying cause** (show only if helpful to the user) - It's helpful to have an explanation of why something happened if the additional layer of transparency helps increase understanding.
+3. **How to fix it** - Tell the user what they can do about the error. If there's nothing for them to do, explain what the product is doing.
+
+### Be supportive and transparent
+
+When writing error messages, speak in a confident and compassionate voice while being supportive and transparent. Use "we" to refer to the system and "you" to address the user.
+
+| Tone | What this means |
+| --- | --- |
+| Supportive | Whether it's a system or user error, we support the user. |
+| Transparent | We aim to be honest and easy to understand. |
+
+### Words to avoid
+
+* **sorry** - Avoid saying "sorry." Save it for grave errors with data loss.
+* **please** - Use "please" sparingly. Only if its absence makes the message sound demanding.
+* **fail, failure** - Do not use. Speak to users in a positive way. Use "Couldn't" instead of "Failed to."
+* **oops** - Can sound irreverent. Avoid using words to downplay an error.
+* **Are you sure?** - Do not use. Instead of asking questions, confirm the user-intended action.
+
+## Match design components to the chosen message
+
+Choose your design component based on the error message, not the other way around. User impact determines the message and how it should be displayed.
+
+### Modal dialog
+
+* User impact: High
+* Severity: High
+* Style: Elaborate
+
+Use when the user needs to spend considerable time or effort to resolve the error.
+
+### Page-level banner
+
+* User impact: Moderate to Low
+* Severity: Moderate to Low
+* Style: Brief
+
+Use for less severe situations where a less intrusive display is appropriate.

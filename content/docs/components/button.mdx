@@ -1,0 +1,269 @@
+---
+title: Button
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Buttons are interactive components that guide and inform a user's interaction through an experience. They signal actions and provide clear visual cues to help users accomplish their goals with confidence and efficiency.
+
+## Usage
+
+<imagePlaceholder imageId="cv-button_hero" />
+
+### When to use
+
+Use button variants to prioritize actions: **Raised** for primary actions like "Submit," **Outlined** for secondary actions like "Cancel," and **Text** for less prominent, inline tasks. Each style ensures clarity and purpose.
+
+| Variant | Purpose |
+| --- | --- |
+| **Raised** | A primary button is used for the main action on a page or screen, such as "submit" or "save". |
+| **Outline** | A secondary button is used for less critical actions or alternatives, like "cancel" or "back". |
+| **Text** | A tertiary button is used for less critical actions or alternatives, like "cancel" or "back". |
+
+### Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+#### Placement
+
+<imagePlaceholder imageId="cv-button_placement" />
+
+<doDont
+  doBody={<>
+    **Buttons are organized by priority**, starting with the primary action on the far right (if applicable), followed by secondary actions and lesser functions like icon buttons.
+  </>}
+  dontBody={<>
+    Don't place buttons in an order that confuses their priority or purpose, such as putting secondary actions ahead of the primary action.
+  </>}
+/>
+
+<imagePlaceholder imageId="cv-button_in-footers" />
+
+<doDont
+  doBody={<>
+    **In footers** (e.g., card, dialog, page, or sheet footers), align buttons to the right, placing destructive actions on the left to prevent accidental clicks.
+  </>}
+  dontBody={<>
+    Don't place destructive actions on the right or mix button alignments, as this can lead to confusion or unintended actions.
+  </>}
+/>
+
+#### Groupings and types
+
+<imagePlaceholder imageId="cv-button_action--primary" />
+
+<doDont
+  doBody={<>
+    **Use one primary button per group of actions.** This ensures users clearly understand the most important action.
+  </>}
+  dontBody={<>
+    Don't use multiple primary buttons in the same layout. This creates confusion about which action is most important.
+  </>}
+/>
+
+<doDont
+  doBody={<>
+    **Use secondary buttons (outlined) for less critical actions.** These should complement the primary button without overshadowing it.
+  </>}
+  dontBody={<>
+    Don't place secondary buttons (outlined) to the right of the primary button. This breaks the priority flow.
+  </>}
+/>
+
+<imagePlaceholder imageId="cv-button_action--destructive" />
+
+<doDont
+  doBody={<>
+    Place the destructive button as the primary action (aligned to the right) only when it represents the main task, such as deleting critical data. Use the negative color to emphasize caution.
+  </>}
+  dontBody={<>
+    Use a destructive button as the primary action unless it is the primary task. Misusing this placement can confuse users and increase the risk of accidental actions.
+  </>}
+/>
+
+<imagePlaceholder imageId="cv-button_action--destructive--not-primary" />
+
+<doDont
+  doBody={<>
+    In button groups when the destructive button is not the primary, use secondary (outlined) or tertiary (text) styles for destructive actions to keep the primary action visually dominant and clear.
+  </>}
+  dontBody={<>
+    Use the negative color for secondary or less critical actions, as it distracts from the primary action and creates unnecessary visual weight.
+  </>}
+/>
+
+<doDont
+  doBody={<>
+    Use **clear and concise labels** that directly communicate the action (e.g., "Submit" or "Delete"). **Highlight the primary action** with a visually distinct button to establish clear priority. **Ensure buttons are properly spaced and sized** for easy interaction, especially on mobile.
+  </>}
+  dontBody={<>
+    **Don't** place destructive buttons too close to primary ones without clear separation to avoid accidental clicks. **Don't** rely solely on color to differentiate buttons; use outlines, icons, or other visual cues for accessibility. **Don't** overload interfaces with too many buttons, as this overwhelms users and complicates decision-making.
+  </>}
+/>
+
+### Usage — additional resources
+
+* [Angular Material component](https://m2.material.io/components/buttons)
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7892-36757)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-button_anatomy" />
+
+1. Icon that conveys the purpose of the button. Can be to the right or left of the button text.
+2. Describes the action performed by the button.
+3. Outline or color fill that contains the button contents.
+
+### Typography
+
+Use these text styles for button:
+
+1. button
+
+<imagePlaceholder imageId="cv-button_typography" />
+
+### Content guidelines
+
+Buttons trigger actions. Actionable labels ensure clarity and ease of use.
+
+* **Categorization**: Use (Raised) primary buttons for main actions, (Outline) secondary for less critical actions.
+* **Use sentence style**
+* **Word limit**: Limit labels to 2-3 words.
+
+<doDont
+  doBody={<>
+    Example label: "Submit"
+  </>}
+  dontBody={<>
+    Example label: "Click here to submit"
+  </>}
+/>
+
+### Variants
+
+Buttons are outlined by default or filled for higher emphasis. Use outlined buttons for everything except the primary action (if any). Use filled buttons for the primary action.
+
+Buttons can have one icon to the left or right of the text.
+
+<imagePlaceholder imageId="cv-button_variants" />
+
+### States
+
+#### Default
+
+<imagePlaceholder imageId="cv-button_state_default_filled" />
+
+**Filled button anatomy** — Color tokens: 1, 2 — on-primary · 3 — primary
+
+<imagePlaceholder imageId="cv-button_state_default_outlined" />
+
+**Outlined button anatomy** — Color tokens: 1, 2 — primary · 3 — outline
+
+#### Positive
+
+<imagePlaceholder imageId="cv-button_state_positive_filled" />
+
+**Filled button anatomy** — Color tokens: 1, 2 — on-positive · 3 — positive
+
+<imagePlaceholder imageId="cv-button_state_positive_outlined" />
+
+**Outlined button anatomy** — Color tokens: 1, 2, 3 — positive
+
+#### Caution
+
+<imagePlaceholder imageId="cv-button_state_caution_filled" />
+
+**Filled button anatomy** — Color tokens: 1, 2 — on-caution · 3 — caution
+
+<imagePlaceholder imageId="cv-button_state_caution_outlined" />
+
+**Outlined button anatomy** — Color tokens: 1, 2, 3 — caution
+
+#### Negative
+
+<imagePlaceholder imageId="cv-button_state_negative_filled" />
+
+**Filled button anatomy** — Color tokens: 1, 2 — on-negative · 3 — negative
+
+<imagePlaceholder imageId="cv-button_state_negative_outlined" />
+
+**Outlined button anatomy** — Color tokens: 1, 2, 3 — negative
+
+#### Emphasis
+
+<imagePlaceholder imageId="cv-button_state_emphasis_filled" />
+
+**Filled button anatomy** — Color tokens: 1, 2 — on-emphasis · 3 — emphasis
+
+<imagePlaceholder imageId="cv-button_state_emphasis_outlined" />
+
+**Outlined button anatomy** — Color tokens: 1, 2, 3 — emphasis
+
+#### Secondary
+
+<imagePlaceholder imageId="cv-button_state_secondary_filled" />
+
+**Filled button anatomy** — Color tokens: 1, 2 — on-secondary · 3 — secondary
+
+<imagePlaceholder imageId="cv-button_state_secondary_outlined" />
+
+**Outlined button anatomy** — Color tokens: 1, 2, 3 — secondary
+
+#### Interaction states
+
+The following interaction states are available for buttons. See the state layers section on the [Colors](/docs/foundations/color) page for more details.
+
+<imagePlaceholder imageId="cv-button_interaction_states" />
+
+## Web components
+
+<storybookEmbed storyId="components-button--contained" height={300} embedMode="story" />
+
+### Text variant
+
+**Props (summary)**
+
+label · icon · color: primary | secondary | emphasis | neutral | caution | negative | positive · raised · unelevated · outlined · dense · disabled · expandContent · fullwidth · trailingIcon
+
+```html
+<cv-button icon="add" label="Label" trailingIcon> </cv-button>
+```
+
+### How to import
+
+```js
+import '@covalent/components/button';
+```
+
+* [MWC button](https://www.npmjs.com/package/@material/mwc-button) (Material Web Components)
+* [Covalent design system — Button](https://teradata.github.io/covalent/docs/components/?path=/docs/components-button--overview)
+
+## Accessibility
+
+### Overview
+
+Buttons must be accessible to all users, ensuring equal interaction regardless of ability. They should have clear, descriptive labels, proper color contrast, and visible focus states to support usability and accessibility.
+
+### Keyboard interactions
+
+Buttons should be fully operable via keyboard:
+
+* **Enter/Return key**: Activates the button's action.
+* **Spacebar**: Activates the button's action, consistent with standard keyboard behavior.
+* Provide clear feedback, such as visual states (e.g., hover, focus, active), to indicate when the button is ready to be interacted with.
+
+<imagePlaceholder imageId="cv-button_accessibility" />
+
+#### Tab index focus
+
+Buttons must follow a logical tab order to maintain smooth navigation:
+
+* Use **`tabindex="0"`** for buttons to include them in the natural tab order.
+* Focus states should be clearly visible and distinct, meeting [WCAG 2.1 contrast requirements](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+* Avoid removing buttons from the tab order unless they are intentionally disabled, ensuring accessibility for keyboard and assistive technology users.
+
+### Accessibility — additional resources
+
+* [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility — buttons](https://m2.material.io/components/buttons/web#using-buttons)

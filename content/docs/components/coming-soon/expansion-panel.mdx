@@ -1,0 +1,53 @@
+---
+title: Expansion Panel
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Collapsible panel revealing additional content when expanded.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Legacy document - Expansion panels (Figma)](https://www.figma.com/design/FxrGweRWPOb6EsOW1MenFL/Expansion-panels?m=auto&t=vBlOgv4letIOllWB-6)
+* [Angular Material - Expansion panels](https://material.angular.io/components/expansion/overview)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `noSurface` | `boolean` | Whether to remove the surface background. |
+| `titleWidth` | `string` | Width of the title column (e.g., `"150px"`). |
+
+### Example
+
+```html
+<cv-expansion-panel titleWidth="150px">
+  <cv-expansion-panel-item
+    title="Title"
+    index="0"
+    contentPreview="content preview">
+    <div slot="content"></div>
+  </cv-expansion-panel-item>
+  <cv-expansion-panel-item
+    title="Title"
+    index="0"
+    contentPreview="content preview">
+    <div slot="content"></div>
+  </cv-expansion-panel-item>
+  <cv-expansion-panel-item
+    title="Title"
+    index="0"
+    contentPreview="content preview">
+    <div slot="content"></div>
+  </cv-expansion-panel-item>
+</cv-expansion-panel>
+```
+
+### References
+
+* [Covalent design system - Expansion panel](https://teradata.github.io/covalent/docs/components/?path=/docs/components-expansion-panel--overview)

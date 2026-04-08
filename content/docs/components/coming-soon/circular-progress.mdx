@@ -1,0 +1,46 @@
+---
+title: Circular Progress
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Visual indication of progress displayed in a circular format.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Circular progress (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7893-24)
+* [Legacy document - Progress spinner (Figma)](https://www.figma.com/design/ivmr0E23qw3oQOg790cwoC/Progress-spinner?m=auto&t=vBlOgv4letIOllWB-6)
+* [Material Design - Progress indicator](https://m2.material.io/components/progress-indicators)
+* [Angular Material - Progress spinner](https://material.angular.io/components/progress-spinner/overview)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `indeterminate` | `boolean` | Whether the progress indicator is indeterminate (no specific progress value). |
+| `progress` | `number` | Current progress value (0 to 1). |
+| `density` | `number` | Density scale for the component size. |
+| `closed` | `boolean` | Whether the progress indicator is hidden. |
+
+### Example
+
+```html
+<cv-circular-progress indeterminate progress="0" density="0"></cv-circular-progress>
+```
+
+### Methods
+
+| Method | Description |
+| --- | --- |
+| `open() => void` | Sets `closed` to `false`, showing the progress indicator. |
+| `close() => void` | Sets `closed` to `true`, hiding the progress indicator. |
+
+### References
+
+* [MWC circular progress](https://www.npmjs.com/package/@material/mwc-circular-progress)
+* [Covalent design system - Circular progress](https://teradata.github.io/covalent/docs/components/?path=/docs/components-circular-progress--overview)

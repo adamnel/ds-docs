@@ -45,9 +45,11 @@ export const NavLevel: React.FC<NavLevelProps> = ({
   const defaultTitle = getEndpointSlug(endpoint_slug);
   const slug = getUrl(categoryData.slug).replace(/\/$/, "");
   const [expanded, setExpanded] = React.useState(
-    matchActualTarget(slug || getUrl(categoryData.href), path) ||
-      hasNestedSlug(categoryData.items, path) ||
-      level === 0
+    categoryData.defaultCollapsed
+      ? hasNestedSlug(categoryData.items, path)
+      : matchActualTarget(slug || getUrl(categoryData.href), path) ||
+          hasNestedSlug(categoryData.items, path) ||
+          level === 0
   );
 
   const selected =

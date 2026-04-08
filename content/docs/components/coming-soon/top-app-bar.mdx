@@ -1,0 +1,57 @@
+---
+title: Top App Bar
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Horizontal bar at the top of an application containing navigation and other controls.
+
+## Usage
+
+Design documentation coming soon.
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `centerTitle` | `boolean` | Whether to center the title text. |
+| `prominent` | `boolean` | Whether to use the prominent (taller) variant. |
+| `dense` | `boolean` | Whether to use the dense (shorter) variant. |
+| `scrollTarget` | `HTMLElement` | The element to listen for scroll events on. |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `navigationIcon` | Navigation icon displayed at the start of the bar. |
+| `title` | Title text content. |
+| `actionItems` | Action items displayed at the end of the bar. |
+
+```html
+<cv-top-app-bar>
+  <div slot="navigationIcon"></div>
+  <div slot="title">App Bar Title</div>
+  <div slot="actionItems">
+    <cv-icon-button icon="houseboat"></cv-icon-button>
+  </div>
+  <cv-empty-state
+    headline="You don't have access to this area"
+    subtitle="You don't have permission to view this application. Please contact your system administrator for further details."
+    icon="lock">
+    <div slot="button"></div>
+    <div slot="buttons"></div>
+  </cv-empty-state>
+</cv-top-app-bar>
+```
+
+### Events
+
+| Event | Detail | Description |
+| --- | --- | --- |
+| `nav` | `{}` | Fired when the `navigationIcon` is clicked. |
+
+### References
+
+* [MWC top app bar](https://www.npmjs.com/package/@material/mwc-top-app-bar)
+* [Covalent design system - Top app bar](https://teradata.github.io/covalent/docs/components/?path=/docs/components-tooltip--overview)

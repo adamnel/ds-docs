@@ -1,0 +1,56 @@
+---
+title: Card
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Container presenting information or content in a visually distinct format.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Legacy document - Cards (Figma)](https://www.figma.com/design/gW8A14qsVzscCC3XoiE7oB/Cards?node-id=8-84)
+* [Material Design - Cards](https://m2.material.io/components/cards)
+* [Angular Material - Cards](https://material.angular.io/components/card/overview)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `cardTitle` | `string` | The title displayed in the card header. |
+| `outlined` | `boolean` | Whether to use an outlined card style. |
+| `actionBar` | `boolean` | Whether to show the action bar. |
+| `interactive` | `boolean` | Whether the card is interactive (clickable). |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `default` | Main card content. |
+| `card-actions` | Action buttons displayed in the card action bar. |
+
+### Example
+
+```html
+<cv-card cardTitle="Card title" actionBar>
+  <div slot="card-actions">
+    <cv-button label="Retry" outlined> </cv-button>
+    <cv-icon-button icon="houseboat"> </cv-icon-button>
+  </div>
+  <cv-empty-state
+    headline="You don't have access to this area"
+    subtitle="You don't have permission to view this application."
+    icon="lock">
+    <div slot="button"></div>
+    <div slot="buttons"></div>
+  </cv-empty-state>
+</cv-card>
+```
+
+### References
+
+* [Covalent design system - Cards](https://teradata.github.io/covalent/docs/components/?path=/docs/components-cards--overview)

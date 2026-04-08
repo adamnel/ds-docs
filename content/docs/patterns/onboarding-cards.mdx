@@ -1,0 +1,80 @@
+---
+title: Onboarding Cards
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Cards serve as shortcuts to tasks that we want people to complete first. It's an opportunity to help them quickly unlock the value of a feature or product.
+
+## Anatomy
+
+### Onboarding cards
+
+1. **Header** - Provides context and introduces the onboarding or task sequence using a title or message to succinctly communicate the overarching goal or status.
+2. **Accordion container** - Wraps the onboarding cards in a collapsible format, helping manage screen real estate and focus.
+3. **Progress indicator** - Visual indicator showing the user's progression through the onboarding steps, typically represented as "X/Y Complete."
+4. **Skip all button** - Positioned prominently to allow users to bypass the entire onboarding process.
+5. **Expand/collapse button** - An icon button that changes state to control the expansion or collapse of the accordion container.
+6. **Navigation arrows** - Positioned at the edges of the card carousel, these buttons allow users to navigate left or right through the cards.
+7. **Action cards** - Individual containers for each task or step, including icons, titles, descriptions, and a CTA button.
+8. **Carousel indicators** - Dots that indicate the current slide within the carousel and the total number of slides.
+
+### Action card
+
+1. Icon for the type of task conveyed by the single card
+2. Communicates the card message in 1 headline
+3. Continues to communicate the card message
+4. Single card container
+5. A call to action for the task
+
+## Content guidelines
+
+**Do:**
+
+* **Heading** - Be as engaging as possible. Use imperative verbs and sentence style.
+* **Message** - When writing about benefits of completing the task, use the future tense to create a human-like tone (e.g., "you'll" or "they'll").
+* **Call to action** - Use strong verbs that correspond to the headings and encourage action.
+
+**Don't:**
+
+* **Heading** - Don't sacrifice clarity. Don't use initial capitalization.
+* **Message** - Don't repeat the header. Instead, add details that will help the user succeed.
+* **Call to action** - Don't say "OK" or "Close." Design options to close or skip cards on the container.
+
+## Recommendations
+
+* Plan for 30% text expansion for localized versions.
+* Optimize for the breakpoint width at 1280px.
+* On a standard 3-card layout, up to 2 lines in the English message is recommended.
+* Don't truncate any text. Cards contain contextually rich information that users need to read in full.
+* Link to UIs where people can complete a task, not documentation.
+* Focus on the jobs to be done in the user's context.
+
+## States
+
+### Action card states
+
+1. **Incomplete** - The task has not been completed.
+2. **Completed** - The task was successfully completed.
+3. **Unavailable** - The task is not available currently because it is dependent on an incomplete setup task.
+
+### Collapsed
+
+The arrow icon button can be used to collapse the cards.
+
+### Scrollable
+
+When the screen size is too small to display all cards at once, scroll controls should appear. Clicking the forward arrow on the last page should return to the first page. The card carousel should be scrollable using the trackpad or arrow keys when focused.
+
+### Non-scrollable
+
+When the screen is big enough to display all cards, hide scroll controls.
+
+### Complete
+
+When all cards in the carousel have been completed, the carousel should change to the completed state. A congratulatory message will be displayed, along with a link to further learning resources. The "Skip all" button becomes "Dismiss."
+
+## Related components
+
+* **Completion tracker** - Provides a visual indication of completion status within the Get-Started experience.
+* **Button** - A secondary action component, for inline interactions such as skipping a step.
+* **Icon button** - A secondary action component for inline interactions, such as collapsing.

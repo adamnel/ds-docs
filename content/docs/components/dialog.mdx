@@ -1,0 +1,254 @@
+---
+title: Dialog
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+A dialog is a modal window that overlays the current page to grab the user's attention.
+
+## Usage
+
+<imagePlaceholder imageId="cv-dialog--hero" />
+
+### When to use
+
+They are used for tasks that require immediate focus, such as confirmations, log-in forms, or input forms. Modals should be used sparingly to avoid disrupting the user experience. A modal typically requires the user to take action before they can continue interacting with the rest of the page.
+
+| Variant | Purpose |
+| --- | --- |
+| **Default** | Display critical information or actions requiring focused user attention |
+
+### Recommendations
+
+<imagePlaceholder imageId="cv-dialog_do--recommendation" />
+<imagePlaceholder imageId="cv-dialog_dont--recommendation" />
+
+<doDont
+  doBody={<>
+    * Use concise, action-oriented text.
+    * When the primary action is a negative one such as "Delete," "Discard," and "Skip," the secondary action needs to be semantically distinct from the primary one.
+    * Ensure the modal is dedicated to a single task or message.
+    * Make modals keyboard-navigable, with proper screen reader support.
+    * Provide obvious primary and secondary buttons (e.g., "Save" and "Cancel").
+    * Dim or block the background to focus the user on the modal.
+    * Ensure modals work well on all screen sizes.
+    * Include a close button and allow clicking outside the modal to close it (if appropriate).
+    * Highlight the primary action button to guide the user.
+  </>}
+  dontBody={<>
+    * Overuse modals for non-critical information or tasks.
+    * Add excessive content or complicated interactions within the modal.
+    * Prevent users from closing the modal unless it's critical (e.g., unsaved changes).
+  </>}
+/>
+
+### Usage -- additional resources
+
+* [Angular Material component](https://m2.material.io/components/dialogs)
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7979-29833)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-dialog_anatomy" />
+
+1. Provides details about the request.
+2. Provides a brief description of the message or request.
+3. Contains the header, body, and buttons.
+4. Actions the user can take on the message or request.
+
+### Typography
+
+Use these text styles for dialog:
+
+1. body-1
+2. headline-6
+3. button
+
+<imagePlaceholder imageId="cv-dialog_typography" />
+
+### Content guidelines
+
+Two scenarios require a modal dialog:
+
+* Confirming the user's action.
+* Communicating a high-severity [error](/docs/content/error-messages).
+
+#### Confirming the user's action
+
+If the user initiates a destructive action, display a modal dialog to give the user a chance to review their work before proceeding with the action.
+
+<imagePlaceholder imageId="cv-dialog_do--content_1" />
+
+<doDont
+  doBody={<>
+    **Heading:** Repeat the user's request with a concise question and a neutral tone, for example, "Delete this file?"
+
+    **Message:** Succinctly communicate additional information such as the result of the primary action.
+
+    **Actions:** If the primary action is a negative one such as "Delete," the secondary action must be semantically distinct from the primary action. "Don't delete / Delete" are a good example of 2 semantically distinct actions.
+  </>}
+  dontBody={<>
+    **Heading:** Don't say "Are you sure"? It can be perceived as condescending.
+
+    **Message:** Don't be wordy. Try keeping the message to one succinct sentence.
+
+    **Actions:** Don't use "Yes" and "No." A modal dialog is already interruptive to the user's workflow. Don't make them spend more time understanding what action "Yes" and "No" each represents.
+  </>}
+/>
+
+If the user is not aware of an action that's been initiated, for example, they accidentally select the Back button on their browser while editing a form, display a modal dialog to communicate what happened and the actions they can take.
+
+<imagePlaceholder imageId="cv-dialog_do--content_2" />
+
+<doDont
+  doBody={<>
+    **Heading:** Succinctly communicate what happened.
+
+    **Message:** Remember you're having a conversation with a human. Lean into an empathetic and transparent voice when the user needs to decide what to do next.
+
+    **Actions:** If the primary action is a negative one such as "Discard," the secondary action must be semantically distinct from the primary action. "Keep editing / Discard" are a good example of two semantically distinct actions.
+  </>}
+  dontBody={<>
+    **Heading:** Don't assume they know what happened. Asking a question is more suitable if the user initiated the action themselves.
+
+    **Message:** Don't say "Are you sure?" especially when they may not be aware of what happened. Don't repeat the heading.
+
+    **Actions:** Don't use "Cancel." Because "Cancel / Discard" are semantically similar, the user may interpret "Cancel" as "canceling the unsaved changes." This can create confusion.
+  </>}
+/>
+
+#### Communicating a high-severity error
+
+Not all errors call for displaying a modal dialog. When critical issues require the user's immediate attention, use a modal dialog. For complete details on designing content for high-severity errors, see [Errors](/docs/content/error-messages) in Content.
+
+### Variants
+
+Action buttons can be **horizontally** aligned or **vertically** stacked.
+
+<imagePlaceholder imageId="cv-dialog_anatomy_variants" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | surface-container |
+| 4 | primary |
+
+## Web components
+<storybookEmbed storyId="components-dialog--anatomy" height={300} embedMode="story" />
+
+
+### Demos
+
+* Default
+* Delete confirmation
+
+### Default
+
+```html
+<cv-dialog
+  open
+  heading="Heading"
+  scrimClickAction="close"
+  escapeKeyAction="close"
+  defaultAction="close"
+  actionAttribute="dialogAction"
+  initialFocusAttribute="dialogInitialFocus">
+  Message
+  <div slot="secondaryAction">
+    <cv-button label="Label"> </cv-button>
+  </div>
+  <div slot="primaryAction">
+    <cv-button label="Label"> </cv-button>
+  </div>
+</cv-dialog>
+```
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `open` | Whether the dialog is open |
+| `hideActions` | Whether to hide the action buttons |
+| `stacked` | Whether action buttons are stacked vertically |
+| `heading` | The dialog heading text |
+| `scrimClickAction` | Action to take when the scrim is clicked |
+| `escapeKeyAction` | Action to take when the escape key is pressed |
+| `defaultAction` | The default action |
+| `actionAttribute` | Attribute for action elements |
+| `initialFocusAttribute` | Attribute for initial focus element |
+
+### How to import
+
+```js
+import "@covalent/components/dialog";
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `forceLayout() => void` | Forces dialog to relayout (animation frame time). May be required if dialog size is incorrect or if stacked layout has not been triggered correctly. |
+| `focus() => void` | Focuses on the initial focus element if defined. |
+| `blur() => void` | Blurs the active element. |
+| `show() => void` | Opens the dialog. |
+| `close() => void` | Closes the dialog. |
+
+### Listeners
+
+| Event name | Target | Description |
+| --- | --- | --- |
+| `click` | root element | Detects if clicked target is a dialog action. |
+| `resize` | window | Performs dialog layout (passive). |
+| `orientationchange` | window | Performs dialog layout (passive). |
+| `keydown` | mwc-dialog | Listens for the enter key to click the default button (passive). |
+| `keydown` | document | Listens for the escape key to close the dialog. |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `opening` | `cv-dialog` | `{}` | Fired when the dialog is beginning to open. |
+| `opened` | `cv-dialog` | `{}` | Fired once the dialog is finished opening (after animation). |
+| `closing` | `cv-dialog` | `{action: string}` | Fired when the dialog is beginning to close. Detail is the action that closed the dialog. |
+| `closed` | `cv-dialog` | `{action: string}` | Fired once the dialog is finished closing (after animation). Detail is the action that closed the dialog. |
+
+### Web components -- additional resources
+
+* [MWC dialog](https://www.npmjs.com/package/@material/mwc-dialog)
+* [Storybook](https://teradata.github.io/covalent/docs/components/?path=/docs/components-dialog--overview)
+
+## Accessibility
+
+### Overview
+
+The **Dialog** component ensures inclusivity by supporting seamless navigation for keyboard and assistive technology users. Proper focus management, clear labeling, and adherence to WCAG standards make dialogs perceivable, operable, and user-friendly. This ensures a consistent and equitable experience for all users.
+
+### Keyboard interactions
+
+#### Focus management
+
+* Focus is automatically set to the first interactive element when the dialog opens.
+* Ensure focus is returned to the triggering element upon closing.
+
+#### Tab index
+
+* Tab navigation cycles through all focusable elements within the dialog.
+* Prevent focus from moving outside the dialog while it is open.
+
+<imagePlaceholder imageId="cv-dialog_accessibility" />
+
+#### ARIA roles
+
+* Use `role="dialog"` and associate it with a `label` or `aria-labelledby` for screen reader accessibility.
+* Provide contextual descriptions with `aria-describedby` for better comprehension.
+
+#### Escape key support
+
+* Dialogs should be dismissible with the Escape key for intuitive closure.
+
+### Accessibility -- additional resources
+
+* [Web Content Accessibility Guidelines (WCAG) component standards](https://www.w3.org/TR/WCAG21/)
+* [Material accessibility component guidelines](https://m2.material.io/components/dialogs/web#using-dialogs)

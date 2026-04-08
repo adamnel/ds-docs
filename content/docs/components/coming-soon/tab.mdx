@@ -1,0 +1,57 @@
+---
+title: Tab
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+A component that organizes content across different screens, data sets, and other interactions.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design: Tab](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=9965-46123)
+* [Legacy document: Tabs](https://www.figma.com/design/xrXnnUqmcOWk5YfmY6zcqg/Tabs?m=auto&t=igsBXlZlwwHQzjtQ-6)
+* [Material Design: Tabs](https://m2.material.io/components/tabs)
+* [Angular Material: Tabs](https://material.angular.io/components/tabs/overview)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `label` | Tab label text |
+| `icon` | Icon name |
+| `indicatorIcon` | Indicator icon |
+| `hasImageIcon` | Whether the icon is an image |
+| `isFadingIndicator` | Uses a fading indicator |
+| `minWidth` | Uses minimum width |
+| `isMinWidthIndicator` | Uses minimum width indicator |
+| `stacked` | Stacks icon above label |
+| `active` | Whether the tab is active |
+
+```html
+<cv-tab label="Tab label"> </cv-tab>
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `activate() => void` | Activates the indicator. |
+| `deactivate() => void` | Deactivates the indicator. |
+| `computeDimensions() => MDCTabDimensions` | Computes the dimensions of the content. See [Tab types](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab/types.ts#L29) for definition. |
+| `computeIndicatorClientRect() => ClientRect` | Computes the dimensions of the indicator. |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `interacted` | `cv-tab` | `{tabId: string}` | Emitted when the Tab is interacted with, regardless of its active state. Used by parent components to know which Tab to activate. |
+
+### References
+
+* [MWC tab](https://www.npmjs.com/package/@material/mwc-tab)
+* [Covalent design system - Tabs](https://teradata.github.io/covalent/docs/components/?path=/docs/components-tabs--overview)

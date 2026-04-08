@@ -1,0 +1,238 @@
+---
+title: Radio Icon
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Radio button styled with an icon as its visual representation.
+
+## Usage
+
+<imagePlaceholder imageId="cv-radio-icon_hero" />
+
+### When to use
+
+Use radio icon buttons when you need a more visual way for the user to choose one option from a set of predefined options, such as selecting a payment method or choosing a shipping speed. These function identically to standard radio buttons, but present in a more visually impactful way, and provide a much larger click target.
+
+If there are more than two options, or the choices are less mutually exclusive, consider using checkboxes or checkbox icons.
+
+### Recommendations
+
+Recommended practices ensure clear guidance, usability, accessibility, appropriate sizing, and user support.
+
+**Do:**
+
+* Ensure radio icon buttons are clearly labeled with descriptive options.
+* Ensure that the user cannot select multiple radio icon buttons in a set.
+* Group radio icon buttons together.
+* Provide a default selection if appropriate (e.g., defaulting to the most common choice).
+* Make sure radio icon buttons are appropriately spaced to avoid accidental selection.
+
+**Don't:**
+
+* Make radio icon buttons too small to be easily clickable, especially on mobile.
+
+### Usage — additional resources
+
+* [Figma component](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7974-66505)
+
+## Style
+
+### Anatomy
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy" />
+
+1. Icon.
+2. (optional) Primary label.
+3. (optional) Description / supporting text.
+4. Indicates selection state of radio icon.
+
+### Content guidelines
+
+Radio buttons allow users to select one option from a set. Clear labels and hierarchy reduce confusion.
+
+* **Categorization**: Use for mutually exclusive options only.
+* **Voice & tone**: Friendly and concise.
+* **Word limit**: 2-4 words for button labels. Group label or helper text up to 50 characters.
+
+<doDont
+  doBody={<>
+    **Example Label:** "Monthly Plan"
+  </>}
+  dontBody={<>
+    **Example Label:** "Choose this option if you want a monthly plan."
+  </>}
+/>
+
+### Typography
+
+<imagePlaceholder imageId="cv-radio-icon_typography" />
+
+| Anatomy | Typography token |
+| --- | --- |
+| 1 | body-1 |
+| 2 | body-2 |
+
+### States
+
+#### Selected
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_selected" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | primary |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | primary |
+| 5 | primary-12 |
+| 6 | primary |
+
+#### Unselected
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_unselected" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | on-surface-variant |
+| 5 | transparent |
+| 6 | outline |
+
+#### Disabled
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-38 |
+| 2 | on-surface-38 |
+| 3 | on-surface-38 |
+| 4 | on-surface-38 |
+| 5 | transparent |
+| 6 | outline-variant |
+
+#### Interaction states
+
+The following interaction states are available for radio icon buttons. See the state layers section on the Colors page for more details.
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_interaction-states" />
+
+#### Selected (hovered)
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_selected_hovered" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | primary |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | primary |
+| 5 | primary-16 |
+| 6 | primary |
+
+#### Selected (focused) and selected (pressed)
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_selected_focused_pressed" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | primary |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | primary |
+| 5 | primary-20 |
+| 6 | primary |
+
+#### Unselected (hovered)
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_unselected_hovered" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | on-surface-variant |
+| 5 | on-surface-8 |
+| 6 | outline |
+
+#### Unselected (focused) and unselected (pressed)
+
+<imagePlaceholder imageId="cv-radio-icon_anatomy_unselected_focused_pressed" />
+
+| Anatomy | Color token |
+| --- | --- |
+| 1 | on-surface-variant |
+| 2 | on-surface |
+| 3 | on-surface-variant |
+| 4 | on-surface-variant |
+| 5 | on-surface-12 |
+| 6 | outline |
+
+## Web components
+<storybookEmbed storyId="components-icon-radio--template" height={300} embedMode="story" />
+
+
+### Demos
+
+* Unchecked
+* Checked
+* Disabled
+
+### Props
+
+| Prop | Description |
+| --- | --- |
+| `checked` | Whether the radio icon is checked |
+| `disabled` | Whether the radio icon is disabled |
+| `iconOnly` | Show icon only without text |
+| `value` | Value of the radio icon |
+| `name` | Name of the radio icon |
+| `icon` | Material Symbol icon name |
+| `text` | Text content for the radio icon |
+
+### Code example
+
+```html
+<cv-radio-icon>
+  <div slot="text">Balance Every week</div>
+  <div slot="icon">
+    <cv-icon> houseboat </cv-icon>
+  </div>
+</cv-radio-icon>
+```
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `change` | `cv-radio-icon` | `{}` | Fired when the user modifies the radio `checked` state from an input device interaction on this radio. Note that, like native `<input>`, the `change` event is *not* fired when the `checked` property is set from JavaScript, nor is it fired when another radio in the same group becomes `checked`. |
+
+### References
+
+* [MWC radio](https://www.npmjs.com/package/@material/mwc-radio)
+* [Covalent design system - Icon radio](https://teradata.github.io/covalent/docs/components/?path=/docs/components-icon-radio--overview)
+
+## Accessibility
+
+### Overview
+
+Radio buttons enable mutually exclusive choices and must have clear labels and grouped accessibility support to ensure users can make informed decisions.
+
+### Keyboard interactions
+
+Radios should be fully operable via keyboard:
+
+* **Tab key**: Moves focus to the radio icon group.
+* **Spacebar**: Selects the currently focused radio icon.
+* **Arrow keys**: Move focus between options and select one.
+
+<imagePlaceholder imageId="cv-radio-icon_accessibility1" />
+
+### Tab index focus
+
+* Group the radio icons logically with a single **tabindex="0"** for the group.
+* Focus states must indicate the selected item clearly.
+* Exclude disabled options from the tab order.
+
+<imagePlaceholder imageId="cv-radio-icon_accessibility2" />

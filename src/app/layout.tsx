@@ -39,6 +39,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#E6FAF8" />
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={`${body.variable} ${heading.variable}`}>
         {!isDev && gtmId && (

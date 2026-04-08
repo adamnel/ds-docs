@@ -1,0 +1,43 @@
+---
+title: Icon Button Toggle
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Toggle button featuring an icon as the visual indicator of its state.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design: Icon button toggle](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7923-2250)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `on` | Whether the toggle is on |
+| `disabled` | Disables the toggle |
+| `onIcon` | Icon displayed when toggled on |
+| `offIcon` | Icon displayed when toggled off |
+| `aria-label` | Accessible label |
+| `ariaLabelOn` | Accessible label when on |
+| `ariaLabelOff` | Accessible label when off |
+
+```html
+<cv-icon-button-toggle onIcon="flashlight_on" offIcon="flashlight_off"></cv-icon-button-toggle>
+```
+
+### Events
+
+| Event name | Detail | Description |
+| --- | --- | --- |
+| `icon-button-toggle-change` | `{isOn: boolean}` | Indicates the button has been toggled. `isOn` indicates the `on` value of the toggle button. |
+
+### References
+
+* [MWC icon button toggle](https://www.npmjs.com/package/@material/mwc-icon-button-toggle)
+* [Covalent design system - Icon button toggle](https://teradata.github.io/covalent/docs/components/?path=/docs/components-icon-button-toggle--overview)

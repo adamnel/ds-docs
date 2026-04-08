@@ -1,0 +1,60 @@
+---
+title: Code Snippet
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Portion of code displayed within an interface, often for demonstration or explanation.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Code samples (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7910-39132)
+* [Legacy document - Code samples (Figma)](https://www.figma.com/design/4qn8W9GCuhyNxEMBhMeahz/Code-samples?node-id=0-1)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `label` | `string` | Label displayed in the header (e.g., file name). |
+| `language` | `string` | Programming language for syntax highlighting. |
+| `inline` | `boolean` | Whether to render the snippet inline. |
+| `hideHeader` | `boolean` | Whether to hide the header bar. |
+| `maxHeight` | `string` | Maximum height of the code snippet container. |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| `default` | The code content to display. |
+| `action-items` | Action buttons displayed in the header. |
+| `actionItems` | Alternative slot for action buttons. |
+
+### Example
+
+```html
+<cv-code-snippet label="Example.sql" language="sql">
+  SELECT * FROM load_to_teradata (
+    ON (
+      SELECT "class" AS class_col, "variable" AS variable_col,
+      "type" AS type_col, category, cnt, "sum" AS sum_col,
+      "sumSq", "totalCnt" FROM aster_nb_modelSC
+    )
+    tdpid ('sdt12432.labs.teradata.com')
+    username ('sample_user')
+    password ('sample_user')
+    target_table ('td_nb_modelSC')
+  );
+  <div slot="action-items">
+    <cv-button label="Retry" outlined> </cv-button>
+  </div>
+</cv-code-snippet>
+```
+
+### References
+
+* [Covalent design system - Code snippet](https://teradata.github.io/covalent/docs/components/?path=/docs/components-code-snippet--overview)

@@ -1,0 +1,47 @@
+---
+title: Typography
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Styling and formatting of text.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Typography (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-12561)
+* [See also: Foundations - Typography](/site/covalent/latest/pages/typography-3shrxwkyk)
+* [See also: Tokens - Typography](/site/covalent/latest/pages/typography)
+
+## Web components
+
+The `cv-typography` component provides a set of predefined text scales for consistent typographic styling.
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `scale` | `string` | The typographic scale to apply. One of: `headline1`, `headline2`, `headline3`, `headline4`, `headline5`, `headline6`, `subtitle1`, `subtitle2`, `body1`, `body2`, `caption`, `button`, `overline`. |
+
+### Available scales
+
+* Headline 1
+* Headline 2
+* Headline 3
+* Headline 4
+* Headline 5
+* Body 1
+* Body 2
+
+```html
+<cv-typography scale="headline1">
+  The quick brown fox jumps over the lazy dog
+</cv-typography>
+```
+
+### References
+
+* [MDC Typography](https://m2.material.io/develop/web/guides/typography)
+* [Covalent design system - Text](https://teradata.github.io/covalent/docs/components/?path=/docs/components-text--overview)

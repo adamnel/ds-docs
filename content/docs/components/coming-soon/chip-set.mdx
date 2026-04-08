@@ -1,0 +1,41 @@
+---
+title: Chip Set
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Compact visual element representing an attribute, action, or choice.
+
+## Usage
+
+Design documentation coming soon. In the meantime, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Chip set (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7914-54907)
+* See also: [Chip](/docs/components/chip)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `selectable` | `boolean` | **Required.** Whether chips in the set are selectable. |
+| `multi` | `boolean` | Whether multiple chips can be selected at once. |
+| `label` | `string` | Accessible label for the chip set. |
+| `activeIndex` | `number` | Index of the currently active chip. |
+
+### Example
+
+```html
+<cv-chip-set selectable activeIndex="0" label="chip-set">
+  <cv-chip label="Chip" filter state="secondary"> </cv-chip>
+  <cv-chip label="Chip" filter state="secondary"> </cv-chip>
+  <cv-chip label="Chip" filter state="secondary"> </cv-chip>
+</cv-chip-set>
+```
+
+### References
+
+* [MDC chips](https://www.npmjs.com/package/@material/chips)
+* [Covalent design system - Chips](https://teradata.github.io/covalent/docs/components/?path=/docs/components-chips--overview)

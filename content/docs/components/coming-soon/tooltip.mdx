@@ -1,0 +1,41 @@
+---
+title: Tooltip
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Small pop-up box providing additional information when hovering over an element.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design - Tooltip (Figma)](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-9376)
+* [Legacy design - Tooltips (Figma)](https://www.figma.com/design/vT5owGSUliHF9Wq0He5E9k/Tooltips?m=auto\&t=igsBXlZlwwHQzjtQ-6)
+* [Material Design - Tooltips](https://m2.material.io/components/tooltips)
+* [Angular Material - Tooltip](https://material.angular.io/components/tooltip/overview)
+
+## Web components
+
+### Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `persistent` | `boolean` | Whether the tooltip stays visible without hover. |
+| `rich` | `boolean` | Whether to use the rich tooltip variant. |
+| `richTitle` | `string` | Title text for rich tooltips. |
+| `hideDelay` | `number` | Delay in milliseconds before the tooltip hides. |
+| `showDelay` | `number` | Delay in milliseconds before the tooltip shows. |
+| `actionItems` | `slot` | Slot for action items in rich tooltips. |
+
+```html
+<cv-tooltip hidedelay="5000" open>
+  Im a tooltip
+</cv-tooltip>
+```
+
+### References
+
+* [MDC tooltip](https://www.npmjs.com/package/@material/tooltip/v/10.0.0-canary.6863fd43a.0)
+* [Covalent design system - Tooltip](https://teradata.github.io/covalent/docs/components/?path=/docs/components-tooltip--overview)

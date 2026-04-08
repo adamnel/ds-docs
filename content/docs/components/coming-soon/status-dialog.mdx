@@ -1,0 +1,90 @@
+---
+title: Status Dialog
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Modal window displaying messages indicating the status, along with optional details.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current documentation: Status dialog](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=13258-107)
+* [New pattern document: Status dialog](https://www.figma.com/design/bmY69C85hqtl96mP6bA4AK/Status-dialogs?node-id=4-16)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `state` | Status state. One of: `error`, `positive`, `warning` |
+| `heading` | Heading text |
+| `open` | Whether the dialog is open |
+| `hideActions` | Hides action buttons |
+| `stacked` | Stacks action buttons vertically |
+| `scrimClickAction` | Action on scrim click |
+| `escapeKeyAction` | Action on escape key |
+| `defaultAction` | Default action |
+| `actionAttribute` | Attribute for action elements |
+| `initialFocusAttribute` | Attribute for initial focus element |
+
+### Slots
+
+| Slot | Description |
+| --- | --- |
+| default | Main content (error message or status content) |
+| `details` | Additional detail content |
+| `primaryAction` | Primary action button |
+| `secondaryAction` | Secondary action button |
+
+```html
+<cv-status-dialog
+  state="error"
+  heading="Title for the dialog"
+  open
+  scrimClickAction="close"
+  escapeKeyAction="close"
+  defaultAction="close"
+  actionAttribute="dialogAction"
+  initialFocusAttribute="dialogInitialFocus">
+  <div slot="primaryAction"></div>
+  Error message / content to be displayed.
+</cv-status-dialog>
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `forceLayout() => void` | Forces dialog to relayout (animation frame time). May be required if dialog size is incorrect or if stacked layout has not been triggered correctly. |
+| `focus() => void` | Focuses on the initial focus element if defined. |
+| `blur() => void` | Blurs the active element. |
+| `show() => void` | Opens the dialog. |
+| `close() => void` | Closes the dialog. |
+
+### Listeners
+
+| Event name | Target | Description |
+| --- | --- | --- |
+| `click` | `root element` | Detects if clicked target is a dialog action. |
+| `resize` | `window` | Performs dialog layout (passive). |
+| `orientationchange` | `window` | Performs dialog layout (passive). |
+| `keydown` | `cv-status-dialog` | Listens for the enter key to click the default button (passive). |
+| `keydown` | `document` | Listens for the escape key to close the dialog. |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `opening` | `cv-status-dialog` | `{}` | Fired when the dialog is beginning to open. |
+| `opened` | `cv-status-dialog` | `{}` | Fired once the dialog is finished opening (after animation). |
+| `closing` | `cv-status-dialog` | `{action: string}` | Fired when the dialog is beginning to close. Detail is the action that closed the dialog. |
+| `closed` | `cv-status-dialog` | `{action: string}` | Fired once the dialog is finished closing (after animation). Detail is the action that closed the dialog. |
+
+### References
+
+* [MWC dialog](https://www.npmjs.com/package/@material/mwc-dialog)
+* [Covalent design system - Status Dialog](https://teradata.github.io/covalent/docs/components/?path=/docs/components-status-dialog--overview)

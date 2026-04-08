@@ -1,0 +1,48 @@
+---
+title: Tab Bar
+last_edited: '2026-04-08T00:00:00.000Z'
+---
+
+Navigation element allowing users to switch between different sections or views.
+
+## Usage
+
+Design documentation coming soon. In the mean time, review the resources below.
+
+### Usage — additional resources
+
+* [Current design: Tab bar](https://www.figma.com/design/KvXVAmYdCVAS7hzkOa73Em/Covalent-Principles?node-id=7894-9459)
+* [See also: Tab](/site/covalent/latest/pattern/tab)
+
+## Web components
+
+### Properties
+
+| Property | Description |
+| --- | --- |
+| `activeIndex` | Index of the active tab |
+
+```html
+<cv-tab-bar activeIndex="0">
+  <cv-tab label="Tab label"> </cv-tab>
+  <cv-tab label="Tab label"> </cv-tab>
+  <cv-tab label="Tab label"> </cv-tab>
+</cv-tab-bar>
+```
+
+### Methods
+
+| Method signature | Description |
+| --- | --- |
+| `scrollIndexIntoView(index: number) => void` | For long, scrollable `cv-tab-bar`s, scrolls the tab at the given index into view. |
+
+### Events
+
+| Event name | Target | Detail | Description |
+| --- | --- | --- | --- |
+| `MDCTabBar:activated` | `cv-tab-bar` | `{index: number}` | Emitted when a tab selection has been made. |
+
+### References
+
+* [MWC tab bar](https://www.npmjs.com/package/@material/mwc-tab-bar)
+* [Covalent design system - Tabs](https://teradata.github.io/covalent/docs/components/?path=/docs/components-tabs--overview)
