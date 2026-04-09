@@ -1,3 +1,4 @@
+import { stripBasePath } from "@/utils/base-path";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
@@ -50,10 +51,11 @@ export function Pagination() {
     };
 
     // Get current slug from pathname
+    const currentPath = stripBasePath(pathname);
     const slug =
-      pathname === "/docs"
+      currentPath === "/docs" || currentPath === "/docs/"
         ? "content/docs/index.mdx"
-        : `content${pathname}.mdx`;
+        : `content${currentPath}.mdx`;
 
     // Get all pages in sequence
     const allPages = getAllPages();

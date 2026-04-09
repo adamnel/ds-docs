@@ -1,5 +1,6 @@
 import { DynamicLink } from "@/components/ui/dynamic-link";
 import settings from "@/content/settings/config.json";
+import { stripBasePath } from "@/utils/base-path";
 import { matchActualTarget } from "@/utils/docs/urls";
 import { getUrl } from "@/utils/get-url";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
@@ -38,7 +39,7 @@ export const NavLevel: React.FC<NavLevelProps> = ({
 }) => {
   const navLevelElem = React.useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
-  const path = pathname || "";
+  const path = stripBasePath(pathname) || "";
 
   // If there is only one endpoint slug, use it as the default title
   // This will be used only when endpoint title is not set
@@ -67,42 +68,42 @@ export const NavLevel: React.FC<NavLevelProps> = ({
       inline-flex items-center justify-center px-0.5 py-1 my-1 rounded text-xs font-medium mr-1.5 flex-shrink-0 w-12
       ${
         categoryData.verb === "get"
-          ? pathname === slug
+          ? path === slug
             ? "bg-green-100 text-green-800"
             : "bg-green-100/75 group-hover:bg-green-100 text-green-800"
           : ""
       }
       ${
         categoryData.verb === "post"
-          ? pathname === slug
+          ? path === slug
             ? "bg-blue-100 text-blue-800"
             : "bg-blue-100/75 group-hover:bg-blue-100 text-blue-800"
           : ""
       }
       ${
         categoryData.verb === "put"
-          ? pathname === slug
+          ? path === slug
             ? "bg-yellow-100 text-yellow-800"
             : "bg-yellow-100/75 group-hover:bg-yellow-100 text-yellow-800"
           : ""
       }
       ${
         categoryData.verb === "delete"
-          ? pathname === slug
+          ? path === slug
             ? "bg-red-100 text-red-800"
             : "bg-red-100/75 group-hover:bg-red-100 text-red-800"
           : ""
       }
       ${
         categoryData.verb === "patch"
-          ? pathname === slug
+          ? path === slug
             ? "bg-purple-100 text-purple-800"
             : "bg-purple-100/75 group-hover:bg-purple-100 text-purple-800"
           : ""
       }
       ${
         !["get", "post", "put", "delete", "patch"].includes(categoryData.verb)
-          ? pathname === slug
+          ? path === slug
             ? "bg-gray-100 text-gray-800"
             : "bg-gray-100/75 group-hover:bg-gray-100 text-gray-800"
           : ""

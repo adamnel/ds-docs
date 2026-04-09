@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type React from "react";
+import { DynamicLink } from "./dynamic-link";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   color?: "white" | "blue" | "orange" | "seafoam" | "ghost" | "ghostBlue";
@@ -64,9 +64,9 @@ export const LinkButton = ({
   ...props
 }) => {
   return (
-    <Link
+    <DynamicLink
       href={link}
-      passHref
+      isFullWidth={true}
       className={`${baseClasses} ${
         colorClasses[color] ? colorClasses[color] : colorClasses.seafoam
       } ${
@@ -75,7 +75,7 @@ export const LinkButton = ({
       {...props}
     >
       {children}
-    </Link>
+    </DynamicLink>
   );
 };
 
@@ -87,16 +87,16 @@ export const FlushButton = ({
   ...props
 }) => {
   return (
-    <Link
+    <DynamicLink
       href={link}
-      passHref
+      isFullWidth={true}
       className={`${baseClasses} ${
         colorClasses[color] ? colorClasses[color] : colorClasses.seafoam
       } ${"hover:inner-link border-none bg-none p-2 hover:translate-x-0 hover:translate-y-0 hover:shadow-none"} ${className}`}
       {...props}
     >
       {children}
-    </Link>
+    </DynamicLink>
   );
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
+import { normalizeStaticHref, withBasePath } from "@/utils/base-path";
 import Image from "next/image";
-import { withBasePath } from "@/utils/base-path";
 
 const ErrorWrapper = ({
   errorConfig,
@@ -22,7 +22,9 @@ const ErrorWrapper = ({
             </h2>
             <hr
               className="block h-[7px] w-full border-none bg-[length:auto_100%] bg-no-repeat"
-              style={{ backgroundImage: `url('${withBasePath("/svg/hr.svg")}')` }}
+              style={{
+                backgroundImage: `url('${withBasePath("/svg/hr.svg")}')`,
+              }}
             />
             <p className="-mb-1 block text-neutral-text font-thin text-md lg:text-lg lg:leading-normal">
               {errorConfig?.description ??
@@ -35,7 +37,7 @@ const ErrorWrapper = ({
                 (link?.linkUrl || link?.linkUrl === "") && (
                   <a
                     key={link.linkUrl}
-                    href={link.linkUrl}
+                    href={normalizeStaticHref(link.linkUrl)}
                     className="text-neutral-text-secondary shadow-sm hover:shadow-md outline outline-neutral-border-subtle hover:text-neutral-text rounded-md p-2 bg-neutral-background hover:bg-neutral-background-secondary"
                   >
                     <div>{link.linkText ?? "External Link 🔗"}</div>

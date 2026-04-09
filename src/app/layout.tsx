@@ -43,7 +43,11 @@ export default function RootLayout({
           type="application/rss+xml"
           href={withBasePath("/rss.xml")}
         />
-        <link rel="icon" type="image/svg+xml" href={withBasePath("/favicon.svg")} />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={withBasePath("/favicon.svg")}
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
           rel="stylesheet"

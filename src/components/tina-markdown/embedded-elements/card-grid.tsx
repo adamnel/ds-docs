@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { DynamicLink } from "@/components/ui/dynamic-link";
 import { tinaField } from "tinacms/dist/react";
 
 export const CardGrid = (data: {
@@ -16,36 +16,41 @@ export const CardGrid = (data: {
       {data.cards?.map((card, index) => {
         if (card.link) {
           return (
-            <Link
+            <DynamicLink
               href={card.link}
-              className={cardClasses}
               key={`card-${index}-${card.title}`}
+              isFullWidth={true}
             >
-              <h2
-                className="text-2xl font-medium brand-primary-gradient mb-2 font-heading"
-                data-tina-field={tinaField(data.cards[index], "title")}
-              >
-                {card.title}
-              </h2>
-              <p
-                className="text-neutral-text font-light mb-10 font-body"
-                data-tina-field={tinaField(data.cards[index], "description")}
-              >
-                {card.description}
-              </p>
-              {card.link && (
-                <p className="flex items-center absolute bottom-4">
-                  <span
-                    className="relative brand-secondary-gradient"
-                    data-tina-field={tinaField(data.cards[index], "linkText")}
-                  >
-                    {card.linkText ?? "See more"}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-brand-secondary-gradient-start to-brand-secondary-gradient-end group-hover:w-full transition-all duration-300 ease-in-out" />
-                  </span>
-                  <span className="ml-1 mr-2 brand-secondary-gradient"> ›</span>
+              <div className={cardClasses}>
+                <h2
+                  className="text-2xl font-medium brand-primary-gradient mb-2 font-heading"
+                  data-tina-field={tinaField(data.cards[index], "title")}
+                >
+                  {card.title}
+                </h2>
+                <p
+                  className="text-neutral-text font-light mb-10 font-body"
+                  data-tina-field={tinaField(data.cards[index], "description")}
+                >
+                  {card.description}
                 </p>
-              )}
-            </Link>
+                {card.link && (
+                  <p className="flex items-center absolute bottom-4">
+                    <span
+                      className="relative brand-secondary-gradient"
+                      data-tina-field={tinaField(data.cards[index], "linkText")}
+                    >
+                      {card.linkText ?? "See more"}
+                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-brand-secondary-gradient-start to-brand-secondary-gradient-end group-hover:w-full transition-all duration-300 ease-in-out" />
+                    </span>
+                    <span className="ml-1 mr-2 brand-secondary-gradient">
+                      {" "}
+                      ›
+                    </span>
+                  </p>
+                )}
+              </div>
+            </DynamicLink>
           );
         }
         return (

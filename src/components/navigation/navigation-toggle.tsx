@@ -1,3 +1,4 @@
+import { stripBasePath } from "@/utils/base-path";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -25,7 +26,7 @@ export const NavigationDropdownContent = ({
   onClose: () => void;
 }) => {
   const pathname = usePathname();
-  const path = pathname || "";
+  const path = stripBasePath(pathname) || "";
 
   const [selectedValue, setSelectedValue] = useState(
     findTabWithPath(tocData, path)

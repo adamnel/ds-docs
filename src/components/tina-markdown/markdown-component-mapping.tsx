@@ -1,4 +1,5 @@
 import { IconsUsageGuide } from "@/components/docs/icon-usage/icons-usage-guide";
+import { normalizeStaticHref } from "@/utils/base-path";
 import type { ReactNode } from "react";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import Accordion, { AccordionBlock } from "./embedded-elements/accordion";
@@ -177,7 +178,7 @@ export const MarkdownComponentMapping: Components<ComponentMapping> = {
   blockquote: (props) => <Blockquote {...props} />,
   a: (props) => (
     <a
-      href={props?.url}
+      href={normalizeStaticHref(props?.url)}
       {...props}
       className="underline opacity-80 transition-all duration-200 ease-out hover:text-brand-primary text-neutral-text"
     />

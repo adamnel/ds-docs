@@ -6,6 +6,7 @@ import type {
   NavigationBarData,
   SupermenuGroup,
 } from "@/src/utils/docs/navigation/documentNavigation";
+import { stripBasePath } from "@/utils/base-path";
 import * as Tabs from "@radix-ui/react-tabs";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -31,38 +32,36 @@ export const TabsLayout = ({
   };
   tinaProps: { data: Record<string, unknown> };
 }) => {
-  const [navigationDocsData, setNavigationDocsData] = React.useState<
-    FormattedNavigation | undefined
-  >();
-  const [tabs, setTabs] = React.useState<TabItem[]>([]);
-  const [selectedTab, setSelectedTab] = React.useState<string | undefined>();
-  const [objectOfSelectedTab, setObjectOfSelectedTab] = React.useState<
-    TabItem | undefined
-  >();
+  const navigationDocsData = React.useMemo(
+    () =>
+      formatNavigationData(
+        tinaProps.data as unknown as NavigationBarData,
+        false
+      ),
+    [tinaProps.data]
+  );
+  const tabs = React.useMemo(
+    () =>
+      navigationDocsData.data.map((tab) => ({
+        label: tab.title,
+        content: tab,
+        __typename: tab.__typename,
+        overviewSlug: tab.overviewSlug,
+      })),
+    [navigationDocsData]
+  );
+  const [selectedTab, setSelectedTab] = React.useState<string>(
+    tabs[0]?.label || ""
+  );
   const pathname = usePathname();
-
-  React.useEffect(() => {
-    const formattedNavData = formatNavigationData(
-      tinaProps.data as unknown as NavigationBarData,
-      false
-    );
-    setNavigationDocsData(formattedNavData);
-    const tabs = formattedNavData.data.map((tab) => ({
-      label: tab.title,
-      content: tab,
-      __typename: tab.__typename,
-      overviewSlug: tab.overviewSlug,
-    }));
-    setTabs(tabs);
-    setSelectedTab(tabs[0]?.label);
-    setObjectOfSelectedTab(tabs[0]);
-  }, [tinaProps.data]);
+  const objectOfSelectedTab =
+    tabs.find((tab) => tab.label === selectedTab) || tabs[0];
 
   React.useEffect(() => {
     // Find the tab that contains the current path
     if (!tabs.length || !pathname) return;
 
-    const initialTab = findTabWithPath(tabs, pathname);
+    const initialTab = findTabWithPath(tabs, stripBasePath(pathname));
     setSelectedTab(initialTab);
     // Dispatch initial tab change with index
     const initialIndex = tabs.findIndex((tab) => tab.label === initialTab);
@@ -84,7 +83,7 @@ export const TabsLayout = ({
 
   return (
     <Tabs.Root
-      value={selectedTab}
+      value={selectedTab || tabs[0]?.label || ""}
       onValueChange={handleTabChange}
       className="flex flex-col w-full"
     >

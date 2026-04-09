@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { DynamicLink } from "@/components/ui/dynamic-link";
+import { normalizeStaticHref, stripBasePath } from "@/utils/base-path";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -163,7 +164,7 @@ export const BreadCrumbs = ({
     return trail;
   };
 
-  const currentPath = usePathname();
+  const currentPath = stripBasePath(usePathname());
 
   const breadcrumbs = findBreadcrumbTrail(navigationDocsData, currentPath);
 
@@ -187,12 +188,14 @@ export const BreadCrumbs = ({
               )}
 
               {isClickable ? (
-                <Link
-                  href={crumb?.url || "/"}
-                  className="text-sm uppercase text-neutral-text-secondary hover:text-brand-primary transition-all duration-300 cursor-pointer"
+                <DynamicLink
+                  href={normalizeStaticHref(crumb?.url || "/")}
+                  isFullWidth={true}
                 >
-                  {crumb.title}
-                </Link>
+                  <span className="text-sm uppercase text-neutral-text-secondary hover:text-brand-primary transition-all duration-300 cursor-pointer">
+                    {crumb.title}
+                  </span>
+                </DynamicLink>
               ) : (
                 <span
                   className={`text-sm uppercase tracking-wide ${

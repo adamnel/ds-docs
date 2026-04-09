@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { DynamicLink } from "@/components/ui/dynamic-link";
 
 interface SearchResult {
   url: string;
@@ -40,22 +40,20 @@ export function SearchResults({
         data-testid="search-results-container"
       >
         {results.map((result, index) => (
-          <Link
-            key={index}
-            href={result.url}
-            className="block p-2 border-b-1 border-b-gray-200 last:border-b-0 group"
-          >
-            <h3 className="font-medium text-brand-primary group-hover:text-orange-400">
-              {result.title}
-            </h3>
-            <p
-              className="mt-1 text-sm text-neutral-text"
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: For Highlighting the search term, it is important to use dangerouslySetInnerHTML
-              dangerouslySetInnerHTML={{
-                __html: result.excerpt || "",
-              }}
-            />
-          </Link>
+          <DynamicLink key={index} href={result.url} isFullWidth={true}>
+            <div className="block p-2 border-b-1 border-b-gray-200 last:border-b-0 group">
+              <h3 className="font-medium text-brand-primary group-hover:text-orange-400">
+                {result.title}
+              </h3>
+              <p
+                className="mt-1 text-sm text-neutral-text"
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: For Highlighting the search term, it is important to use dangerouslySetInnerHTML
+                dangerouslySetInnerHTML={{
+                  __html: result.excerpt || "",
+                }}
+              />
+            </div>
+          </DynamicLink>
         ))}
       </div>
     );

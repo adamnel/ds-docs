@@ -1,10 +1,10 @@
 "use client";
 
+import { DynamicLink } from "@/components/ui/dynamic-link";
+import { withBasePath } from "@/utils/base-path";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { withBasePath } from "@/utils/base-path";
 
 interface NavbarLogoProps {
   navigationDocsData: any;
@@ -24,12 +24,14 @@ export const NavbarLogo = ({ navigationDocsData }: NavbarLogoProps) => {
   const resolvedDarkLogo = withBasePath(darkLogo);
 
   return (
-    <Link href="/" className="flex items-center">
+    <DynamicLink href="/" isFullWidth={true}>
       <div className="relative md:w-[120px] w-[90px] h-[40px]">
         {mounted ? (
           <>
             <Image
-              src={resolvedTheme === "dark" ? resolvedDarkLogo : resolvedLightLogo}
+              src={
+                resolvedTheme === "dark" ? resolvedDarkLogo : resolvedLightLogo
+              }
               alt="Logo"
               fill
               className="object-contain"
@@ -38,7 +40,9 @@ export const NavbarLogo = ({ navigationDocsData }: NavbarLogoProps) => {
             />
             {/* Preload the other logo */}
             <Image
-              src={resolvedTheme === "dark" ? resolvedLightLogo : resolvedDarkLogo}
+              src={
+                resolvedTheme === "dark" ? resolvedLightLogo : resolvedDarkLogo
+              }
               alt=""
               fill
               className="hidden"
@@ -49,6 +53,6 @@ export const NavbarLogo = ({ navigationDocsData }: NavbarLogoProps) => {
           <div className="w-full h-full animate-pulse opacity-20" />
         )}
       </div>
-    </Link>
+    </DynamicLink>
   );
 };
