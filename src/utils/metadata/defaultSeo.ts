@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 import settings from "@/content/settings/config.json";
+import { getSiteUrl } from "../site-url";
+
+const siteUrl = getSiteUrl();
 
 export const DEFAULT_SEO: Metadata = {
-  metadataBase: new URL(settings.siteUrl),
+  metadataBase: new URL(siteUrl),
   title: {
     default: settings.title,
     template: "%s",
@@ -15,7 +18,7 @@ export const DEFAULT_SEO: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    url: settings.siteUrl,
+    url: siteUrl,
     title: settings.title,
     description: settings.description,
     siteName: settings.title,

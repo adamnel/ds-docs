@@ -135,6 +135,27 @@ pnpm build
 
 TinaDocs can be deployed as a static site to GitHub Pages, Vercel, or any static hosting provider.
 
+### **Deploy To Vercel**
+
+1. Push this repo to GitHub.
+2. Import the repository into [Vercel](https://vercel.com/new).
+3. Keep the detected framework preset as `Next.js`.
+4. Set these environment variables in Vercel:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.example
+NEXT_PUBLIC_ENABLE_THEME_SELECTION=true
+```
+
+5. Optional:
+
+```env
+GITHUB_TOKEN=<your GitHub personal access token>
+```
+
+If you add a custom domain in Vercel, use that domain for `NEXT_PUBLIC_SITE_URL`.
+For root-hosted Vercel deployments, do not set `NEXT_PUBLIC_BASE_PATH`.
+
 ---
 
 ## 🔍 Search Setup
