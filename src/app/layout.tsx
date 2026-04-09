@@ -13,8 +13,6 @@ import { withBasePath } from "@/utils/base-path";
 import type React from "react";
 import { TinaClient } from "./tina-client";
 
-const isDev = process.env.NODE_ENV === "development";
-
 const body = Inter({ subsets: ["latin"], variable: "--body-font" });
 const heading = Roboto_Flex({
   subsets: ["latin"],
@@ -24,7 +22,7 @@ const heading = Roboto_Flex({
 });
 
 const isThemeSelectorEnabled =
-  isDev || process.env.NEXT_PUBLIC_ENABLE_THEME_SELECTION === "true";
+  process.env.NEXT_PUBLIC_ENABLE_THEME_SELECTION === "true";
 
 const theme = settings.selectedTheme || "default";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
@@ -54,7 +52,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${body.variable} ${heading.variable}`}>
-        {!isDev && gtmId && (
+        {process.env.NODE_ENV !== "development" && gtmId && (
           <GoogleTagManager
             gtmId={gtmId}
             gtmScriptUrl="https://www.googletagmanager.com/gtm.js"
