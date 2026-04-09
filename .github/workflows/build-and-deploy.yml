@@ -99,6 +99,7 @@ jobs:
       - name: Build with Next.js & TinaCMS
         run: ${{ steps.detect-package-manager.outputs.runner }} run export
         env:
+          NODE_ENV: production
           EXPORT_MODE: static
 
       - name: Upload artifact
