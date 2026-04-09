@@ -1,16 +1,34 @@
 "use client";
 
 import { useGitHubMetadata } from "@/src/components/page-metadata/github-metadata-context";
-import { formatDate } from "date-fns";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaHistory } from "react-icons/fa";
 import { getRelativeTime } from "./timeUtils";
 import type { GitHubMetadataProps } from "./type";
+
+const DATE_FORMATTER = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+function formatMetadataDate(dateString: string): string {
+  const date = new Date(dateString);
+
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  return DATE_FORMATTER.format(date);
+}
 
 export default function GitHubMetadata({
   className = "",
 }: Omit<GitHubMetadataProps, "path">) {
   const { data } = useGitHubMetadata();
+  const [lastUpdateInRelativeTime, setLastUpdateInRelativeTime] = useState("");
 
   if (!data) {
     return (
@@ -22,16 +40,17 @@ export default function GitHubMetadata({
 
   const { latestCommit, firstCommit, historyUrl } = data;
   const lastUpdatedDate = latestCommit.commit.author.date;
-  const lastUpdateInRelativeTime = getRelativeTime(lastUpdatedDate);
-  const lastUpdateInAbsoluteTime = formatDate(lastUpdatedDate, "dd MMM yyyy");
+  const lastUpdateInAbsoluteTime = formatMetadataDate(lastUpdatedDate);
   const createdDate = firstCommit?.commit.author.date;
-  const createdTime = createdDate
-    ? formatDate(createdDate, "d MMM yyyy")
-    : null;
+  const createdTime = createdDate ? formatMetadataDate(createdDate) : null;
 
   const tooltipContent = createdTime
     ? `Created ${createdTime}\nLast updated ${lastUpdateInAbsoluteTime}`
     : `Last updated ${lastUpdateInAbsoluteTime}`;
+
+  useEffect(() => {
+    setLastUpdateInRelativeTime(getRelativeTime(lastUpdatedDate));
+  }, [lastUpdatedDate]);
 
   return (
     <div className={`text-slate-500 text-sm ${className}`}>
@@ -41,7 +60,7 @@ export default function GitHubMetadata({
           <span className="font-bold text-black">
             {latestCommit.commit.author.name}
           </span>
-          {` ${lastUpdateInRelativeTime}.`}
+          {lastUpdateInRelativeTime ? ` ${lastUpdateInRelativeTime}.` : ""}
         </span>
         <div className="relative group">
           <Link

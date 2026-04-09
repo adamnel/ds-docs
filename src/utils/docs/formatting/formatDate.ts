@@ -2,6 +2,13 @@
  * Utilities for formatting dates in document metadata
  */
 
+const DEFAULT_DATE_FORMATTER = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+});
+
 /**
  * Formats a date string into a human-readable format
  *
@@ -15,9 +22,5 @@ export function formatDate(dateString: string | null): string {
 
   if (Number.isNaN(date.getTime())) return "";
 
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  return DEFAULT_DATE_FORMATTER.format(date);
 }
