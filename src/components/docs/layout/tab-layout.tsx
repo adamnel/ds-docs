@@ -74,7 +74,6 @@ export const TabsLayout = ({
 
   const handleTabChange = (value: string) => {
     setSelectedTab(value);
-    setObjectOfSelectedTab(tabs.find((tab) => tab.label === value));
     const newIndex = tabs.findIndex((tab) => tab.label === value);
     window.dispatchEvent(
       new CustomEvent("tabChange", { detail: { value: newIndex.toString() } })
