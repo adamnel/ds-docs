@@ -62,9 +62,14 @@ export default function RootLayout({
         )}
         <ThemeProvider
           attribute="class"
-          defaultTheme={theme}
+          defaultTheme="system"
           enableSystem={true}
           disableTransitionOnChange={false}
+          themes={["light", "dark"]}
+          value={{
+            light: `theme-${theme} light`,
+            dark: `theme-${theme} dark`,
+          }}
         >
           {isThemeSelectorEnabled && <ThemeSelector />}
           <Content>

@@ -1,6 +1,6 @@
+import { withBasePath } from "@/utils/base-path";
 import Image from "next/image";
 import { useState } from "react";
-import { withBasePath } from "@/utils/base-path";
 import { ImageOverlayWrapper } from "../../ui/image-overlay-wrapper";
 
 export const ImageComponent = (props) => {

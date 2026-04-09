@@ -1,3 +1,9 @@
-import DocsPage from "./docs/page";
+import DocsPage, {
+  generateMetadata as generateDocsMetadata,
+} from "./docs/page";
 
-export default DocsPage;
+export const generateMetadata = generateDocsMetadata;
+
+export default async function HomePage() {
+  return <DocsPage />;
+}

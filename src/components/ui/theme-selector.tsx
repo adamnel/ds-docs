@@ -1,5 +1,5 @@
 "use client";
-import { useTheme } from "next-themes";
+import settings from "@/content/settings/config.json";
 import { useEffect, useRef, useState } from "react";
 import { MdArrowDropDown } from "react-icons/md";
 import { MdHelpOutline } from "react-icons/md";
@@ -7,6 +7,7 @@ import { MdHelpOutline } from "react-icons/md";
 const themes = ["default", "tina", "blossom", "lake", "pine", "indigo"];
 
 export const BROWSER_TAB_THEME_KEY = "browser-tab-theme";
+const DEFAULT_THEME_NAME = settings.selectedTheme || "default";
 
 // Default theme colors from root
 const DEFAULT_COLORS = {
@@ -16,7 +17,6 @@ const DEFAULT_COLORS = {
 };
 
 export const ThemeSelector = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -25,10 +25,10 @@ export const ThemeSelector = () => {
   const [selectedTheme, setSelectedTheme] = useState<string>(() => {
     if (typeof window !== "undefined") {
       return (
-        sessionStorage.getItem(BROWSER_TAB_THEME_KEY) || theme || "default"
+        sessionStorage.getItem(BROWSER_TAB_THEME_KEY) || DEFAULT_THEME_NAME
       );
     }
-    return theme || "default";
+    return DEFAULT_THEME_NAME;
   });
 
   // Close dropdown when clicking outside
@@ -57,39 +57,44 @@ export const ThemeSelector = () => {
     setMounted(true);
   }, []);
 
-  // Update selected theme when theme changes from dropdown
   useEffect(() => {
-    if (theme && !themes.includes(theme)) {
-      // If theme is not in our list, it means it's a dark/light mode change
-      setSelectedTheme(selectedTheme);
-    } else {
-      setSelectedTheme(theme || "default");
+    if (!mounted) {
+      return;
     }
-  }, [theme, selectedTheme]);
+
+    const root = document.documentElement;
+    const storedTheme = sessionStorage.getItem(BROWSER_TAB_THEME_KEY);
+    const themeClass = Array.from(root.classList).find((className) =>
+      className.startsWith("theme-")
+    );
+    const activeTheme = storedTheme || themeClass?.replace(/^theme-/, "");
+
+    if (activeTheme && themes.includes(activeTheme)) {
+      setSelectedTheme(activeTheme);
+    }
+  }, [mounted]);
 
   useEffect(() => {
     if (mounted && selectedTheme) {
-      const isDark = resolvedTheme === "dark";
-      document.documentElement.className = `theme-${selectedTheme}${
-        isDark ? " dark" : ""
-      }`;
+      const root = document.documentElement;
+
+      for (const className of Array.from(root.classList)) {
+        if (className.startsWith("theme-")) {
+          root.classList.remove(className);
+        }
+      }
+
+      root.classList.add(`theme-${selectedTheme}`);
       sessionStorage.setItem(BROWSER_TAB_THEME_KEY, selectedTheme);
     }
-  }, [selectedTheme, resolvedTheme, mounted]);
+  }, [selectedTheme, mounted]);
 
   if (!mounted) return null;
 
   const handleThemeChange = (newTheme: string) => {
-    const currentMode = resolvedTheme;
     setSelectedTheme(newTheme);
     sessionStorage.setItem(BROWSER_TAB_THEME_KEY, newTheme);
     setIsOpen(false);
-    if (currentMode === "dark") {
-      setTheme("light");
-      setTimeout(() => setTheme("dark"), 0);
-    } else {
-      setTheme("light");
-    }
   };
 
   return (
