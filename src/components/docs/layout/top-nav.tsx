@@ -5,16 +5,17 @@ import { useRouter } from "next/navigation";
 import type React from "react";
 import { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { Search } from "../../search-docs/search";
 import LightDarkSwitch from "../../ui/light-dark-switch";
 import { NavbarLogo } from "./navbar-logo";
 
 export const TopNav = ({
   tabs,
   navigationDocsData,
+  isHome = false,
 }: {
   tabs: { label: string; content: any; overviewSlug?: string }[];
   navigationDocsData: any;
+  isHome?: boolean;
 }) => {
   const router = useRouter();
   const ctaButtons = navigationDocsData?.ctaButtons;
@@ -37,7 +38,7 @@ export const TopNav = ({
   };
 
   return (
-    <div className="border border-neutral-border/50 mb-2 md:mb-4 w-full lg:px-8 py-1 dark:bg-glass-gradient-end dark:border-b dark:border-neutral-border-subtle/60 shadow-md/5">
+    <div className={`w-full lg:px-8 pt-5 py-1 ${isHome ? "text-white" : "shadow-md/5"}`}>
       <div className="max-w-[2560px] mx-auto flex items-center justify-between lg:py-0 py-2">
         <div className="flex">
           <NavbarLogo navigationDocsData={[navigationDocsData]} />
@@ -58,8 +59,8 @@ export const TopNav = ({
             ))}
           </Tabs.List>
         </div>
-        <div className="flex-1 flex justify-center">
-          <Search />
+        <div className="flex-1 lg:my-4 lg:mb-4">
+          <div className="p-1 lg:p-2" />
         </div>
         <div className="flex items-center gap-4">
           {hasButtons && (

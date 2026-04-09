@@ -149,7 +149,6 @@
         },
         {
           "title": "Coming soon",
-          "defaultCollapsed": true,
           "items": [
             {
               "slug": "content/docs/components/coming-soon/app-shell.mdx",
@@ -363,14 +362,14 @@
   ],
   "ctaButtons": {
     "button1": {
-      "label": "TinaCMS Docs",
-      "link": "https://tina.io/docs",
+      "label": "GitHub",
+      "link": "https://github.com/Teradata/covalent",
       "variant": "primary-outline"
     },
     "button2": {
-      "label": "TinaCloud",
-      "link": "https://app.tina.io",
-      "variant": "primary-background"
+      "label": "Storybook",
+      "link": "https://teradata.github.io/covalent/docs/components",
+      "variant": "primary-outline"
     }
   }
 }

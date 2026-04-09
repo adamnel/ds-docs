@@ -86,11 +86,13 @@ export const TabsLayout = ({
     <Tabs.Root
       value={selectedTab || tabs[0]?.label || ""}
       onValueChange={handleTabChange}
-      className="flex flex-col w-full"
+      className="relative flex flex-col w-full"
     >
-      <TopNav tabs={tabs} navigationDocsData={navigationDocsData} />
+      <div className={showSidebar ? "" : "absolute top-0 left-0 right-0 z-10"}>
+        <TopNav tabs={tabs} navigationDocsData={navigationDocsData} isHome={!showSidebar} />
+      </div>
       <NavigationProvider navigationData={navigationDocsData}>
-        <div className="w-full flex flex-col md:flex-row gap-4 md:p-4 max-w-[2560px] mx-auto">
+        <div className={`w-full flex flex-col md:flex-row max-w-[2560px] mx-auto ${showSidebar ? "gap-4 md:p-4" : ""}`}>
           {showSidebar ? <Sidebar tabs={tabs} /> : null}
           <main className="flex-1">
             <Body
