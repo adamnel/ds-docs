@@ -4,6 +4,7 @@
   "tabs": [
     {
       "title": "Home",
+      "overviewSlug": "content/docs/index.mdx",
       "supermenuGroup": [
         {
           "title": "Home",
