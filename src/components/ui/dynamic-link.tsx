@@ -20,9 +20,10 @@ export const DynamicLink = ({
   isFullWidth = false,
   ...props
 }: DynamicLinkProps) => {
-  const normalizedHref = normalizeStaticHref(href);
-  const shouldUseNativeNavigation =
-    process.env.NEXT_PUBLIC_BASE_PATH && isInternalPath(href);
+  const hasBasePath = Boolean(process.env.NEXT_PUBLIC_BASE_PATH);
+  const normalizedHref =
+    hasBasePath && isInternalPath(href) ? normalizeStaticHref(href) : href;
+  const shouldUseNativeNavigation = hasBasePath && isInternalPath(href);
 
   if (shouldUseNativeNavigation) {
     const {
