@@ -64,10 +64,6 @@ export default function RootLayout({
           enableSystem={true}
           disableTransitionOnChange={false}
           themes={["light", "dark"]}
-          value={{
-            light: `theme-${theme} light`,
-            dark: `theme-${theme} dark`,
-          }}
         >
           {isThemeSelectorEnabled && <ThemeSelector />}
           <Content>
