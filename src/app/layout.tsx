@@ -9,6 +9,7 @@ import { ThemeProvider } from "next-themes";
 import { Inter, Roboto_Flex } from "next/font/google";
 
 import { TabsLayout } from "@/components/docs/layout/tab-layout";
+import { withBasePath } from "@/utils/base-path";
 import type React from "react";
 import { TinaClient } from "./tina-client";
 
@@ -37,8 +38,12 @@ export default function RootLayout({
     <html lang="en" className={`theme-${theme}`} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#E6FAF8" />
-        <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          href={withBasePath("/rss.xml")}
+        />
+        <link rel="icon" type="image/svg+xml" href={withBasePath("/favicon.svg")} />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
           rel="stylesheet"

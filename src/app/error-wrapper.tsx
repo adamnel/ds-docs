@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { withBasePath } from "@/utils/base-path";
 
 const ErrorWrapper = ({
   errorConfig,
@@ -20,7 +20,10 @@ const ErrorWrapper = ({
             <h2 className="bg-gradient-to-r from-brand-secondary-gradient-start to-brand-secondary-gradient-end bg-clip-text font-heading text-6xl leading-normal h-fit text-transparent">
               {errorConfig?.title ?? "Sorry, Friend."}
             </h2>
-            <hr className="block h-[7px] w-full border-none bg-[url('/svg/hr.svg')] bg-[length:auto_100%] bg-no-repeat" />
+            <hr
+              className="block h-[7px] w-full border-none bg-[length:auto_100%] bg-no-repeat"
+              style={{ backgroundImage: `url('${withBasePath("/svg/hr.svg")}')` }}
+            />
             <p className="-mb-1 block text-neutral-text font-thin text-md lg:text-lg lg:leading-normal">
               {errorConfig?.description ??
                 "We couldn't find what you were looking for."}
@@ -44,9 +47,7 @@ const ErrorWrapper = ({
         <div className="mx-auto max-w-[65vw] md:max-w-none">
           <div className="relative aspect-square overflow-hidden flex items-center justify-center">
             <Image
-              src={`${
-                process.env.NEXT_PUBLIC_BASE_PATH || ""
-              }/img/404-image.jpg`}
+              src={withBasePath("/img/404-image.jpg")}
               alt="404 Llama"
               className="rounded-3xl object-cover"
               width={364}

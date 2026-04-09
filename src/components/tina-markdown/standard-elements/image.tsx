@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { useState } from "react";
+import { withBasePath } from "@/utils/base-path";
 import { ImageOverlayWrapper } from "../../ui/image-overlay-wrapper";
 
 export const ImageComponent = (props) => {
   const [dimensions, setDimensions] = useState({ width: 16, height: 9 });
   const [isLoading, setIsLoading] = useState(true);
+  const imageSrc = withBasePath(props?.url || "");
 
   const handleImageLoad = (event) => {
     const img = event.target as HTMLImageElement;
@@ -20,7 +22,7 @@ export const ImageComponent = (props) => {
   return (
     <span className="my-4 flex flex-col gap-2">
       <ImageOverlayWrapper
-        src={props?.url || ""}
+        src={imageSrc}
         alt={props?.alt || ""}
         caption={props?.caption}
       >
@@ -36,7 +38,7 @@ export const ImageComponent = (props) => {
             }}
           >
             <Image
-              src={props?.url || ""}
+              src={imageSrc}
               alt={props?.alt || ""}
               title={props?.caption || ""}
               fill
