@@ -227,6 +227,68 @@
   --background-color: #f9f9f9;
 }
 
+.home-hero-terminal {
+  background-image:
+    radial-gradient(circle at center, rgba(48, 83, 244, 0.18) 0, rgba(48, 83, 244, 0) 58%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='720' viewBox='0 0 720 720'%3E%3Crect width='720' height='720' fill='%23030712'/%3E%3Cg fill='%235d7cff' fill-opacity='0.28' font-family='monospace' font-size='16'%3E%3Ctext x='24' y='48'%3E010011001011001101001010110010110011010010101100101100110100101011001011001101001010%3C/text%3E%3Ctext x='72' y='96'%3E110100101011001011001101001010110010110011010010101100101100110100101011001011001101%3C/text%3E%3Ctext x='28' y='144'%3E001011001101001010110010110011010010101100101100110100101011001011001101001010110010%3C/text%3E%3Ctext x='118' y='192'%3E101100101100110100101011001011001101001010110010110011010010101100101100110100101011%3C/text%3E%3Ctext x='54' y='240'%3E110011010010101100101100110100101011001011001101001010110010110011010010101100101100%3C/text%3E%3Ctext x='168' y='288'%3E010101100101100110100101011001011001101001010110010110011010010101100101100110100101%3C/text%3E%3Ctext x='46' y='336'%3E001101001010110010110011010010101100101100110100101011001011001101001010110010110011%3C/text%3E%3Ctext x='132' y='384'%3E101011001011001101001010110010110011010010101100101100110100101011001011001101001010%3C/text%3E%3Ctext x='36' y='432'%3E110010110011010010101100101100110100101011001011001101001010110010110011010010101100%3C/text%3E%3Ctext x='92' y='480'%3E001010110010110011010010101100101100110100101011001011001101001010110010110011010010%3C/text%3E%3Ctext x='26' y='528'%3E101100110100101011001011001101001010110010110011010010101100101100110100101011001011%3C/text%3E%3Ctext x='150' y='576'%3E110100101011001011001101001010110010110011010010101100101100110100101011001011001101%3C/text%3E%3Ctext x='66' y='624'%3E001011001101001010110010110011010010101100101100110100101011001011001101001010110010%3C/text%3E%3Ctext x='108' y='672'%3E101100101100110100101011001011001101001010110010110011010010101100101100110100101011%3C/text%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: saturate(1.15) brightness(0.82);
+  transform: scale(1.08);
+}
+
+.home-hero-terminal::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background:
+    radial-gradient(circle at center, rgba(48, 83, 244, 0.08), transparent 62%),
+    linear-gradient(90deg, transparent 0%, rgba(142, 163, 255, 0.12) 50%, transparent 100%);
+  animation: home-hero-pulse 10s ease-in-out infinite;
+}
+
+.home-hero-terminal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 62%, rgba(2, 6, 23, 0.55) 100%);
+}
+
+.home-hero-scanlines {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(148, 163, 184, 0.1) 0,
+    rgba(148, 163, 184, 0.1) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  background-size: 100% 4px;
+}
+
+.home-hero-noise {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.16) 0 0.6px, transparent 0.8px),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.12) 0 0.6px, transparent 0.8px),
+    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.1) 0 0.5px, transparent 0.75px),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.14) 0 0.6px, transparent 0.8px);
+  background-size: 18px 18px, 24px 24px, 22px 22px, 28px 28px;
+  mix-blend-mode: soft-light;
+}
+
+@keyframes home-hero-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate3d(-2%, 0, 0) scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translate3d(2%, 0, 0) scale(1.04);
+  }
+}
+
 .theme-blossom.dark {
   --brand-primary: #e54666; /* rubyDark8 */
   --brand-primary-hover: #ec5a72; /* rubyDark10 */
@@ -582,5 +644,4 @@ mark {
   background-color: var(--brand-primary-light);
   font-weight: bold;
 }
-
 
