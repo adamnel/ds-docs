@@ -32,7 +32,7 @@ export const docsCollection = {
     },
     router: ({ document }) => {
       if (document._sys.filename === "index") {
-        return "/";
+        return "/docs";
       }
       const slug = document._sys.breadcrumbs.join("/");
       return `/docs/${slug}`;

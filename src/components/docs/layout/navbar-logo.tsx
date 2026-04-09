@@ -24,7 +24,7 @@ export const NavbarLogo = ({ navigationDocsData }: NavbarLogoProps) => {
   const resolvedDarkLogo = withBasePath(darkLogo);
 
   return (
-    <DynamicLink href="/" isFullWidth={true}>
+    <DynamicLink href="/docs" isFullWidth={true}>
       <div className="relative md:w-[120px] w-[90px] h-[40px]">
         {mounted ? (
           <>

@@ -55,7 +55,7 @@ export const TabsLayout = ({
   );
   const pathname = usePathname();
   const currentPath = stripBasePath(pathname);
-  const showSidebar = currentPath !== "/";
+  const showSidebar = currentPath !== "/docs" && currentPath !== "/docs/";
   const objectOfSelectedTab =
     tabs.find((tab) => tab.label === selectedTab) || tabs[0];
 
@@ -88,11 +88,11 @@ export const TabsLayout = ({
       onValueChange={handleTabChange}
       className="relative flex flex-col w-full"
     >
-      <div className={showSidebar ? "" : "absolute top-0 left-0 right-0 z-10"}>
+      <div className={showSidebar ? "" : "absolute top-0 left-0 right-0 z-10 dark"}>
         <TopNav tabs={tabs} navigationDocsData={navigationDocsData} isHome={!showSidebar} />
       </div>
       <NavigationProvider navigationData={navigationDocsData}>
-        <div className={`w-full flex flex-col md:flex-row max-w-[2560px] mx-auto ${showSidebar ? "gap-4 md:p-4" : ""}`}>
+        <div className={`w-full flex flex-col md:flex-row ${showSidebar ? "max-w-[2560px] mx-auto gap-4 md:p-4" : ""}`}>
           {showSidebar ? <Sidebar tabs={tabs} /> : null}
           <main className="flex-1">
             <Body

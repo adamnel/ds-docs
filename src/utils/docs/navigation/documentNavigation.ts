@@ -148,7 +148,7 @@ export const formatNavigationData = (
 
     const overviewSlug = tab.overviewSlug
       ? tab.overviewSlug === `content${siteConfig.docsHomepage}.mdx`
-        ? "/"
+        ? "/docs"
         : tab.overviewSlug.replace(/^content\/|\.mdx$/g, "/")
       : undefined;
 

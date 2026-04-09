@@ -38,7 +38,7 @@ export const TopNav = ({
   };
 
   return (
-    <div className={`w-full lg:px-8 pt-5 py-1 ${isHome ? "text-white" : "shadow-md/5"}`}>
+    <div className={`w-full lg:px-8 pt-2 pb-2 lg:pt-5 lg:pb-5 ${isHome ? "text-white" : "shadow-md/5"}`}>
       <div className="max-w-[2560px] mx-auto flex items-center justify-between lg:py-0 py-2">
         <div className="flex">
           <NavbarLogo navigationDocsData={[navigationDocsData]} />
@@ -48,8 +48,9 @@ export const TopNav = ({
                 key={tab.label}
                 value={tab.label}
                 className="px-1 text-lg relative text-brand-primary-contrast mx-4 focus:text-brand-secondary-hover cursor-pointer font-semibold data-[state=active]:text-brand-primary-text after:content-[''] after:absolute after:bottom-1.5 after:left-0 after:h-0.25 after:bg-brand-primary-text after:transition-all after:duration-300 after:ease-out data-[state=active]:after:w-full after:w-0"
-                onClick={() => {
+                onClick={(e) => {
                   if (tab.overviewSlug) {
+                    e.preventDefault();
                     router.push(tab.overviewSlug);
                   }
                 }}
