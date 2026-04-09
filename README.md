@@ -133,7 +133,7 @@ pnpm build
 
 ### **Step 6: Deploy**
 
-TinaDocs can be deployed as a static site to GitHub Pages, Vercel, or any static hosting provider.
+TinaDocs can be deployed to Vercel or any compatible hosting provider.
 
 ### **Deploy To Vercel**
 
@@ -154,8 +154,6 @@ GITHUB_TOKEN=<your GitHub personal access token>
 ```
 
 If you add a custom domain in Vercel, use that domain for `NEXT_PUBLIC_SITE_URL`.
-For root-hosted Vercel deployments, do not set `NEXT_PUBLIC_BASE_PATH`.
-
 ---
 
 ## 🔍 Search Setup
